@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Noto_Sans_Gujarati } from "next/font/google";
 import "./globals.css";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${notoSansGujarati.variable} font-body bg-white text-gray-800`}
       >
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

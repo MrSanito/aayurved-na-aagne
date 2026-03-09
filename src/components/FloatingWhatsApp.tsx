@@ -1,0 +1,39 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react";
+
+export default function FloatingWhatsApp() {
+  const whatsappUrl = "https://api.whatsapp.com/message/JBAPTQYQ6RH6K1?autoload=1&app_absent=0";
+
+  return (
+    <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] flex flex-col items-end gap-3 pointer-events-none">
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 2, duration: 0.5 }}
+        className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-gray-100 hidden sm:block pointer-events-auto"
+      >
+        <p className="text-sm font-semibold text-gray-800">
+          માર્ગદર્શન માટે મેસેજ કરો
+        </p>
+      </motion.div>
+
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative group pointer-events-auto"
+      >
+        <motion.div
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.5)] group-hover:bg-green-600 transition-colors"
+        >
+          <MessageCircle className="w-8 h-8 text-white fill-current" />
+        </motion.div>
+        <div className="absolute inset-0 bg-[#25D366] rounded-full w-full h-full -z-10 animate-ping opacity-75"></div>
+      </a>
+    </div>
+  );
+}
