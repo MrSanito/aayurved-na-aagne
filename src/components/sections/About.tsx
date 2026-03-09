@@ -11,7 +11,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-xl"
+          className="relative min-h-[300px] h-[50vw] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-xl"
         >
           <div 
             className="w-full h-full bg-cover bg-center" 
@@ -23,11 +23,11 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6"
+          className="space-y-6 px-2 md:px-0"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
             વજન વધવાનું મુખ્ય કારણ કયું છે?
           </h2>
           <div className="w-20 h-1 bg-herbal rounded-full"></div>

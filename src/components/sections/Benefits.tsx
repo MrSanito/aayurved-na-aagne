@@ -33,8 +33,8 @@ export default function Benefits() {
   ];
 
   return (
-    <section id="benefits" className="py-24 bg-beige/50">
-      <div className="container mx-auto px-6">
+    <section id="benefits" className="py-16 md:py-24 bg-beige/50">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,14 +45,14 @@ export default function Benefits() {
             <h2 className="text-sm font-bold text-gold tracking-widest uppercase mb-3">
               સ્વાસ્થ્ય લાભો
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               આયુર્વેદિક પદ્ધતિના મુખ્ય ફાયદા
             </h3>
             <div className="w-20 h-1 bg-herbal mx-auto rounded-full"></div>
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {benefits.map((benefit, i) => (
             <motion.div
               key={i}

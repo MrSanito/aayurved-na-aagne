@@ -33,9 +33,9 @@ export default function InstagramFeed() {
   ];
 
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+    <section className="py-16 md:py-24 bg-white relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 gap-6">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -62,7 +62,7 @@ export default function InstagramFeed() {
             transition={{ duration: 0.5 }}
             href={profileLink}
             target="_blank"
-            className="btn bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white border-none rounded-full px-8 hover:scale-105 transition-transform shadow-lg hover:shadow-pink-500/30"
+            className="btn bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white border-none rounded-full px-8 py-3 h-auto w-full md:w-auto hover:scale-[1.02] flex items-center justify-center transition-transform shadow-lg hover:shadow-pink-500/30"
           >
             Follow Us <Instagram size={18} className="ml-2" />
           </motion.a>

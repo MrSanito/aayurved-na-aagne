@@ -4,8 +4,8 @@ import { MessageCircle } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 border-t border-gray-800 text-white pt-16 pb-8">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-10 mb-12">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10 mb-12">
           <div>
             <Link href="/" className="font-poppins text-2xl font-bold text-herbal inline-block mb-4">
               AAYURVED NA AANGNE
@@ -14,7 +14,7 @@ export default function Footer() {
               કુદરતી આયુર્વેદિક પદ્ધતિથી વજન ઘટાડવા અને સ્વસ્થ જીવનશૈલી અપનાવવાનો સૌથી સાચો અને સુરક્ષિત રસ્તો.
             </p>
           </div>
-          <div className="flex md:justify-end">
+          <div className="flex md:justify-end border-t border-gray-800 md:border-0 pt-8 md:pt-0">
              <div className="space-y-4">
               <h4 className="text-lg font-semibold text-beige mb-4 border-b border-gray-700 pb-2 inline-block">સંપર્ક કરો</h4>
               <p className="text-gray-400">સ્થળ: અમરેલી, ગુજરાત</p>

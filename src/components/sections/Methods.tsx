@@ -38,8 +38,8 @@ export default function Methods() {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ export default function Methods() {
             <h2 className="text-sm font-bold text-gold tracking-widest uppercase mb-3">
               શરીરના સ્વભાવ મુજબ આયુર્વેદ
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               અમારી આયુર્વેદીક કીટ થી થતા ફાયદાઓ
             </h3>
             <div className="w-24 h-1 bg-herbal mx-auto rounded-full"></div>

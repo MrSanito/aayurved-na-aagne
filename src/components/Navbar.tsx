@@ -30,11 +30,11 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
+        scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="font-poppins text-2xl font-bold text-herbal">
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center gap-4">
+        <Link href="/" className="font-poppins text-lg sm:text-xl lg:text-2xl font-bold text-herbal truncate">
           AAYURVED NA AANGNE
         </Link>
         <div className="hidden md:flex items-center space-x-8">
@@ -51,10 +51,10 @@ export default function Navbar() {
           <Link
             href="https://api.whatsapp.com/message/JBAPTQYQ6RH6K1?autoload=1&app_absent=0"
             target="_blank"
-            className="btn bg-herbal text-white border-none hover:bg-green-800 rounded-full px-6 flex items-center gap-2"
+            className="btn bg-herbal text-white border-none hover:bg-green-800 rounded-full px-4 sm:px-6 flex items-center gap-2 h-10 min-h-[40px]"
           >
-            <MessageCircle size={20} />
-            <span className="font-poppins">WhatsApp</span>
+            <MessageCircle size={18} />
+            <span className="font-poppins text-sm hidden sm:inline">WhatsApp</span>
           </Link>
         </div>
       </div>

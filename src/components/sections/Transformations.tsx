@@ -14,8 +14,8 @@ export default function Transformations() {
   ];
 
   return (
-    <section id="transformations" className="py-24 bg-herbal text-white">
-      <div className="container mx-auto px-6">
+    <section id="transformations" className="py-16 md:py-24 bg-herbal text-white">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export default function Transformations() {
             <h2 className="text-sm font-bold text-gold tracking-widest uppercase mb-3">
               Success Stories
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
               અમારી આયુર્વેદીક કીટ ના RESULT & REVIEW
             </h3>
             <div className="w-24 h-1 bg-gold mx-auto rounded-full"></div>
