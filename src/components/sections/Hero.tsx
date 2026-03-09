@@ -25,7 +25,7 @@ export default function Hero() {
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 w-full">
             <a
-              href="https://api.whatsapp.com/message/JBAPTQYQ6RH6K1"
+              href="https://wa.me/919687105624?text=%E0%AA%B9%E0%AB%81%E0%AA%82%20%E0%AA%B5%E0%AB%87%E0%AA%88%E0%AA%9F%20%E0%AA%B2%E0%AB%8B%E0%AA%B8%20%E0%AA%95%E0%AA%B0%E0%AA%B5%E0%AA%BE%20%E0%AA%87%E0%AA%9A%E0%AB%8D%E0%AA%9B%E0%AB%81%E0%AA%82"
               target="_blank"
               className="btn bg-herbal text-white border-none hover:bg-green-800 rounded-full px-8 py-3 h-auto flex items-center justify-center gap-3 w-full sm:w-fit shadow-lg shadow-herbal/30 text-sm sm:text-base font-semibold"
             >
