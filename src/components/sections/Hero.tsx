@@ -31,7 +31,7 @@ export default function Hero() {
             >
               <MessageCircle size={20} className="sm:w-6 sm:h-6" />
               Personal Coaching
-            </a>
+            </a> 
             <a
               href="https://chat.whatsapp.com/HmzbYQBxadJ3olIPYhi70Y"
               target="_blank"
