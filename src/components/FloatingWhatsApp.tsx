@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 export default function FloatingWhatsApp() {
-  const whatsappUrl = "https://api.whatsapp.com/message/JBAPTQYQ6RH6K1?autoload=1&app_absent=0";
+  const whatsappUrl = "https://api.whatsapp.com/message/JBAPTQYQ6RH6K1";
 
   return (
     <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] flex flex-col items-end gap-3 pointer-events-none">
