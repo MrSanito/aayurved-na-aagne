@@ -5,6 +5,8 @@
   --color-herbal: #2F6F4E;
   --color-beige: #F5EFE6;
   --color-gold: #C9A227;
+  --font-body: var(--font-anek-gujarati), sans-serif;
+  --font-poppins: var(--font-anek-gujarati), sans-serif;
 }
 
 @layer base {

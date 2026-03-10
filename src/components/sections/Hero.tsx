@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle, Users } from "lucide-react";
+import BmiCalculator from "@/components/BmiCalculator";
 
 export default function Hero() {
   return (
@@ -52,9 +53,17 @@ export default function Hero() {
           <div className="absolute inset-0 bg-beige/50 rounded-full blur-3xl mix-blend-multiply opacity-50"></div>
           {/* Authentic Ayurveda Stock Image */}
           <div 
-            className="w-full h-full bg-cover bg-center rounded-3xl shadow-2xl relative z-10" 
+            className="w-full h-full bg-cover bg-center rounded-3xl shadow-2xl relative z-10 flex items-end justify-start sm:justify-end p-4 sm:p-6 lg:p-8" 
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1645088520336-62d94324e869?q=80&w=1200&auto=format&fit=crop")' }}
           >
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="w-full sm:w-auto"
+            >
+              <BmiCalculator />
+            </motion.div>
           </div>
         </motion.div>
       </div>

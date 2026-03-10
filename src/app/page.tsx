@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
+import Certifications from "@/components/sections/Certifications";
+import ProductShowcase from "@/components/sections/ProductShowcase";
 import About from "@/components/sections/About";
 import Methods from "@/components/sections/Methods";
 import Transformations from "@/components/sections/Transformations";
@@ -16,6 +18,8 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <Certifications />
+      <ProductShowcase />
       <DoshaElements />
       <Transformations />
       <Testimonials />
