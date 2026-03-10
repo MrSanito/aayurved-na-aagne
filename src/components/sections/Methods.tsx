@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Leaf, Activity, Sparkles, Sprout, ShieldCheck, Flame } from "lucide-react";
 
 export default function Methods() {
@@ -41,12 +38,7 @@ export default function Methods() {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <h2 className="text-sm font-bold text-gold tracking-widest uppercase mb-3">
               શરીરના સ્વભાવ મુજબ આયુર્વેદ
             </h2>
@@ -54,18 +46,13 @@ export default function Methods() {
               અમારી આયુર્વેદીક કીટ થી થતા ફાયદાઓ
             </h3>
             <div className="w-24 h-1 bg-herbal mx-auto rounded-full"></div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -5 }}
               className="bg-beige p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-transparent hover:border-herbal/20"
             >
               <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6 text-herbal">
@@ -73,7 +60,7 @@ export default function Methods() {
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h4>
               <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

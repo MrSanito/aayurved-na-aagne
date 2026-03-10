@@ -1,6 +1,4 @@
-"use client";
 
-import { motion } from "framer-motion";
 
 export default function DoshaElements() {
   const doshas = [
@@ -33,31 +31,16 @@ export default function DoshaElements() {
   return (
     <section className="py-16 md:py-28 bg-[#0a1912] text-white relative overflow-hidden flex flex-col items-center justify-center">
       {/* Decorative background blur elements */}
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.2, 1],
-          rotate: [0, 90, 0]
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      <div 
         className="absolute top-10 left-10 w-64 md:w-96 h-64 md:h-96 bg-gold/10 rounded-full blur-[100px]"
       />
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.5, 1],
-          rotate: [0, -90, 0]
-        }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      <div 
         className="absolute bottom-10 right-10 w-72 md:w-[500px] h-72 md:h-[500px] bg-herbal/20 rounded-full blur-[120px]"
       />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h2 className="text-gold font-bold tracking-widest uppercase text-xs md:text-sm mb-4">
               આયુર્વેદિક વિજ્ઞાન (Ayurvedic Science)
             </h2>
@@ -69,32 +52,23 @@ export default function DoshaElements() {
               કોઈ પણ કામચલાઉ ડાયેટ કરતા પહેલા તમારા શરીરનો સ્વભાવ જાણવો જરૂરી છે. 
               આયુર્વેદ મુજબ દરેક વ્યક્તિ માટે વજન ઘટાડવાની પ્રક્રિયા અલગ હોય છે.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-8 max-w-6xl mx-auto">
           {doshas.map((dosha, index) => (
-            <motion.div
+            <div
               key={dosha.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: index * 0.2 }}
-              whileHover={{ y: -10 }}
               className={`relative p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden group transition-all duration-500 touch-pan-y`}
             >
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br transition-opacity duration-500 ${dosha.color}`} />
               
               {/* Dynamic Aura Ring */}
               <div className="relative w-20 md:w-24 h-20 md:h-24 mx-auto mb-6 md:mb-8 pointer-events-none">
-                <motion.div 
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                <div 
                   className={`absolute inset-0 rounded-full border-t-2 border-r-2 opacity-50 ${dosha.borderColor}`}
                 />
-                <motion.div 
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                <div 
                   className={`absolute inset-2 rounded-full border-b-2 border-l-2 opacity-30 ${dosha.borderColor}`}
                 />
                 <div className={`absolute inset-4 rounded-full bg-gradient-to-br blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-500 ${dosha.color}`} />
@@ -112,7 +86,7 @@ export default function DoshaElements() {
                   {dosha.desc}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

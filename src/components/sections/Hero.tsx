@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { MessageCircle, Users } from "lucide-react";
 import BmiCalculator from "@/components/BmiCalculator";
 
@@ -8,10 +7,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-white pt-24 md:pt-20 pb-12">
       <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+        <div
           className="space-y-6 z-10"
         >
           <span className="text-gold font-poppins font-semibold tracking-wider uppercase text-xs sm:text-sm">
@@ -42,12 +38,9 @@ export default function Hero() {
               Join Group for Tips
             </a>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+        <div
           className="relative min-h-[350px] sm:min-h-[450px] lg:h-[550px] w-full mt-6 lg:mt-0"
         >
           <div className="absolute inset-0 bg-beige/50 rounded-full blur-3xl mix-blend-multiply opacity-50"></div>
@@ -56,16 +49,13 @@ export default function Hero() {
             className="w-full h-full bg-cover bg-center rounded-3xl shadow-2xl relative z-10 flex items-end justify-start sm:justify-end p-4 sm:p-6 lg:p-8" 
             style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1645088520336-62d94324e869?q=80&w=1200&auto=format&fit=crop")' }}
           >
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+            <div
               className="w-full sm:w-auto"
             >
               <BmiCalculator />
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

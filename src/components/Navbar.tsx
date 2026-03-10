@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -25,10 +24,7 @@ export default function Navbar() {
   ];
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+    <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-4"
       }`}
@@ -58,6 +54,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 }

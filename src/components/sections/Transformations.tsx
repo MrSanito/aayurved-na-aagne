@@ -1,6 +1,4 @@
-"use client";
 
-import { motion } from "framer-motion";
 
 export default function Transformations() {
   // Using all available transformation images
@@ -17,12 +15,7 @@ export default function Transformations() {
     <section id="transformations" className="py-16 md:py-24 bg-herbal text-white">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <h2 className="text-sm font-bold text-gold tracking-widest uppercase mb-3">
               Success Stories
             </h2>
@@ -33,17 +26,13 @@ export default function Transformations() {
             <p className="mt-6 text-beige text-lg max-w-2xl mx-auto">
               માત્ર 90 દિવસમાં સેંકડો લોકોએ આયુર્વેદના માધ્યમથી પોતાનું વજન ઘટાડીને સ્વાસ્થ્ય પાછું મેળવ્યું છે.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((img, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-white rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
             >
               <div className="relative h-72 md:h-80 overflow-hidden">
@@ -57,7 +46,7 @@ export default function Transformations() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { MessageCircle, CheckCircle2 } from "lucide-react";
 
 export default function ContactCTA() {
@@ -14,12 +11,7 @@ export default function ContactCTA() {
         <div className="max-w-4xl mx-auto bg-white rounded-[2rem] shadow-2xl overflow-hidden">
           <div className="grid lg:grid-cols-5 h-full">
             <div className="lg:col-span-3 p-6 sm:p-10 md:p-14 flex flex-col justify-center text-center sm:text-left">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
+              <div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
                   તમારા શરીરના સ્વભાવ મુજબ આયુર્વેદિક માર્ગદર્શન મેળવો.
                 </h3>
@@ -46,16 +38,12 @@ export default function ContactCTA() {
                   <MessageCircle className="relative mr-2 sm:mr-3 shrink-0" size={20} />
                   <span className="relative text-sm sm:text-lg border-l border-white/30 pl-2 sm:pl-3 whitespace-nowrap">WhatsApp પર સંપર્ક કરો</span>
                 </a>
-              </motion.div>
+              </div>
             </div>
             
             <div className="lg:col-span-2 bg-herbal p-8 sm:p-10 flex flex-col justify-center text-white relative overflow-hidden">
               <div className="absolute inset-0 bg-[url('/assets/1001965644.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+              <div
                 className="relative z-10 text-center"
               >
                 <div className="text-5xl font-bold mb-2">90</div>
@@ -63,7 +51,7 @@ export default function ContactCTA() {
                 <p className="text-beige/90 text-sm leading-relaxed mb-6">
                   90 દિવસનો કોર્સ પૂરો કરશો એટલે તમારું વજન તો ઓછું થશે જ, સાથે-સાથે તમારા શરીરના જુદા જુદા ભાગો પર જામેલી એક્સ્ટ્રા ચરબીને દૂર કરશે.
                 </p>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

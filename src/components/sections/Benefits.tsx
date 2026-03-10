@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { BatteryCharging, Heart, Scale, Flame, RefreshCcw } from "lucide-react";
 
 export default function Benefits() {
@@ -36,12 +33,7 @@ export default function Benefits() {
     <section id="benefits" className="py-16 md:py-24 bg-beige/50">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <h2 className="text-sm font-bold text-gold tracking-widest uppercase mb-3">
               સ્વાસ્થ્ય લાભો
             </h2>
@@ -49,17 +41,13 @@ export default function Benefits() {
               આયુર્વેદિક પદ્ધતિના મુખ્ય ફાયદા
             </h3>
             <div className="w-20 h-1 bg-herbal mx-auto rounded-full"></div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {benefits.map((benefit, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="flex flex-col items-center text-center group"
             >
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md mb-6 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300 border border-transparent group-hover:border-herbal/20">
@@ -67,7 +55,7 @@ export default function Benefits() {
               </div>
               <h4 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h4>
               <p className="text-sm text-gray-600 leading-relaxed">{benefit.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
