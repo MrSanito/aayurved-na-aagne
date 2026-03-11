@@ -21,6 +21,25 @@ export default function Certifications() {
         </h3>
         
         <div className="flex flex-col items-center gap-10 lg:gap-14">
+          
+          {/* Highlighted Images Before Badges */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full mb-8">
+            <div className="w-full max-w-md h-auto sm:h-72 relative rounded-xl hover:scale-105 transition-all duration-300">
+              <img 
+                src="/images/certs/kit-ingredients.jpeg" 
+                alt="Kit Ingredients" 
+                className="w-full h-full object-contain mix-blend-multiply" 
+              />
+            </div>
+            <div className="w-full max-w-md h-auto sm:h-72 relative rounded-xl hover:scale-105 transition-all duration-300">
+              <img 
+                src="/images/certs/gujarat-govt-recognition.jpeg" 
+                alt="Gujarat Govt Recognition" 
+                className="w-full h-full object-contain mix-blend-multiply" 
+              />
+            </div>
+          </div>
+
           {/* Top Row */}
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
             {topRow.map((cert, idx) => (

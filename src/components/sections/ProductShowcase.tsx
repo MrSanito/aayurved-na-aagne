@@ -59,12 +59,21 @@ export default function ProductShowcase() {
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center border-b pb-4">
               ગુજરાત સરકાર દ્વારા માન્યતા પ્રાપ્ત (Weight Control Product)
             </h3>
-            <div className="relative w-full aspect-square sm:aspect-video lg:h-[500px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
-              <img 
-                src="/content/certificed by govt.jpeg" 
-                alt="Gujarat Government Recognition Certificates" 
-                className="w-full h-full object-contain mix-blend-multiply"
-              />
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="relative w-full aspect-square sm:aspect-video lg:h-[500px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
+                <img 
+                  src="/content/certificed by govt.jpeg" 
+                  alt="Gujarat Government Recognition Certificates 1" 
+                  className="w-full h-full object-contain mix-blend-multiply"
+                />
+              </div>
+              <div className="relative w-full aspect-square sm:aspect-video lg:h-[500px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
+                <img 
+                  src="/images/certs/gujarat-govt-recognition.jpeg" 
+                  alt="Gujarat Government Recognition Certificates 2" 
+                  className="w-full h-full object-contain mix-blend-multiply"
+                />
+              </div>
             </div>
           </div>
         </div>
