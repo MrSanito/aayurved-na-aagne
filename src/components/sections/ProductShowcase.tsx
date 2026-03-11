@@ -20,13 +20,38 @@ export default function ProductShowcase() {
             </h3>
             <div className="relative w-full aspect-square sm:aspect-video lg:h-[600px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
               <img 
-                src="/images/certs/kit-ingredients.jpeg" 
+                src="/content/products.jpeg" 
                 alt="Ayurvedic Kit and Ingredients" 
-                className="w-full h-full object-contain mix-blend-multiply"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1628173499449-cdbd271f28b2?q=80&w=1200&auto=format&fit=crop";
-                }}
+                className="w-full h-full object-contain"
               />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <div className="bg-white rounded-4xl shadow-xl p-4 sm:p-8 lg:p-10 border border-beige/60 overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center border-b w-full pb-4">
+                3 Month Course
+              </h3>
+              <div className="relative w-full h-[400px] lg:h-[500px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
+                <img 
+                  src="/content/3 month course.jpeg" 
+                  alt="3 Month Course" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+
+            <div className="bg-white rounded-4xl shadow-xl p-4 sm:p-8 lg:p-10 border border-beige/60 overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center border-b w-full pb-4">
+                3 Bottle Combo Pack
+              </h3>
+              <div className="relative w-full h-[400px] lg:h-[500px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
+                <img 
+                  src="/content/3 bottle combo pack have charming body.jpeg" 
+                  alt="3 Bottle Combo Pack" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
             </div>
           </div>
 
@@ -36,12 +61,9 @@ export default function ProductShowcase() {
             </h3>
             <div className="relative w-full aspect-square sm:aspect-video lg:h-[500px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
               <img 
-                src="/images/certs/gujarat-govt-recognition.jpeg" 
+                src="/content/certificed by govt.jpeg" 
                 alt="Gujarat Government Recognition Certificates" 
                 className="w-full h-full object-contain mix-blend-multiply"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1555890209-d754714dbfb7?q=80&w=1200&auto=format&fit=crop";
-                }}
               />
             </div>
           </div>
