@@ -1,15 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
+import DiseasesWarning from "@/components/sections/DiseasesWarning";
+import WeightGainReasons from "@/components/sections/WeightGainReasons";
+import WeightLossLogic from "@/components/sections/WeightLossLogic";
 import Certifications from "@/components/sections/Certifications";
 import ProductShowcase from "@/components/sections/ProductShowcase";
 import About from "@/components/sections/About";
-import Methods from "@/components/sections/Methods";
 import Transformations from "@/components/sections/Transformations";
 import Testimonials from "@/components/sections/Testimonials";
 import DoshaElements from "@/components/sections/DoshaElements";
 import JourneyTimeline from "@/components/sections/JourneyTimeline";
-import Benefits from "@/components/sections/Benefits";
-import Blogs from "@/components/sections/Blogs";
 import InstagramFeed from "@/components/sections/InstagramFeed";
 import ContactCTA from "@/components/sections/ContactCTA";
 import Footer from "@/components/Footer";
@@ -19,16 +19,16 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
+      <DiseasesWarning />
+      <WeightGainReasons />
+      <WeightLossLogic />
       <Certifications />
-      <Blogs />
       <ProductShowcase />
       <DoshaElements />
       <Transformations />
       <Testimonials />
       <About />
-      <Methods />
       <JourneyTimeline />
-      <Benefits />
       <InstagramFeed />
       <ContactCTA />
       <Footer />
