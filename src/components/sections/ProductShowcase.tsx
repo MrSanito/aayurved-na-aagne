@@ -6,7 +6,7 @@ export default function ProductShowcase() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-            આયુર્વેદિક જડીબુટ્ટીઓ અને <span className="text-herbal">સરકારી માન્યતા</span>
+            આયુર્વેદિક જડીબુટ્ટીઓ  
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             અમારી પ્રોડક્ટ્સ શુદ્ધ આયુર્વેદિક જડીબુટ્ટીઓમાંથી બનેલી છે અને તેને સરકારી માન્યતા પણ પ્રાપ્ત છે.
@@ -18,6 +18,14 @@ export default function ProductShowcase() {
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center border-b pb-4">
               અમારી પ્રોડક્ટ કિટ અને સામગ્રી (40+ ઔષધિઓ)
             </h3>
+            {/* 40+ Herbs Infographic */}
+            <div className="mb-8 rounded-xl overflow-hidden shadow-sm border border-stone-100">
+               <img 
+                src="/images/product/ayurvedic_herbs_40.png" 
+                alt="Ayurvedic Herbs (40+ Herbs)" 
+                className="w-full h-auto block"
+              />
+            </div>
             <div className="relative w-full aspect-square sm:aspect-video lg:h-[600px] rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center mb-8">
               <img 
                 src="/content/products.jpeg" 
