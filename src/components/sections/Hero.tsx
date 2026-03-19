@@ -4,23 +4,23 @@ import { FaLeaf, FaCertificate, FaShieldAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-white pt-32 pb-20 md:pt-20 md:pb-12">
+    <section id="home" className="relative min-h-[90vh] md:min-h-screen flex text-center sm:text-left items-center bg-white pt-24 pb-8 md:pt-20 md:pb-12">
       <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8 z-10">
-          <div>
+          <div className="flex flex-col items-center sm:items-start">
             <span className="text-gold font-poppins font-semibold tracking-wider uppercase text-xs sm:text-sm">
               AAYURVED NA AANGNE
             </span>
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight text-gray-900 tracking-tight">
-              આયુર્વેદ દ્વારા કુદરતી રીતે <span className="text-herbal block mt-2 text-2xl sm:text-3xl lg:text-4xl">વજન ઘટાડો</span>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight sm:leading-tight text-gray-900 tracking-tight mt-2">
+              આયુર્વેદ દ્વારા કુદરતી રીતે <span className="text-herbal block mt-2 text-3xl sm:text-4xl lg:text-5xl">વજન ઘટાડો</span>
             </h1>
-            <p className="mt-4 text-base text-gray-600 max-w-lg leading-relaxed">
+            <p className="mt-4 text-sm sm:text-base text-gray-600 max-w-lg leading-relaxed">
               આપણું વજન વધવાનું કારણ શરીરમાં જમા થતી વધારાની ચરબી હોય છે. 
               આ ચરબી શરીરને બેડોળ બનાવે છે અને અનેક રોગને આમંત્રણ આપે છે. અહી શરીરમાં જમાં થયેલી ચરબીને દૂર કરવાનો સરળ અને કાયમી તેમજ સાચો રસ્તો જણાવવામાં આવ્યો છે માટે સંપૂર્ણ વાંચજો…
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4">
             {[
               { icon: <FaLeaf className="text-herbal" />, text: "100% આયુર્વેદિક" },
               { icon: <FaCertificate className="text-gold" />, text: "પ્રમાણિત રિઝલ્ટ" },
@@ -45,7 +45,7 @@ export default function Hero() {
         </div>
 
         <div
-          className="relative min-h-[350px] sm:min-h-[450px] lg:h-[550px] w-full mt-6 lg:mt-0"
+          className="relative min-h-[300px] sm:min-h-[450px] lg:h-[550px] w-full mt-2 lg:mt-0"
         >
           <div className="absolute inset-0 bg-beige/50 rounded-full blur-3xl mix-blend-multiply opacity-50"></div>
           {/* Authentic Ayurveda Stock Image */}
