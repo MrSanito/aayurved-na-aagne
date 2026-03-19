@@ -1,4 +1,5 @@
 
+import { FaWind, FaFireAlt, FaLeaf } from "react-icons/fa";
 
 export default function DoshaElements() {
   const doshas = [
@@ -8,7 +9,8 @@ export default function DoshaElements() {
       elements: "વાયુ + આકાશ",
       desc: "વાત પ્રકૃતિવાળા લોકોનું વજન ઝડપથી ઘટે છે પરંતુ પાચન અનિયમિત હોય છે. તેમને ગરમ અને પોષક આહારની જરૂર છે.",
       color: "from-blue-400 to-cyan-200",
-      borderColor: "border-blue-200"
+      borderColor: "border-blue-200",
+      icon: <FaWind className="text-blue-200" size={32} />
     },
     {
       id: "pitta",
@@ -16,7 +18,8 @@ export default function DoshaElements() {
       elements: "અગ્નિ + જળ",
       desc: "પિત્ત પ્રકૃતિમાં અગ્નિ તત્વ વધુ હોય છે. પાચન ઝડપી હોય છે પણ એસિડિટી થઈ શકે છે. તેમને ઠંડા આહારની જરૂર છે.",
       color: "from-orange-500 to-yellow-300",
-      borderColor: "border-orange-200"
+      borderColor: "border-orange-200",
+      icon: <FaFireAlt className="text-orange-200" size={32} />
     },
     {
       id: "kapha",
@@ -24,7 +27,8 @@ export default function DoshaElements() {
       elements: "પૃથ્વી + જળ",
       desc: "કફ પ્રકૃતિવાળા લોકોનું વજન ઝડપથી વધે છે અને ઘટવામાં સમય લાગે છે. ચરબી જલ્દી જમા થાય છે.",
       color: "from-herbal to-green-300",
-      borderColor: "border-green-200"
+      borderColor: "border-green-200",
+      icon: <FaLeaf className="text-green-200" size={32} />
     }
   ];
 
@@ -73,7 +77,7 @@ export default function DoshaElements() {
                 />
                 <div className={`absolute inset-4 rounded-full bg-gradient-to-br blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-500 ${dosha.color}`} />
                 <div className="absolute inset-4 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center border border-white/20">
-                  <span className="font-bold text-xl md:text-2xl">{dosha.name.charAt(0)}</span>
+                  {dosha.icon}
                 </div>
               </div>
 

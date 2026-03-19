@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { FaRecycle, FaBolt, FaUserCheck } from "react-icons/fa";
 
 export default function JourneyTimeline() {
   const steps = [
@@ -7,6 +7,7 @@ export default function JourneyTimeline() {
       title: "શરીરનું ડિટોક્સિફિકેશન",
       desc: "આતરડા અને પેટમાં જામેલો વર્ષો જૂનો કચરો (ટોક્સિન્સ) ધીમે ધીમે બહાર નીકળવાની શરૂઆત થાય છે. પેટ હલકું લાગવા માંડે છે.",
       color: "bg-green-500",
+      icon: <FaRecycle className="text-white" size={12} />,
       active: true
     },
     {
@@ -14,6 +15,7 @@ export default function JourneyTimeline() {
       title: "મેટાબોલિઝ્મ અને અગ્નિ પ્રદીપ્ત",
       desc: "તમારું પાચનતંત્ર (જઠરાગ્નિ) સક્રિય થાય છે. નવો જમેલો ખોરાક ચરબી બનવાના બદલે એનેર્જીમાં રૂપાંતર પામવાની શરૂઆત થાય છે.",
       color: "bg-herbal",
+      icon: <FaBolt className="text-white" size={12} />,
       active: false
     },
     {
@@ -21,6 +23,7 @@ export default function JourneyTimeline() {
       title: "ચરબી ઓગળવી અને આકાર આવવો",
       desc: "શરીરના હઠીલા ભાગો (ફાંદ, થાઇસ, હિપ્સ) પર જામેલી વધારાની ચરબી ઓગળે છે. વજન ઘટવાની સાથે સાથે શરીર યોગ્ય આકારમાં આવે છે.",
       color: "bg-gold",
+      icon: <FaUserCheck className="text-white" size={12} />,
       active: false
     }
   ];
@@ -69,9 +72,9 @@ export default function JourneyTimeline() {
                   </div>
 
                   {/* Visual Node */}
-                  <div className="absolute left-[12px] md:left-1/2 top-8 md:top-8 transform md:-translate-x-1/2 z-10">
-                    <div className="w-6 h-6 rounded-full bg-white shadow-md border-4 border-herbal flex items-center justify-center p-[2px]">
-                      <div className={`w-full h-full rounded-full ${step.color} animate-pulse`} />
+                  <div className="absolute left-[8px] md:left-1/2 top-8 md:top-8 transform md:-translate-x-1/2 z-10">
+                    <div className={`w-8 h-8 rounded-full ${step.color} shadow-lg border-2 border-white flex items-center justify-center animate-pulse`}>
+                      {step.icon}
                     </div>
                   </div>
                 </div>

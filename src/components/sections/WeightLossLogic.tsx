@@ -1,8 +1,22 @@
 "use client";
 
 import { CheckCircle2, XCircle, ArrowRight, ShieldCheck, Zap, Activity } from "lucide-react";
+import { FaLeaf, FaInfinity, FaUserMd, FaUtensils, FaDumbbell, FaFireAlt, FaSmileBeam, FaShieldAlt } from "react-icons/fa";
+import { GiStomach } from "react-icons/gi";
 
 export default function WeightLossLogic() {
+  const benefits = [
+    { title: "સંપૂર્ણ આયુર્વેદિક", desc: "કોઈ પણ પ્રકારની સાઇડ ઈફેક્ટ નથી", icon: <FaLeaf className="text-herbal" size={24} /> },
+    { title: "કાયમી વજન ઘટાડો", desc: "પાચન શક્તિ વધારીને વજન ઓછું કરશે", icon: <FaInfinity className="text-blue-600" size={24} /> },
+    { title: "ડોક્ટર સર્ટિફાઇડ", desc: "આયુર્વેદિક ડોકટરો દ્વારા પ્રમાણિત કીટ", icon: <FaUserMd className="text-red-500" size={24} /> },
+    { title: "કોઈ ડાયેટિંગ નહીં", desc: "ભૂખ્યા રહેવાની કે ડાયેટ કરવાની જરૂર નથી", icon: <FaUtensils className="text-orange-500" size={24} /> },
+    { title: "કોઈ કસરત જરૂર નથી", desc: "GYM , YOGA કે વધારાની મહેનતની જરૂર નથી", icon: <FaDumbbell className="text-gray-600" size={24} /> },
+    { title: "હઠીલી ચરબી દુર", desc: "ફાંદ , હિપ્સ , થાઈસ, અને છાતીની ચરબી દુર કરશે", icon: <FaFireAlt className="text-red-600" size={24} /> },
+    { title: "ઉપયોગમાં સરળ", desc: "ટેબલેટ (ગોળીઓ) આવશે, ઉપયોગમાં ખૂબ જ સરળ", icon: <FaSmileBeam className="text-yellow-500" size={24} /> },
+    { title: "પાચન સમસ્યામાં રાહત", desc: "ગેસ, એસીડીટી, કબજિયાત દુર કરશે", icon: <GiStomach className="text-green-600" size={24} /> },
+    { title: "ગંભીર બીમારીથી બચાવ", desc: "વધારે વજનથી થતી 40+ બીમારીઓથી બચાવશે", icon: <FaShieldAlt className="text-indigo-600" size={24} /> }
+  ];
+
   return (
     <section className="py-16 bg-beige/30">
       <div className="container mx-auto px-4 sm:px-6">
@@ -117,7 +131,7 @@ export default function WeightLossLogic() {
               </div>
             </div>
 
-            <div className="bg-beige p-8 sm:p-12 rounded-[2rem] border border-herbal/10 space-y-6">
+            <div className="bg-beige p-8 sm:p-12 rounded-4xl border border-herbal/10 space-y-6">
               <h3 className="text-2xl font-bold text-gray-900">વજન ઘટાડવા છતાં કેમ ફરીથી વધી જાય છે ??</h3>
               <p className="text-gray-700 leading-relaxed">
                 માર્કેટમાં મળતી 90 થી 95 ટકા દવાઓ કે ટ્રીટમેન્ટ માત્ર ને માત્ર જૂની ચરબી ઓગાળવાનું કાર્ય કરે છે નવી ચરબી બને છે એના પર કોઈ પણ પ્રકારનું કાર્ય કરતી નથી. એટલે કે ડાયજેસ્ટીવ સિસ્ટમ એટલે પાચન સાયકલ પર કાર્ય કરતી નથી.
@@ -156,7 +170,7 @@ export default function WeightLossLogic() {
               </div>
               <div className="relative group">
                 <div className="absolute -inset-4 bg-herbal/10 rounded-[2.5rem] blur-xl group-hover:bg-herbal/20 transition-all"></div>
-                <div className="relative bg-white p-8 rounded-[2rem] shadow-xl border border-beige space-y-6">
+                <div className="relative bg-white p-8 rounded-4xl shadow-xl border border-beige space-y-6">
                   <h4 className="text-2xl font-bold text-herbal">અમારી આયુર્વેદિક કીટ કઈ રીતે કાર્ય કરશે ?</h4>
                   <div className="space-y-4 text-gray-700">
                     <p>સૌથી પહેલા તમારી પચન સાયકલ ને નિયમિત કરશે જેથી તમારું શરીર નકામી અને વધારાની ચરબી નહિ બનાવે.</p>
@@ -175,26 +189,16 @@ export default function WeightLossLogic() {
             </div>
           </div>
 
-          {/* New Section: Kit Benefits (repurposed from Methods.tsx) */}
+          {/* Section: Kit Benefits */}
           <div className="space-y-12">
             <h2 className="text-3xl font-bold text-center text-gray-900 uppercase tracking-wide">
               આયુર્વેદીક કીટ થી થતા ફાયદાઓ
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { title: "સંપૂર્ણ આયુર્વેદિક", desc: "કોઈ પણ પ્રકારની સાઇડ ઈફેક્ટ નથી" },
-                { title: "કાયમી વજન ઘટાડો", desc: "પાચન શક્તિ વધારીને વજન ઓછું કરશે" },
-                { title: "ડોક્ટર સર્ટિફાઇડ", desc: "આયુર્વેદિક ડોકટરો દ્વારા પ્રમાણિત કીટ" },
-                { title: "કોઈ ડાયેટિંગ નહીં", desc: "ભૂખ્યા રહેવાની કે ડાયેટ કરવાની જરૂર નથી" },
-                { title: "કોઈ કસરત જરૂર નથી", desc: "GYM , YOGA કે વધારાની મહેનતની જરૂર નથી" },
-                { title: "હઠીલી ચરબી દુર", desc: "ફાંદ , હિપ્સ , થાઈસ, અને છાતીની ચરબી દુર કરશે" },
-                { title: "ઉપયોગમાં સરળ", desc: "ટેબલેટ (ગોળીઓ) આવશે, ઉપયોગમાં ખૂબ જ સરળ" },
-                { title: "પાચન સમસ્યામાં રાહત", desc: "ગેસ, એસીડીટી, કબજિયાત દુર કરશે" },
-                { title: "ગંભીર બીમારીથી બચાવ", desc: "વધારે વજનથી થતી 40+ બીમારીઓથી બચાવશે" }
-              ].map((benefit, i) => (
+              {benefits.map((benefit, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-50 flex gap-4">
-                  <div className="w-10 h-10 bg-beige rounded-lg flex items-center justify-center text-herbal shrink-0 font-bold">
-                    {i + 1}
+                  <div className="w-12 h-12 bg-beige/50 rounded-xl flex items-center justify-center shrink-0">
+                    {benefit.icon}
                   </div>
                   <div>
                     <h5 className="font-bold text-gray-900 mb-1">{benefit.title}</h5>
