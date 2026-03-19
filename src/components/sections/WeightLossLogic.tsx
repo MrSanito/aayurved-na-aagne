@@ -21,7 +21,7 @@ export default function WeightLossLogic() {
             </p>
             <div className="py-4">
               <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.56 PM (1).jpeg" 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM.jpeg" 
                 alt="Natural Solutions" 
                 className="w-full max-h-[350px] object-contain rounded-xl"
               />
@@ -31,7 +31,7 @@ export default function WeightLossLogic() {
             </p>
             <div className="py-4">
               <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM (2).jpeg" 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM (1).jpeg" 
                 alt="Risks" 
                 className="w-full max-h-[350px] object-contain rounded-xl"
               />
@@ -47,7 +47,7 @@ export default function WeightLossLogic() {
             <p className="text-lg leading-relaxed text-gray-600">મોટાભાગ ના કિસ્સા માં લોકો કામચલાઉ રસ્તો અપનાવતા હોય છે ..</p>
             <div className="py-4">
               <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.54 PM (1).jpeg" 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM (2).jpeg" 
                 alt="Time and Health" 
                 className="w-full max-h-[350px] object-contain rounded-xl"
               />
@@ -64,7 +64,7 @@ export default function WeightLossLogic() {
             </p>
             <div className="py-4">
               <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.54 PM.jpeg" 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.56 PM.jpeg" 
                 alt="Lifestyle" 
                 className="w-full max-h-[350px] object-contain rounded-xl"
               />
@@ -74,7 +74,7 @@ export default function WeightLossLogic() {
             </p>
             <div className="py-4">
               <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM (1).jpeg" 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.56 PM (1).jpeg" 
                 alt="Fat Conversion" 
                 className="w-full max-h-[350px] object-contain rounded-xl"
               />
@@ -119,6 +119,14 @@ export default function WeightLossLogic() {
                 ))}
               </ul>
 
+              <div className="py-6">
+                <img 
+                  src="/content/products.jpeg" 
+                  alt="Ayurvedic Kit Products" 
+                  className="w-full max-h-[400px] object-contain rounded-2xl shadow-md"
+                />
+              </div>
+
               <div className="bg-white p-8 rounded-3xl shadow-lg border border-beige space-y-6">
                 <h4 className="text-2xl font-bold text-herbal">અમારી આયુર્વેદિક કીટ કઈ રીતે કાર્ય કરશે ?</h4>
                 <div className="space-y-4 text-gray-700">
@@ -126,6 +134,15 @@ export default function WeightLossLogic() {
                   <p className="flex gap-3"><span className="text-gold font-bold">•</span> આયુર્વેદિક રીતે શરીરમાં જમા થયેલી નકામી ચરબીને ઓગાળીને દૂર કરશે.</p>
                   <p className="flex gap-3"><span className="text-gold font-bold">•</span> ઓગળેલી ચરબીને મળ અને મૂત્ર સ્વરૂપે શરીરમાંથી બહાર કાઢશે અને તમારું પેટ સાફ કરશે..</p>
                 </div>
+              </div>
+
+              <div className="py-8">
+                <h4 className="text-2xl font-bold text-center mb-8 border-b border-gray-100 pb-4">આયુર્વેદીક કીટ થી થતા ફાયદાઓ</h4>
+                <img 
+                  src="/content/3 month course.jpeg" 
+                  alt="Ayurvedic Kit Benefits" 
+                  className="w-full max-h-[500px] object-contain rounded-2xl"
+                />
               </div>
 
               {/* Order Button */}
