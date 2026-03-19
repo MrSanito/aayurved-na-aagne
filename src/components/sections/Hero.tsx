@@ -1,7 +1,6 @@
 "use client";
 
-import { FaLeaf, FaCertificate, FaShieldAlt } from "react-icons/fa";
-import BmiCalculator from "@/components/BmiCalculator";
+import { FaLeaf, FaCertificate, FaShieldAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -33,6 +32,16 @@ export default function Hero() {
               </div>
             ))}
           </div>
+
+          <div className="pt-4">
+            <a 
+              href="https://wa.me/919687105624?text=%E0%AA%B9%E0%AB%81%E0%AA%82%20%E0%AA%B5%E0%AB%87%E0%AA%88%E0%AA%9F%20%E0%AA%B2%E0%AB%8B%E0%AA%B8%20%E0%AA%95%E0%AA%B0%E0%AA%B5%E0%AA%BE%20%E0%AA%87%E0%AA%9A%E0%AB%8D%E0%AA%9B%E0%AB%81%E0%AA%82"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-herbal text-white rounded-full font-bold text-lg hover:bg-green-800 transition-all shadow-lg shadow-herbal/20 hover:scale-105 active:scale-95"
+            >
+              <FaWhatsapp size={24} />
+              વજન ઘટાડવા માટે સંપર્ક કરો
+            </a>
+          </div>
         </div>
 
         <div
@@ -40,16 +49,11 @@ export default function Hero() {
         >
           <div className="absolute inset-0 bg-beige/50 rounded-full blur-3xl mix-blend-multiply opacity-50"></div>
           {/* Authentic Ayurveda Stock Image */}
-          <div 
-            className="w-full h-full bg-cover bg-center rounded-3xl shadow-2xl relative z-10 flex items-end justify-start sm:justify-end p-4 sm:p-6 lg:p-8" 
-            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1645088520336-62d94324e869?q=80&w=1200&auto=format&fit=crop")' }}
-          >
-            <div
-              className="w-full sm:w-auto"
+            <div 
+              className="w-full h-full bg-cover bg-center rounded-3xl shadow-2xl relative z-10" 
+              style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1645088520336-62d94324e869?q=80&w=1200&auto=format&fit=crop")' }}
             >
-              <BmiCalculator />
             </div>
-          </div>
         </div>
       </div>
     </section>

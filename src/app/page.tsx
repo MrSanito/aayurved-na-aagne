@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import DiseasesWarning from "@/components/sections/DiseasesWarning";
-import WeightGainReasons from "@/components/sections/WeightGainReasons";
 import WeightLossLogic from "@/components/sections/WeightLossLogic";
 import Certifications from "@/components/sections/Certifications";
 import ProductShowcase from "@/components/sections/ProductShowcase";
@@ -20,7 +19,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <DiseasesWarning />
-      <WeightGainReasons />
       <WeightLossLogic />
       <Certifications />
       <ProductShowcase />

@@ -1,4 +1,4 @@
-
+import { FaCamera, FaStar, FaCheckCircle, FaImages } from "react-icons/fa";
 
 export default function Transformations() {
   // Using all available transformation images
@@ -17,10 +17,14 @@ export default function Transformations() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div>
-            <h2 className="text-sm font-bold text-gold tracking-widest uppercase mb-3">
-              Success Stories
-            </h2>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <FaCamera className="text-gold animate-pulse" size={24} />
+              <h2 className="text-sm font-bold text-gold tracking-widest uppercase">
+                Success Stories
+              </h2>
+            </div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 flex items-center justify-center gap-4">
+              <FaImages className="hidden sm:block text-gold/50" />
               અમારી આયુર્વેદીક કીટ ના RESULT & REVIEW
             </h3>
             <div className="w-24 h-1 bg-gold mx-auto rounded-full"></div>
@@ -42,9 +46,10 @@ export default function Transformations() {
                   style={{ backgroundImage: `url("${img}")` }}
                 ></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                  <span className="text-white font-medium bg-herbal/90 px-4 py-1 rounded-full backdrop-blur-sm">
-                    Amazing Result
-                  </span>
+                  <div className="flex items-center gap-2 text-white font-medium bg-herbal/90 px-4 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
+                    <FaCheckCircle className="text-gold" />
+                    <span>Amazing Result</span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { Star, Quote } from "lucide-react";
+import { FaStar, FaQuoteRight, FaUser, FaQuoteLeft } from "react-icons/fa";
 
 export default function Testimonials() {
   const testimonials = [
@@ -40,13 +40,13 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-white p-8 rounded-3xl shadow-sm border border-transparent hover:border-herbal/20 hover:shadow-xl transition-all relative group"
+              className="bg-white p-8 rounded-4xl shadow-sm border border-transparent hover:border-herbal/20 hover:shadow-xl transition-all relative group overflow-hidden"
             >
-              <Quote className="absolute top-6 right-6 text-beige/50 w-12 h-12 rotate-12 group-hover:rotate-0 transition-transform duration-500" />
+              <FaQuoteRight className="absolute -top-2 -right-2 text-beige/20 w-24 h-24 -rotate-12 group-hover:rotate-0 transition-transform duration-700" />
               
-              <div className="flex gap-1 mb-6 text-gold">
+              <div className="flex gap-1 mb-6 text-gold relative z-10">
                 {[...Array(t.rating)].map((_, j) => (
-                  <Star key={j} size={18} fill="currentColor" />
+                  <FaStar key={j} size={18} fill="currentColor" />
                 ))}
               </div>
               
@@ -61,11 +61,11 @@ export default function Testimonials() {
                 ))}
               </div>
               
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-herbal/10 rounded-full flex items-center justify-center text-herbal font-bold">
-                  {t.name.charAt(0)}
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="w-12 h-12 bg-herbal/10 rounded-full flex items-center justify-center text-herbal shadow-inner border border-herbal/5">
+                  <FaUser className="opacity-80" />
                 </div>
-                <div className="font-bold text-gray-900">{t.name}</div>
+                <div className="font-bold text-gray-900 tracking-tight">{t.name}</div>
               </div>
             </div>
           ))}

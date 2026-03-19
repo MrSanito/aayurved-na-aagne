@@ -1,4 +1,4 @@
-import { MessageCircle, CheckCircle2 } from "lucide-react";
+import { FaWhatsapp, FaCheckCircle } from "react-icons/fa";
 
 export default function ContactCTA() {
   return (
@@ -21,9 +21,9 @@ export default function ContactCTA() {
 
                 <ul className="space-y-4 mb-10">
                   {['કાયમી વજન ઘટાડો', 'કોઈ સાઇડ ઇફેક્ટ નથી', '100% આયુર્વેદિક પ્રોડક્ટ'].map((item, i) => (
-                    <li key={i} className="flex items-center justify-center sm:justify-start text-gray-700">
-                      <CheckCircle2 className="text-herbal mr-3 shrink-0" size={20} />
-                      <span className="font-medium text-sm sm:text-base">{item}</span>
+                    <li key={i} className="flex items-center justify-center sm:justify-start text-gray-700 font-bold">
+                      <FaCheckCircle className="text-herbal mr-3 shrink-0" size={20} />
+                      <span className="text-sm sm:text-base">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -35,7 +35,7 @@ export default function ContactCTA() {
                 >
                   <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-green-600 rounded-full group-hover:w-[150%] group-hover:h-56"></span>
                   <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
-                  <MessageCircle className="relative mr-2 sm:mr-3 shrink-0" size={20} />
+                  <FaWhatsapp className="relative mr-2 sm:mr-3 shrink-0" size={24} strokeWidth={0} />
                   <span className="relative text-sm sm:text-lg border-l border-white/30 pl-2 sm:pl-3 whitespace-nowrap">WhatsApp પર સંપર્ક કરો</span>
                 </a>
               </div>
