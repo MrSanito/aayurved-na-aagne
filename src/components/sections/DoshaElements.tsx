@@ -48,11 +48,11 @@ export default function DoshaElements() {
             <h2 className="text-gold font-bold tracking-widest uppercase text-xs md:text-sm mb-4">
               આયુર્વેદિક વિજ્ઞાન (Ayurvedic Science)
             </h2>
-            <h3 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
               તમારા શરીરની પ્રકૃતિ ઓળખો
             </h3>
-            <div className="w-16 md:w-24 h-1 bg-gold mx-auto rounded-full mb-8"></div>
-            <p className="text-gray-300 md:text-lg leading-relaxed px-4 md:px-0">
+            <div className="w-16 md:w-20 h-1 bg-gold mx-auto rounded-full mb-8"></div>
+            <p className="text-gray-300 md:text-base leading-relaxed px-4 md:px-0">
               કોઈ પણ કામચલાઉ ડાયેટ કરતા પહેલા તમારા શરીરનો સ્વભાવ જાણવો જરૂરી છે. 
               આયુર્વેદ મુજબ દરેક વ્યક્તિ માટે વજન ઘટાડવાની પ્રક્રિયા અલગ હોય છે.
             </p>

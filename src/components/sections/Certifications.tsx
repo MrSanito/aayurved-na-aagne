@@ -13,7 +13,7 @@ export default function Certifications() {
               <FaShieldAlt className="text-gold" />
               પ્રમાણિત અને 100% સુરક્ષિત
             </h3>
-            <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-xl sm:text-3xl font-bold text-gray-900 leading-tight">
               ગુજરાત સરકાર દ્વારા માન્યતા પ્રાપ્ત <br className="hidden sm:block" />
               <span className="text-gold">(Weight Control Product)</span>
             </h2>

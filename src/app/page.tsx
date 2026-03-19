@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
-import DiseasesWarning from "@/components/sections/DiseasesWarning";
-import WeightLossLogic from "@/components/sections/WeightLossLogic";
+import BlogContent from "@/components/sections/BlogContent";
 import Certifications from "@/components/sections/Certifications";
 import ProductShowcase from "@/components/sections/ProductShowcase";
 import About from "@/components/sections/About";
@@ -18,8 +17,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <DiseasesWarning />
-      <WeightLossLogic />
+      <BlogContent />
       <Certifications />
       <ProductShowcase />
       <DoshaElements />

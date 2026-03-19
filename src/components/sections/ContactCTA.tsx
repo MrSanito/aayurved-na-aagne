@@ -12,10 +12,10 @@ export default function ContactCTA() {
           <div className="grid lg:grid-cols-5 h-full">
             <div className="lg:col-span-3 p-6 sm:p-10 md:p-14 flex flex-col justify-center text-center sm:text-left">
               <div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 leading-tight">
                   તમારા શરીરના સ્વભાવ મુજબ આયુર્વેદિક માર્ગદર્શન મેળવો.
                 </h3>
-                <p className="text-lg text-gray-600 mb-8">
+                <p className="text-base text-gray-600 mb-8">
                   જો તમે પણ સંપૂર્ણ આયુર્વેદિક રીતે વજન ઓછું કરવા માંગતા હોવ તો આજે જ અમારી આયુર્વેદિક કીટનો ઓર્ડર કરો. માત્ર 90 દિવસમાં ફેટમાંથી ફીટ બનો!
                 </p>
 

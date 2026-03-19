@@ -11,12 +11,12 @@ export default function Hero() {
             <span className="text-gold font-poppins font-semibold tracking-wider uppercase text-xs sm:text-sm">
               AAYURVED NA AANGNE
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
-              આયુર્વેદ દ્વારા કુદરતી રીતે <span className="text-herbal block mt-2 text-5xl sm:text-6xl lg:text-8xl">વજન ઘટાડો</span>
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight text-gray-900 tracking-tight">
+              આયુર્વેદ દ્વારા કુદરતી રીતે <span className="text-herbal block mt-2 text-2xl sm:text-3xl lg:text-4xl">વજન ઘટાડો</span>
             </h1>
-            <p className="mt-4 text-lg text-gray-600 max-w-lg leading-relaxed">
+            <p className="mt-4 text-base text-gray-600 max-w-lg leading-relaxed">
               આપણું વજન વધવાનું કારણ શરીરમાં જમા થતી વધારાની ચરબી હોય છે. 
-              અહી શરીરમાં જમાં થયેલી ચરબીને દૂર કરવાનો સરળ અને કાયમી તેમજ સાચો રસ્તો જણાવવામાં આવ્યો છે.
+              આ ચરબી શરીરને બેડોળ બનાવે છે અને અનેક રોગને આમંત્રણ આપે છે. અહી શરીરમાં જમાં થયેલી ચરબીને દૂર કરવાનો સરળ અને કાયમી તેમજ સાચો રસ્તો જણાવવામાં આવ્યો છે માટે સંપૂર્ણ વાંચજો…
             </p>
           </div>
 
@@ -35,7 +35,7 @@ export default function Hero() {
 
           <div className="pt-4">
             <a 
-              href="https://wa.me/919687105624?text=%E0%AA%B9%E0%AB%81%E0%AA%82%20%E0%AA%B5%E0%AB%87%E0%AA%88%E0%AA%9F%20%E0%AA%B2%E0%AB%8B%E0%AA%B8%20%E0%AA%95%E0%AA%B0%E0%AA%B5%E0%AA%BE%20%E0%AA%87%E0%AA%9A%E0%AB%8D%E0%AA%9B%E0%AB%81%E0%AA%82"
+              href="https://wa.me/message/JBAPTQYQ6RH6K1" 
               className="flex sm:inline-flex items-center justify-center gap-3 px-8 py-5 bg-herbal text-white rounded-full font-bold text-lg hover:bg-green-800 transition-all shadow-lg shadow-herbal/20 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               <FaWhatsapp size={24} />
