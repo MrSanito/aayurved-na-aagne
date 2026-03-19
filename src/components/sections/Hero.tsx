@@ -4,15 +4,15 @@ import { FaLeaf, FaCertificate, FaShieldAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-white pt-24 md:pt-20 pb-12">
+    <section id="home" className="relative min-h-screen flex items-center bg-white pt-32 pb-20 md:pt-20 md:pb-12">
       <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8 z-10">
           <div>
             <span className="text-gold font-poppins font-semibold tracking-wider uppercase text-xs sm:text-sm">
               AAYURVED NA AANGNE
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-gray-900">
-              આયુર્વેદ દ્વારા કુદરતી રીતે <span className="text-herbal block mt-2">વજન ઘટાડો</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
+              આયુર્વેદ દ્વારા કુદરતી રીતે <span className="text-herbal block mt-2 text-5xl sm:text-6xl lg:text-8xl">વજન ઘટાડો</span>
             </h1>
             <p className="mt-4 text-lg text-gray-600 max-w-lg leading-relaxed">
               આપણું વજન વધવાનું કારણ શરીરમાં જમા થતી વધારાની ચરબી હોય છે. 
@@ -36,7 +36,7 @@ export default function Hero() {
           <div className="pt-4">
             <a 
               href="https://wa.me/919687105624?text=%E0%AA%B9%E0%AB%81%E0%AA%82%20%E0%AA%B5%E0%AB%87%E0%AA%88%E0%AA%9F%20%E0%AA%B2%E0%AB%8B%E0%AA%B8%20%E0%AA%95%E0%AA%B0%E0%AA%B5%E0%AA%BE%20%E0%AA%87%E0%AA%9A%E0%AB%8D%E0%AA%9B%E0%AB%81%E0%AA%82"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-herbal text-white rounded-full font-bold text-lg hover:bg-green-800 transition-all shadow-lg shadow-herbal/20 hover:scale-105 active:scale-95"
+              className="flex sm:inline-flex items-center justify-center gap-3 px-8 py-5 bg-herbal text-white rounded-full font-bold text-lg hover:bg-green-800 transition-all shadow-lg shadow-herbal/20 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               <FaWhatsapp size={24} />
               વજન ઘટાડવા માટે સંપર્ક કરો

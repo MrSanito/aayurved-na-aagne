@@ -46,8 +46,10 @@ export default function DiseasesWarning() {
               – પોતાનું વજન શા માટે ઘટાડવું જરૂરી છે. તે વાત તમને સમજાઈ ગઈ હશે..સાચું ને… ??!
             </p>
 
-            <div className="pt-8 max-w-xl mx-auto">
-              <BmiCalculator />
+            <div className="flex justify-center px-4">
+              <div className="w-full max-w-sm sm:max-w-md lg:max-w-none">
+                <BmiCalculator />
+              </div>
             </div>
           </div>
 

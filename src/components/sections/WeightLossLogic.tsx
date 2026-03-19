@@ -19,7 +19,7 @@ export default function WeightLossLogic() {
   return (
     <section className="py-16 bg-beige/30">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto space-y-24">
+        <div className="max-w-5xl mx-auto space-y-16 md:space-y-32">
           
           {/* Section 1: Methods and Failure */}
           <div className="space-y-10">
@@ -27,7 +27,7 @@ export default function WeightLossLogic() {
               <FaTimesCircle className="text-red-500 shrink-0" size={36} />
               વજન ઘટાડવા માટે ના ઉપાયો ?
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
               <div className="space-y-6">
                 <div className="bg-white p-8 rounded-3xl shadow-sm border border-red-100 space-y-6">
                   <p className="text-lg text-gray-700 leading-relaxed">
@@ -46,7 +46,7 @@ export default function WeightLossLogic() {
                 </div>
                 
                 {/* Image: Natural Solutions (Gym, Diet, Yoga) */}
-                <div className="relative rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 group max-w-md mx-auto">
+                <div className="relative rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 group max-w-sm sm:max-w-md mx-auto">
                   <img 
                     src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.56 PM (1).jpeg" 
                     alt="Natural Solutions" 
@@ -67,7 +67,7 @@ export default function WeightLossLogic() {
                 </div>
 
                 {/* Image: Surgery and Meds Risks */}
-                <div className="relative rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-red-100 group max-w-md mx-auto">
+                <div className="relative rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-red-100 group max-w-sm sm:max-w-md mx-auto">
                   <img 
                     src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM (2).jpeg" 
                     alt="Surgery Risks" 
@@ -114,7 +114,7 @@ export default function WeightLossLogic() {
                 </div>
 
                 {/* Image: Time and Health */}
-                <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md p-2 border border-white/20 group max-w-lg mx-auto">
+                <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white/10 backdrop-blur-md p-2 border border-white/20 group max-w-sm sm:max-w-lg mx-auto">
                   <img 
                     src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.54 PM (1).jpeg" 
                     alt="Time and Health" 
@@ -310,7 +310,7 @@ export default function WeightLossLogic() {
             </p>
             <a 
               href="https://wa.me/919687105624?text=%E0%AA%B9%E0%AB%81%E0%AA%82%20%E0%AA%B5%E0%AB%87%E0%AA%88%E0%AA%9F%20%E0%AA%B2%E0%AB%8B%E0%AA%B8%20%E0%AA%95%E0%AA%B0%E0%AA%B5%E0%AA%BE%20%E0%AA%87%E0%AA%9A%E0%AB%8D%E0%AA%9B%E0%AB%81%E0%AA%82" 
-              className="inline-flex items-center gap-4 px-16 py-6 bg-gold text-white rounded-full font-bold text-2xl hover:bg-gold-dark transition-all shadow-2xl shadow-gold/40 hover:scale-110 active:scale-95"
+              className="flex sm:inline-flex flex-col sm:flex-row items-center justify-center gap-4 px-8 sm:px-16 py-6 sm:py-7 bg-gold text-white rounded-3xl sm:rounded-full font-bold text-xl sm:text-2xl hover:bg-gold-dark transition-all shadow-2xl shadow-gold/40 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               <FaWhatsapp size={28} />
               Order Now
