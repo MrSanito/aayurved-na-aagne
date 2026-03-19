@@ -113,7 +113,7 @@ export default function BlogContent() {
             <li>ચામડી લુઝ પડવી વગેરે..</li>
           </ol>
 
-          <BlogImage src="/images/blog/sideEffects.jpg" alt="સાઇડ ઈફેક્ટ" linkHref="/images/blog/sideEffects.jpg" />
+          <BlogImage src="/images/updatedImages/sideEffects1.jpg" alt="સાઇડ ઈફેક્ટ" linkHref="/images/updatedImages/sideEffects1.jpg" />
 
           <p className="my-8 font-bold text-stone-800">
             પરંતુ જો તમે કાયમી સોલ્યુશન તરફ જવા માંગતા હોવ તો વજન વધવા પાછળ નું મુખ્ય કારણ
@@ -129,7 +129,7 @@ export default function BlogContent() {
             વધતું રહે…
           </p>
 
-          <BlogImage src="/images/blog/digestive.jpg" alt="ડાયજેસ્ટીવ સિસ્ટમ" linkHref="/images/blog/digestive.jpg" />
+          <BlogImage src="/images/updatedImages/digestive1.jpeg" alt="ડાયજેસ્ટીવ સિસ્ટમ" linkHref="/images/updatedImages/digestive1.jpeg" />
 
           <p className="my-6">
             – આપણે જે ખોરાક ખાઈએ તેમાંથી ઉપર મુજબ 7 અલગ અલગ તત્વો બને છે.. જે વ્યક્તિની પાચન
@@ -142,7 +142,7 @@ export default function BlogContent() {
             વજન વધતું નથી…
           </p>
 
-          <BlogImage src="/images/blog/fastFood.jpg" alt="ફાસ્ટ ફૂડ" linkHref="/images/blog/fastFood.jpg" />
+          <BlogImage src="/images/updatedImages/fastFood!.jpeg" alt="ફાસ્ટ ફૂડ" linkHref="/images/updatedImages/fastFood!.jpeg" />
 
           <p className="my-4">
             જો માત્ર બેઠાડું જીવન કે બહારનું ફાસ્ટ ફૂડ ખાવાથી વજન વધતું હોય તો દુનિયમાં રહેલા
@@ -174,7 +174,7 @@ export default function BlogContent() {
             એટલે તમારું વજન ફરીથી વધવા લાગે છે…
           </p>
 
-          <BlogImage src="/images/blog/weightGain.jpg" alt="ફરીથી વધી જાય" linkHref="/images/blog/weightGain.jpg" />
+          <BlogImage src="/images/updatedImages/weightGain1.jpeg" alt="ફરીથી વધી જાય" linkHref="/images/updatedImages/weightGain1.jpeg" />
 
           <p className="my-8 font-bold text-center text-stone-900 bg-gold/10 p-4 rounded-xl">
             જો તમારે વજન ઓછું કરવું જ હોય તો કાયમી માટે ઓછું કરવું ( પરમેનેન્ટ ) જોઈએ કારણ કે
