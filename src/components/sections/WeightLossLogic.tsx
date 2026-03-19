@@ -19,23 +19,11 @@ export default function WeightLossLogic() {
             <p className="text-lg leading-relaxed font-bold">
               ઘણા લોકો ઓપરેશન (સર્જરી) પણ કરાવતા હોય છે .
             </p>
-            <div className="py-4">
-              <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM.jpeg" 
-                alt="Natural Solutions" 
-                className="w-full max-h-[350px] object-contain rounded-xl"
-              />
-            </div>
+        
             <p className="text-lg leading-relaxed">
               પરંતુ તેઓ વજન ઓછું કરવામાં નિષ્ફળ જાય છે અથવા તો વજન ઓછું તો કરી લે છે પરંતુ ત્યારબાદ ફરી વજન વધી જાય છે . કારણ કે વજન વધવા પાછળ ના મૂળ કારણો પર તેઓ કાર્ય નથી કરતા ..
             </p>
-            <div className="py-4">
-              <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM (1).jpeg" 
-                alt="Risks" 
-                className="w-full max-h-[350px] object-contain rounded-xl"
-              />
-            </div>
+            
           </div>
 
           <div className="space-y-4">
@@ -45,11 +33,21 @@ export default function WeightLossLogic() {
             
             <h3 className="text-xl font-bold pt-4">તમે ક્યો રસ્તો અપનાવશો ? કાયમી કે કામચલાઉ ..</h3>
             <p className="text-lg leading-relaxed text-gray-600">મોટાભાગ ના કિસ્સા માં લોકો કામચલાઉ રસ્તો અપનાવતા હોય છે ..</p>
-            <div className="py-4">
+            <div className="space-y-8 py-4">
+              <img 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.56 PM (1).jpeg" 
+                alt="Fat Conversion" 
+                className="w-full max-h-[350px] object-contain rounded-xl mx-auto"
+              />
+              <img 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM.jpeg" 
+                alt="Natural Solutions" 
+                className="w-full max-h-[350px] object-contain rounded-xl mx-auto"
+              />
               <img 
                 src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM (2).jpeg" 
                 alt="Time and Health" 
-                className="w-full max-h-[350px] object-contain rounded-xl"
+                className="w-full max-h-[350px] object-contain rounded-xl mx-auto"
               />
             </div>
             <p className="text-lg leading-relaxed font-bold">
@@ -62,32 +60,27 @@ export default function WeightLossLogic() {
             <p className="text-lg leading-relaxed">
               આપણા શરીર માં ખોટી જીવનશૈલી અને ખોટા ખોરાક ને લીધે ગેસ , એસીડીટી , કબજિયાત જેવી ઘણી સમસ્યાઓ રહેતી હોય છે . આ બધાનું કારણ આપડી પાચન સાયકલ ની અનીયમીતતા છે .
             </p>
-            <div className="py-4">
-              <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.56 PM.jpeg" 
-                alt="Lifestyle" 
-                className="w-full max-h-[350px] object-contain rounded-xl"
-              />
-            </div>
+            
             <p className="text-lg leading-relaxed">
               જેના લીધે આપણે જે કઈ પણ ખાઈએ છીએ તેનું પાચન થવાને બદલે ચરબીમાં રૂપાંતરિત થઇ જાય છે . ચરબી માં રૂપાંતરિત થયેલો ખોરાક આપણા લીવર , પેટ , થાપ , હિપ્સ અને આખા શરીર ના જુદા જુદા ભાગોમાં જમા થતો જાય છે . જેના લીધે વજન વધે છે …
             </p>
-            <div className="py-4">
+            
+            <div className="space-y-8 py-4">
               <img 
-                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.56 PM (1).jpeg" 
-                alt="Fat Conversion" 
-                className="w-full max-h-[350px] object-contain rounded-xl"
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.55 PM (1).jpeg" 
+                alt="Risks" 
+                className="w-full max-h-[350px] object-contain rounded-xl mx-auto"
               />
-            </div>
-            <p className="text-lg font-bold text-center py-4 text-herbal">
-              તો હવે તમને વજન વધવાનું સાચું કારણ સમજાઈ ગયું હશે ..
-            </p>
-
-            {/* Placement of BMI Calculator */}
-            <div className="py-10">
-              <div className="max-w-md mx-auto">
-                <BmiCalculator />
-              </div>
+              <img 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.54 PM (1).jpeg" 
+                alt="Obesity Related Diseases" 
+                className="w-full max-h-[400px] object-contain mx-auto" 
+              />
+              <img 
+                src="/AfterHeroSection/WhatsApp Image 2026-03-17 at 1.07.54 PM.jpeg" 
+                alt="Ideal Body Weight Chart" 
+                className="w-full max-h-[400px] object-contain mx-auto" 
+              />
             </div>
 
             <h3 className="text-xl font-bold pt-8">વજન ઘટાડ્યા પછી પણ કેમ ફરી વધી જાય છે ?</h3>
@@ -144,6 +137,7 @@ export default function WeightLossLogic() {
                   className="w-full max-h-[500px] object-contain rounded-2xl"
                 />
               </div>
+
 
               {/* Order Button */}
               <div className="text-center pt-10">
