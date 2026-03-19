@@ -34,18 +34,14 @@ export default function DiseasesWarning() {
           </div>
         </div>
 
-        {/* 3. BMI Calculator */}
-        <div className="pt-8">
-          <div className="max-w-md mx-auto">
-            <BmiCalculator />
-          </div>
-        </div>
 
         {/* Supporting Text */}
         <div className="space-y-8 py-8">
-          <p className="text-xl text-red-600 font-bold text-center leading-relaxed">
-            જો તમારું વજન તમારી ઊંચાઈ થી થોડું પણ વધારે છે તો તમે ઘણી ગંભીર બીમારીનો ભોગ બની શકો છો જેવી કે….
-          </p>
+          <h2 className="text-xl sm:text-2xl text-red-600 font-bold text-center leading-relaxed italic">
+            - જો તમારું વજન તમારી ઊંચાઈ થી થોડું પણ વધારે છે તો તમે ઘણી ગંભીર બીમારીનો ભોગ બની શકો છો જેવી કે….
+          </h2>
+
+          <BmiCalculator />
 
           <p className="text-lg text-gray-800 leading-relaxed font-bold text-center">
             – પોતાનું વજન શા માટે ઘટાડવું જરૂરી છે. તે વાત તમને સમજાઈ ગઈ હશે..સાચું ને… ??!
