@@ -13,7 +13,6 @@ export default function Transformations() {
 
   const mediaItems: MediaItem[] = [
     { type: "image", url: "/content/prodcut result.jpeg", id: "img1" },
-    { type: "video", url: "/Videos/video 1.mp4", id: "vid1" },
     { type: "image", url: "/assets/1001965731.jpg", id: "img2" },
     { type: "video", url: "/Videos/video 2.mp4", id: "vid2" },
     { type: "image", url: "/assets/1001972842.jpg", id: "img3" },
@@ -23,6 +22,8 @@ export default function Transformations() {
     { type: "image", url: "/assets/1001972865.jpg", id: "img5" },
     { type: "video", url: "/Videos/video 5.mp4", id: "vid5" },
     { type: "image", url: "/assets/1001965644.jpg", id: "img6" },
+    { type: "video", url: "/Videos/video 1.mp4", id: "vid1" },
+
     { type: "image", url: "/assets/1001972839.jpg", id: "img7" },
   ];
 
