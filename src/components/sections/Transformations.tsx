@@ -1,15 +1,49 @@
-import { FaCamera, FaCheckCircle, FaImages } from "react-icons/fa";
+"use client"
+import { useState } from "react";
+import { FaCamera, FaCheckCircle, FaPlay, FaPause, FaImages } from "react-icons/fa";
+
+interface MediaItem {
+  type: "image" | "video";
+  url: string;
+  id: string;
+}
 
 export default function Transformations() {
-  const images = [
-    "/content/prodcut result.jpeg",
-    "/assets/1001965731.jpg",
-    "/assets/1001972842.jpg",
-    "/assets/1001972854.jpg",
-    "/assets/1001972865.jpg",
-    "/assets/1001965644.jpg",
-    "/assets/1001972839.jpg"
+  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
+
+  const mediaItems: MediaItem[] = [
+    { type: "image", url: "/content/prodcut result.jpeg", id: "img1" },
+    { type: "video", url: "/Videos/video 1.mp4", id: "vid1" },
+    { type: "image", url: "/assets/1001965731.jpg", id: "img2" },
+    { type: "video", url: "/Videos/video 2.mp4", id: "vid2" },
+    { type: "image", url: "/assets/1001972842.jpg", id: "img3" },
+    { type: "video", url: "/Videos/video 3.mp4", id: "vid3" },
+    { type: "image", url: "/assets/1001972854.jpg", id: "img4" },
+    { type: "video", url: "/Videos/video 4.mp4", id: "vid4" },
+    { type: "image", url: "/assets/1001972865.jpg", id: "img5" },
+    { type: "video", url: "/Videos/video 5.mp4", id: "vid5" },
+    { type: "image", url: "/assets/1001965644.jpg", id: "img6" },
+    { type: "image", url: "/assets/1001972839.jpg", id: "img7" },
   ];
+
+  const toggleVideo = (id: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    const video = document.getElementById(id) as HTMLVideoElement;
+    
+    if (playingVideo === id) {
+      video.pause();
+      setPlayingVideo(null);
+    } else {
+      // Pause any currently playing video
+      if (playingVideo) {
+        const currentPlaying = document.getElementById(playingVideo) as HTMLVideoElement;
+        if (currentPlaying) currentPlaying.pause();
+      }
+      
+      video.play();
+      setPlayingVideo(id);
+    }
+  };
 
   return (
     <section id="transformations" className="py-24 md:py-32 bg-herbal text-white relative overflow-hidden">
@@ -34,23 +68,56 @@ export default function Transformations() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {images.map((img, i) => (
+          {mediaItems.map((item) => (
             <div
-              key={i}
-              className="bg-white rounded-[2rem] overflow-hidden shadow-2xl group transition-transform duration-500 hover:-translate-y-2 border border-white/10"
+              key={item.id}
+              className="bg-white rounded-[2rem] overflow-hidden shadow-2xl group transition-transform duration-500 hover:-translate-y-2 border border-white/10 relative"
             >
               <div className="relative h-80 md:h-96 overflow-hidden">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" 
-                  style={{ backgroundImage: `url("${img}")` }}
-                ></div>
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="flex items-center justify-center gap-2 text-white font-bold bg-herbal/95 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-xl font-outfit text-sm uppercase tracking-widest">
-                    <FaCheckCircle className="text-gold" />
-                    <span>Amazing Result</span>
+                {item.type === "image" ? (
+                  <>
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" 
+                      style={{ backgroundImage: `url("${item.url}")` }}
+                    ></div>
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="flex items-center justify-center gap-2 text-white font-bold bg-herbal/95 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-xl font-outfit text-sm uppercase tracking-widest">
+                        <FaCheckCircle className="text-gold" />
+                        <span>Amazing Result</span>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="relative w-full h-full bg-black flex items-center justify-center">
+                    <video
+                      id={item.id}
+                      className="w-full h-full object-cover"
+                      playsInline
+                      preload="none"
+                      onClick={(e) => toggleVideo(item.id, e)}
+                      src={item.url}
+                      controls={playingVideo === item.id}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                    
+                    {playingVideo !== item.id && (
+                      <button 
+                        onClick={(e) => toggleVideo(item.id, e)}
+                        className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-colors z-20"
+                      >
+                        <div className="w-20 h-20 rounded-full bg-gold/90 flex items-center justify-center transform transition-transform duration-300 group-hover:scale-110 shadow-lg">
+                           <FaPlay className="text-white ml-1" size={30} />
+                        </div>
+                      </button>
+                    )}
+
+                    <div className="absolute top-4 right-4 bg-herbal/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-md border border-white/10 uppercase tracking-widest z-30">
+                      Video Story
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           ))}

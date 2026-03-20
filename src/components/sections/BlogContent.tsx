@@ -234,6 +234,30 @@ export default function BlogContent() {
           <div className="my-16 border-t border-stone-100 pt-10">
             <h1 className="text-2xl sm:text-3xl font-bold text-center text-stone-900 mb-8 font-heading">• અમારી આયુર્વેદીક કીટ ના RESULT &amp; REVIEW</h1>
             <BlogImage src="/images/blog/review1.jpg" alt="Review 1" linkHref="/images/blog/review1.jpg" />
+            
+            <div className="my-10 space-y-8">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto aspect-9/16 bg-black">
+                 <video 
+                   src="/Videos/video 1.mp4" 
+                   className="w-full h-full object-cover" 
+                   preload="none" 
+                   controls 
+                   poster="/images/blog/hero.jpg"
+                 />
+                 <div className="absolute top-4 left-4 bg-herbal text-white text-xs px-3 py-1 rounded-full font-bold">Success Story 1</div>
+              </div>
+              
+              <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto aspect-9/16 bg-black">
+                 <video 
+                   src="/Videos/video 2.mp4" 
+                   className="w-full h-full object-cover" 
+                   preload="none" 
+                   controls 
+                 />
+                 <div className="absolute top-4 left-4 bg-herbal text-white text-xs px-3 py-1 rounded-full font-bold">Success Story 2</div>
+              </div>
+            </div>
+
             <BlogImage src="/images/blog/review2.jpg" alt="Review 2" linkHref="/images/blog/review2.jpg" />
           </div>
 
