@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anek_Gujarati } from "next/font/google";
+import { Anek_Gujarati, Outfit } from "next/font/google";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
@@ -7,6 +7,12 @@ const anekGujarati = Anek_Gujarati({
   variable: "--font-anek-gujarati",
   subsets: ["gujarati", "latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="gu" data-theme="light">
       <body
-        className={`${anekGujarati.variable} font-body bg-white text-gray-800`}
+        className={`${anekGujarati.variable} ${outfit.variable} font-body bg-white text-gray-800`}
       >
         {children}
         <FloatingWhatsApp />

@@ -24,8 +24,7 @@ export default function Home() {
       <Transformations />
       <Testimonials />
       <About />
-      <JourneyTimeline />
-      <InstagramFeed />
+       <InstagramFeed />
       <ContactCTA />
       <Footer />
     </main>

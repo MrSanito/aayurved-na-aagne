@@ -1,6 +1,7 @@
 "use client";
 
 import BmiCalculator from "@/components/BmiCalculator";
+import JourneyTimeline from "./JourneyTimeline";
 
 // ─── Reusable image component ────────────────────────────────────────────────
 function BlogImage({ src, alt = "", linkHref }: { src: string, alt?: string, linkHref?: string }) {
@@ -25,17 +26,17 @@ export default function BlogContent() {
   const ORDER_LINK = "https://wa.me/message/JBAPTQYQ6RH6K1";
 
   return (
-    <section className="py-12 md:py-16 bg-stone-50/50">
+    <section className="m-0 pt-0 pb-12 md:py-16 bg-stone-50/50">
       <div className="container mx-auto px-4 max-w-3xl">
-        <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 leading-relaxed text-stone-700 font-sans text-base sm:text-lg">
+        <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 leading-relaxed text-stone-700 font-body text-base sm:text-lg">
           
-          <div className="border-b-2 border-green-50 pb-4 mb-8">
-            <h1 className="text-lg sm:text-xl font-bold text-green-800">
+          <div className="border-b-2 border-stone-50 pb-4 mb-8">
+            <h1 className="text-lg sm:text-xl font-bold text-herbal font-outfit tracking-wider">
               AAYURVED NA AANGNE
             </h1>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 mb-2 leading-tight">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-stone-900 mb-6 leading-tight font-heading">
             વજન ઘટાડવા માટેનો અત્યાર સુધીનો સૌથી સફળ આયુર્વેદિક ઉપાય..
           </h2>
 
@@ -48,14 +49,14 @@ export default function BlogContent() {
           <BlogImage src="/images/blog/hero.jpg" alt="વજન ઘટાડવો" linkHref="/images/blog/hero.jpg" />
 
           {/* ── Section 1 ── */}
-          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-12 mb-6">ઊંચાઈ પ્રમાણે વજન કેટલું હોવું જોઈએ ?</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-12 mb-6 font-heading">ઊંચાઈ પ્રમાણે વજન કેટલું હોવું જોઈએ ?</h2>
           <BlogImage src="/images/blog/weightChart.jpg" alt="ઊંચાઈ પ્રમાણે વજન" linkHref="/images/blog/weightChart.jpg" />
 
 
           <div className="bg-red-50/50 p-6 rounded-2xl border border-red-100/50 my-8">
               <BmiCalculator />
           </div>
-          <h2 className="text-xl sm:text-2xl font-bold text-red-600 mt-12 mb-6 italic leading-snug">
+          <h2 className="text-xl sm:text-2xl font-bold text-red-600 mt-12 mb-6 italic leading-snug font-heading">
             - જો તમારું વજન તમારી ઊંચાઈ થી થોડું પણ વધારે છે તો તમે ઘણી ગંભીર બીમારીનો ભોગ બની શકો છો જેવી કે….
           </h2>
           
@@ -66,7 +67,7 @@ export default function BlogContent() {
           </p>
 
           {/* ── Section 2 ── */}
-          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-12 mb-4">• વજન ઘટાડવા માટે ના ઉપાયો ?</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-12 mb-4 font-heading">• વજન ઘટાડવા માટે ના ઉપાયો ?</h2>
           <p className="mb-6">અત્યારે વજન ઓછું કરવા માટે લોકો ઘણાં પ્રયત્નો કરતા હોય છે જેમ કે..</p>
           <BlogImage src="/images/blog/wrong_methods.jpg" alt="ઉપાયો" linkHref="/images/blog/wrong_methods.jpg" />
 
@@ -81,7 +82,7 @@ export default function BlogContent() {
           </p>
 
           {/* ── Section 3 ── */}
-          <h1 className="text-2xl sm:text-3xl font-bold text-herbal mt-12 mb-6 leading-tight">• વજન ઘટાડવા માટેનો સાચો રસ્તો ક્યો છે ??</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-herbal mt-12 mb-6 leading-tight font-heading">• વજન ઘટાડવા માટેનો સાચો રસ્તો ક્યો છે ??</h1>
           <p className="mb-4 font-bold text-stone-800">– આપણું વજન ઘટાડવાના મુખ્ય 2 રસ્તાઓ હોય છે.</p>
           <ol className="list-decimal pl-6 space-y-3 mb-8">
             <li>
@@ -94,7 +95,7 @@ export default function BlogContent() {
             </li>
           </ol>
 
-          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-12 mb-6">• તમે ક્યો રસ્તો અપનાવશો કાયમી કે કામચલાઉ ?</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-12 mb-6 font-heading">• તમે ક્યો રસ્તો અપનાવશો કાયમી કે કામચલાઉ ?</h2>
           <p className="my-4">
             – મોટાં ભાગના લોકો ઝડપથી વજન ઘટાડવા માટે કામચલાઉ રસ્તાઓ આપનાવે છે જેમ કે GYM ,
             ડાયેટ , YOGA કે પછી સ્ટીરોઇડ વાળી દવાઓ અથવા ઓપરેશન કરાવતા હોય છે.
@@ -121,7 +122,7 @@ export default function BlogContent() {
           </p>
 
           {/* ── Section 4 ── */}
-          <h1 className="text-2xl sm:text-3xl font-bold text-herbal mt-12 mb-6 leading-tight">• વજન વધવાનું મુખ્ય કારણ કયું છે ?</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-herbal mt-12 mb-6 leading-tight font-heading">• વજન વધવાનું મુખ્ય કારણ કયું છે ?</h1>
           <p className="my-6">
             – વજન વધવાનું મુખ્ય કારણ વ્યક્તિની <span className="font-bold underline decoration-herbal border-b border-herbal pb-1">ડાયજેસ્ટીવ સિસ્ટમ એટલે પચન સાયકલ</span> નિયમિત ન હોય
             જેથી ખાધેલા ખોરાકનું પાચન ન થાય અને પાચન ન થયેલા ખોરાકનું ચરબીમાં રૂપાંતર થતું રહે
@@ -165,7 +166,7 @@ export default function BlogContent() {
           </p>
 
           {/* ── Section 5 ── */}
-          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-12 mb-6">• વજન ઘટાડવા છતાં કેમ ફરીથી વધી જાય છે ??</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-stone-900 mt-12 mb-6 font-heading">• વજન ઘટાડવા છતાં કેમ ફરીથી વધી જાય છે ??</h2>
           <p className="my-4">
             માર્કેટમાં મળતી 90 થી 95 ટકા દવાઓ કે ટ્રીટમેન્ટ માત્ર ને માત્ર જૂની ચરબી ઓગાળવાનું
             કાર્ય કરે છે નવી ચરબી બને છે એના પર કોઈ પણ પ્રકારનું કાર્ય કરતી નથી એટલે કે
@@ -183,7 +184,7 @@ export default function BlogContent() {
           </p>
 
           {/* ── Section 6 ── */}
-          <h1 className="text-2xl sm:text-3xl font-bold text-stone-900 mt-12 mb-6 leading-tight">• કાયમ માટે (પરમેનેન્ટ ) વજન ઘટાડવા માટે શું કરવું ?</h1>
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-stone-900 mt-12 mb-6 leading-tight font-heading">• કાયમ માટે (પરમેનેન્ટ ) વજન ઘટાડવા માટે શું કરવું ?</h1>
           <p className="my-6">
             કાયમ માટે (પરમેનેન્ટ ) વજન ઘટાડવા માટેની અમારી આયુર્વેદિક કીટ આવશે , જે મેટાબોલિઝ્મ
             સિસ્ટમ અને ડાયજેસ્ટીવ સિસ્ટમ ( પાચન તંત્ર ) પર કાર્ય કરે છે. અને જેનો 90 દિવસનો
@@ -192,29 +193,31 @@ export default function BlogContent() {
             અને આ કીટની કોઈ પણ પ્રકારની સાઇડ ઈફેક્ટ નથી
           </p>
 
-          <h2 className="text-xl sm:text-2xl font-bold text-herbal mt-10 mb-6">• અમારી આયુર્વેદિક કીટ કઈ રીતે કાર્ય કરશે ?</h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-herbal mt-10 mb-6 font-heading">• અમારી આયુર્વેદિક કીટ કઈ રીતે કાર્ય કરશે ?</h2>
           <div className="space-y-4 mb-10 text-stone-700 bg-stone-50 p-6 rounded-2xl border border-stone-100">
             <p className="flex items-start gap-2">
-              <span className="text-herbal font-bold mt-1">✓</span>
+              <span className="text-herbal font-bold mt-1 font-outfit">✓</span>
               <span>સૌથી પહેલા તમારી મેટાબોલિઝ્મ સિસ્ટમ અને ડાયજેસ્ટીવ સિસ્ટમ ને નિયમિત કરશે જેથી તમારું શરીર નકામી અને વધારાની ચરબી નહિ બનાવે….</span>
             </p>
             <p className="flex items-start gap-2">
-              <span className="text-herbal font-bold mt-1">✓</span>
+              <span className="text-herbal font-bold mt-1 font-outfit">✓</span>
               <span>જેથી તમારું વજન વધતું અટકી જશે અને જો તમે નીયમીત 90 દિવસ અમારી આ કીટ ઉપયોગ કરો છો તો તમારું પાચન તંત્રને એકદમ નિયમિત થઈ જશે જેથી તમારું વજન ઓછું થયા પછી ફરીથી વધવાની સંભાવના રહેતી નથી..</span>
             </p>
             <p className="flex items-start gap-2">
-              <span className="text-herbal font-bold mt-1">✓</span>
+              <span className="text-herbal font-bold mt-1 font-outfit">✓</span>
               <span>આયુર્વેદિક રીતે શરીરમાં જમા થયેલી નકામી ચરબીને ઓગાળીને દૂર કરશે જેથી ફાંદ, થાઇસ, હિપ્સ અને છાતી પર જમા થયેલી વધારાની ચરબી પણ દૂર થશે.</span>
             </p>
             <p className="flex items-start gap-2">
-              <span className="text-herbal font-bold mt-1">✓</span>
+              <span className="text-herbal font-bold mt-1 font-outfit">✓</span>
               <span>ઓગળેલી ચરબીને મળ અને મૂત્ર સ્વરૂપે શરીરમાંથી બહાર કાઢશે અને તમારું પેટ સાફ કરશે..</span>
             </p>
           </div>
 
+          <JourneyTimeline/>
+
           {/* Order button */}
           <div className="text-center my-12">
-            <p className="font-bold text-xl mb-6 text-stone-900 animate-pulse">
+            <p className="font-bold text-xl mb-6 text-stone-900 animate-pulse font-heading">
               ઑર્ડર માટે અહીંયા ક્લિક કરો
             </p>
             <a href={ORDER_LINK} target="_blank" rel="noreferrer" className="inline-block group relative">
@@ -229,14 +232,14 @@ export default function BlogContent() {
 
           {/* ── Reviews ── */}
           <div className="my-16 border-t border-stone-100 pt-10">
-            <h1 className="text-2xl sm:text-3xl font-bold text-center text-stone-900 mb-8">• અમારી આયુર્વેદીક કીટ ના RESULT &amp; REVIEW</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-center text-stone-900 mb-8 font-heading">• અમારી આયુર્વેદીક કીટ ના RESULT &amp; REVIEW</h1>
             <BlogImage src="/images/blog/review1.jpg" alt="Review 1" linkHref="/images/blog/review1.jpg" />
             <BlogImage src="/images/blog/review2.jpg" alt="Review 2" linkHref="/images/blog/review2.jpg" />
           </div>
 
           {/* ── Benefits ── */}
           <div className="my-16 border-t border-stone-100 pt-10">
-            <h1 className="text-2xl sm:text-3xl font-bold text-herbal mb-8">• આયુર્વેદીક કીટ થી થતા ફાયદાઓ</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-herbal mb-8 font-heading">• આયુર્વેદીક કીટ થી થતા ફાયદાઓ</h1>
             <ol className="list-decimal pl-6 space-y-4 mb-10 text-stone-700 font-medium bg-stone-50 p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-inner">
               <li>સંપૂર્ણ આયુર્વેદિક કીટ છે. તેની કોઈ પણ પ્રકારની સાઇડ ઈફેક્ટ નથી.</li>
               <li>
@@ -266,7 +269,7 @@ export default function BlogContent() {
               આયુર્વેદિક કીટ….
             </div>
 
-            <h1 className="text-xl sm:text-2xl font-bold text-center text-stone-900 mb-6">ઑર્ડર કરવા માટે નીચેના બટન પર ક્લિક કરો</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-center text-stone-900 mb-6 font-heading">ઑર્ડર કરવા માટે નીચેના બટન પર ક્લિક કરો</h1>
             <div className="text-center">
               <a href={ORDER_LINK} target="_blank" rel="noreferrer" className="inline-block group relative">
                 <div className="absolute -inset-4 bg-herbal/10 rounded-full blur-2xl group-hover:bg-herbal/20 transition-all duration-500"></div>
@@ -278,7 +281,6 @@ export default function BlogContent() {
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </section>

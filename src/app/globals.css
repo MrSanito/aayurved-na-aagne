@@ -3,15 +3,24 @@
 
 @theme {
   --color-herbal: #2F6F4E;
+  --color-herbal-dark: #1E4631;
   --color-beige: #F5EFE6;
   --color-gold: #C9A227;
+  --color-stone-900: #1C1917;
+  --color-stone-700: #44403C;
+  --color-stone-600: #57534E;
   --font-body: var(--font-anek-gujarati), sans-serif;
-  --font-poppins: var(--font-anek-gujarati), sans-serif;
+  --font-heading: var(--font-anek-gujarati), sans-serif;
+  --font-outfit: var(--font-outfit), sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-white text-gray-800 antialiased;
+    @apply bg-white text-stone-700 antialiased font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-stone-900 font-heading tracking-tight;
   }
 }
 

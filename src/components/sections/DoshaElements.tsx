@@ -1,4 +1,3 @@
-
 import { FaWind, FaFireAlt, FaLeaf } from "react-icons/fa";
 
 export default function DoshaElements() {
@@ -33,7 +32,7 @@ export default function DoshaElements() {
   ];
 
   return (
-    <section className="py-16 md:py-28 bg-[#0a1912] text-white relative overflow-hidden flex flex-col items-center justify-center">
+    <section className="py-20 md:py-32 bg-[#0a1912] text-white relative overflow-hidden">
       {/* Decorative background blur elements */}
       <div 
         className="absolute top-10 left-10 w-64 md:w-96 h-64 md:h-96 bg-gold/10 rounded-full blur-[100px]"
@@ -44,49 +43,39 @@ export default function DoshaElements() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-          <div>
-            <h2 className="text-gold font-bold tracking-widest uppercase text-xs md:text-sm mb-4">
-              આયુર્વેદિક વિજ્ઞાન (Ayurvedic Science)
-            </h2>
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
-              તમારા શરીરની પ્રકૃતિ ઓળખો
-            </h3>
-            <div className="w-16 md:w-20 h-1 bg-gold mx-auto rounded-full mb-8"></div>
-            <p className="text-gray-300 md:text-base leading-relaxed px-4 md:px-0">
-              કોઈ પણ કામચલાઉ ડાયેટ કરતા પહેલા તમારા શરીરનો સ્વભાવ જાણવો જરૂરી છે. 
-              આયુર્વેદ મુજબ દરેક વ્યક્તિ માટે વજન ઘટાડવાની પ્રક્રિયા અલગ હોય છે.
-            </p>
-          </div>
+          <h2 className="text-gold font-outfit font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-4">
+            આયુર્વેદિક વિજ્ઞાન (Ayurvedic Science)
+          </h2>
+          <h3 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight font-heading">
+            તમારા શરીરની પ્રકૃતિ ઓળખો
+          </h3>
+          <div className="w-20 h-1 bg-gold mx-auto rounded-full mb-10"></div>
+          <p className="text-stone-300 text-lg md:text-xl leading-relaxed font-medium">
+            કોઈ પણ કામચલાઉ ડાયેટ કરતા પહેલા તમારા શરીરનો સ્વભાવ જાણવો જરૂરી છે...
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-8 max-w-6xl mx-auto">
-          {doshas.map((dosha, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+          {doshas.map((dosha) => (
             <div
               key={dosha.id}
-              className={`relative p-8 md:p-10 rounded-3xl md:rounded-[2.5rem] bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden group transition-all duration-500 touch-pan-y`}
+              className="relative p-10 rounded-[2.5rem] bg-white/5 backdrop-blur-xl border border-white/10 overflow-hidden group transition-all duration-500 hover:bg-white/[0.08]"
             >
               <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br transition-opacity duration-500 ${dosha.color}`} />
               
-              {/* Dynamic Aura Ring */}
-              <div className="relative w-20 md:w-24 h-20 md:h-24 mx-auto mb-6 md:mb-8 pointer-events-none">
-                <div 
-                  className={`absolute inset-0 rounded-full border-t-2 border-r-2 opacity-50 ${dosha.borderColor}`}
-                />
-                <div 
-                  className={`absolute inset-2 rounded-full border-b-2 border-l-2 opacity-30 ${dosha.borderColor}`}
-                />
-                <div className={`absolute inset-4 rounded-full bg-gradient-to-br blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-500 ${dosha.color}`} />
-                <div className="absolute inset-4 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center border border-white/20">
+              <div className="relative w-24 h-24 mx-auto mb-8">
+                <div className={`absolute inset-0 rounded-full border-t-2 border-r-2 opacity-50 ${dosha.borderColor}`} />
+                <div className="absolute inset-4 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center border border-white/20 shadow-2xl">
                   {dosha.icon}
                 </div>
               </div>
 
-              <div className="text-center relative z-10 pointer-events-none">
-                <h4 className="text-xl md:text-2xl font-bold mb-3 text-white group-hover:text-gold transition-colors">{dosha.name}</h4>
-                <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-xs text-white/90 font-medium mb-6 backdrop-blur-md border border-white/5 shadow-inner">
+              <div className="text-center relative z-10">
+                <h4 className="text-2xl font-bold mb-3 text-white font-heading">{dosha.name}</h4>
+                <div className="inline-block px-5 py-1.5 rounded-full bg-white/10 text-xs text-white font-bold font-outfit tracking-widest uppercase mb-6 border border-white/10 shadow-inner">
                   {dosha.elements}
                 </div>
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-200 transition-colors">
+                <p className="text-stone-400 text-base leading-relaxed group-hover:text-stone-200 transition-colors">
                   {dosha.desc}
                 </p>
               </div>
