@@ -23,7 +23,7 @@ export default function Home() {
       <DoshaElements />
       <Transformations />
       <Testimonials />
-      <About />
+      {/* <About /> */}
        <InstagramFeed />
       <ContactCTA />
       <Footer />
