@@ -8,7 +8,7 @@ import Transformations from "@/components/sections/Transformations";
 import Testimonials from "@/components/sections/Testimonials";
 import DoshaElements from "@/components/sections/DoshaElements";
 import JourneyTimeline from "@/components/sections/JourneyTimeline";
-import InstagramFeed from "@/components/sections/InstagramFeed";
+import SocialLinks from "@/components/sections/SocialLinks";
 import ContactCTA from "@/components/sections/ContactCTA";
 import Footer from "@/components/Footer";
 
@@ -24,7 +24,7 @@ export default function Home() {
       <Transformations />
       <Testimonials />
       {/* <About /> */}
-       <InstagramFeed />
+       <SocialLinks />
       <ContactCTA />
       <Footer />
     </main>
