@@ -23,7 +23,6 @@ export default function Transformations() {
     { type: "video", url: "/Videos/video 5.mp4", id: "vid5" },
     { type: "image", url: "/assets/1001965644.jpg", id: "img6" },
     { type: "video", url: "/Videos/video 1.mp4", id: "vid1" },
-
     { type: "image", url: "/assets/1001972839.jpg", id: "img7" },
   ];
 
