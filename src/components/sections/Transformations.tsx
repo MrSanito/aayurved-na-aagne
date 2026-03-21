@@ -78,7 +78,7 @@ export default function Transformations() {
                 {item.type === "image" ? (
                   <>
                     <div 
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" 
+                      className={`absolute inset-0 ${item.id === 'img1' ? 'bg-contain' : 'bg-cover'} bg-no-repeat bg-center transition-transform duration-1000 group-hover:scale-110`} 
                       style={{ backgroundImage: `url("${item.url}")` }}
                     ></div>
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

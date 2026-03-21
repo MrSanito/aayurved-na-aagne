@@ -211,6 +211,7 @@ export default function BlogContent() {
               <span className="text-herbal font-bold mt-1 font-outfit">✓</span>
               <span>ઓગળેલી ચરબીને મળ અને મૂત્ર સ્વરૂપે શરીરમાંથી બહાર કાઢશે અને તમારું પેટ સાફ કરશે..</span>
             </p>
+            <BlogImage src="/images/uploaded/body_science.png" alt="શરીરનું વિજ્ઞાન" linkHref="/images/uploaded/body_science.png" />
           </div>
 
           <JourneyTimeline/>

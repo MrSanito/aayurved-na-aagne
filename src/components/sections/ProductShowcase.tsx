@@ -86,27 +86,6 @@ export default function ProductShowcase() {
             </div>
           </div>
 
-          <div className="bg-white rounded-[2.5rem] shadow-xl p-6 sm:p-10 border border-stone-100 overflow-hidden">
-            <h3 className="text-2xl font-bold text-stone-800 mb-10 text-center border-b border-stone-50 pb-6 font-heading uppercase tracking-widest font-outfit text-sm">
-              ગુજરાત સરકાર દ્વારા માન્યતા પ્રાપ્ત
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              <div className="relative w-full aspect-square md:aspect-video lg:h-[550px] rounded-2xl overflow-hidden bg-stone-50 flex items-center justify-center">
-                <img 
-                  src="/content/certificed by govt.jpeg" 
-                  alt="Gujarat Government Recognition Certificates 1" 
-                  className="w-full h-full object-contain mix-blend-multiply"
-                />
-              </div>
-              <div className="relative w-full aspect-square md:aspect-video lg:h-[550px] rounded-2xl overflow-hidden bg-stone-50 flex items-center justify-center">
-                <img 
-                  src="/images/certs/gujarat-govt-recognition.jpeg" 
-                  alt="Gujarat Government Recognition Certificates 2" 
-                  className="w-full h-full object-contain mix-blend-multiply"
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

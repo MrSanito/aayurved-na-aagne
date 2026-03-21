@@ -48,8 +48,8 @@ export default function Hero() {
           <div className="hidden pb-0 md:absolute inset-0 bg-beige/50 rounded-full blur-3xl mix-blend-multiply opacity-50"></div>
           {/* Authentic Ayurveda Stock Image */}
           <img 
-            src="https://images.unsplash.com/photo-1645088520336-62d94324e869?q=80&w=1200&auto=format&fit=crop"
-            alt="Authentic Ayurveda"
+            src="/images/uploaded/hero_new.jpg"
+            alt="Ayurveda Weight Loss"
             className="w-full h-auto rounded-3xl md:shadow-2xl relative z-10"
           />
         </div>
