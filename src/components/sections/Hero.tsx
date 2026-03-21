@@ -88,27 +88,7 @@ export default function Hero() {
             className="w-full h-auto rounded-3xl md:shadow-2xl relative z-10"
           />
 
-          {/* Stats card overlay */}
-          <div
-            className="absolute bottom-4 right-4 flex items-center gap-3 px-4 py-3 rounded-2xl z-20"
-            style={{
-              background: "rgba(255,255,255,0.88)",
-              backdropFilter: "blur(10px)",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.10)",
-              border: "1px solid rgba(255,255,255,0.6)",
-            }}
-          >
-            <div
-              className="flex items-center justify-center rounded-full flex-shrink-0"
-              style={{ width: 38, height: 38, background: "linear-gradient(135deg,#86aa54,#4a7c1f)" }}
-            >
-              <FaLeaf style={{ color: "#fff", fontSize: 16 }} />
-            </div>
-            <div>
-              <div className="font-extrabold text-stone-800 text-sm leading-tight">500+ ગ્રાહકો</div>
-              <div className="text-stone-400 text-xs mt-0.5">સફળ ઉપચાર • 2024</div>
-            </div>
-          </div>
+
         </div>
 
       </div>

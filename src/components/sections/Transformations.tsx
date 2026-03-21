@@ -74,26 +74,27 @@ export default function Transformations() {
               key={item.id}
               className="bg-white rounded-[2rem] overflow-hidden shadow-2xl group transition-transform duration-500 hover:-translate-y-2 border border-white/10 relative"
             >
-              <div className="relative h-80 md:h-96 overflow-hidden">
+              <div className="relative overflow-hidden">
                 {item.type === "image" ? (
-                  <>
-                    <div 
-                      className={`absolute inset-0 ${item.id === 'img1' ? 'bg-contain' : 'bg-cover'} bg-no-repeat bg-center transition-transform duration-1000 group-hover:scale-110`} 
-                      style={{ backgroundImage: `url("${item.url}")` }}
-                    ></div>
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative group">
+                    <img 
+                      src={item.url} 
+                      alt="Ayurvedic Result"
+                      className="w-full h-auto min-h-[400px] object-contain bg-stone-50 transition-transform duration-1000 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="flex items-center justify-center gap-2 text-white font-bold bg-herbal/95 px-6 py-3 rounded-full backdrop-blur-md border border-white/20 shadow-xl font-outfit text-sm uppercase tracking-widest">
                         <FaCheckCircle className="text-gold" />
                         <span>Amazing Result</span>
                       </div>
                     </div>
-                  </>
+                  </div>
                 ) : (
-                  <div className="relative w-full h-full bg-black flex items-center justify-center">
+                  <div className="relative aspect-9/16 bg-black flex items-center justify-center min-h-[400px]">
                     <video
                       id={item.id}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       playsInline
                       preload="none"
                       onClick={(e) => toggleVideo(item.id, e)}
