@@ -4,12 +4,12 @@ import BmiCalculator from "@/components/BmiCalculator";
 import JourneyTimeline from "./JourneyTimeline";
 
 // ─── Reusable image component ────────────────────────────────────────────────
-function BlogImage({ src, alt = "", linkHref }: { src: string, alt?: string, linkHref?: string }) {
+function BlogImage({ src, alt = "", linkHref, className = "max-w-md" }: { src: string, alt?: string, linkHref?: string, className?: string }) {
   const img = (
     <img
       src={src}
       alt={alt}
-      className="w-full max-w-md h-auto block my-8 mx-auto rounded-2xl shadow-xl border border-stone-100 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
+      className={`w-full ${className} h-auto block my-8 mx-auto rounded-2xl shadow-xl border border-stone-100 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl`}
     />
   );
   if (linkHref) {
@@ -211,7 +211,7 @@ export default function BlogContent() {
               <span className="text-herbal font-bold mt-1 font-outfit">✓</span>
               <span>ઓગળેલી ચરબીને મળ અને મૂત્ર સ્વરૂપે શરીરમાંથી બહાર કાઢશે અને તમારું પેટ સાફ કરશે..</span>
             </p>
-            <BlogImage src="/images/uploaded/body_science.png" alt="શરીરનું વિજ્ઞાન" linkHref="/images/uploaded/body_science.png" />
+            <BlogImage src="/images/uploaded/body_science.png" alt="શરીરનું વિજ્ઞાન" linkHref="/images/uploaded/body_science.png" className="max-w-2xl" />
           </div>
 
           <JourneyTimeline/>
@@ -234,13 +234,13 @@ export default function BlogContent() {
           {/* ── Reviews ── */}
           <div className="my-16 border-t border-stone-100 pt-10">
             <h1 className="text-2xl sm:text-3xl font-bold text-center text-stone-900 mb-8 font-heading">• અમારી આયુર્વેદીક કીટ ના RESULT &amp; REVIEW</h1>
-            <BlogImage src="/images/blog/review1.jpg" alt="Review 1" linkHref="/images/blog/review1.jpg" />
+            <BlogImage src="/images/blog/review1.jpg" alt="Review 1" linkHref="/images/blog/review1.jpg" className="max-w-2xl" />
             
             <div className="my-10 space-y-8">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto aspect-9/16 bg-black">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-2xl mx-auto aspect-9/16 bg-black">
                  <video 
                    src="/Videos/video 1.mp4" 
-                   className="w-full h-full object-cover" 
+                   className="w-full h-full object-contain" 
                    preload="none" 
                    controls 
                    poster="/images/blog/hero.jpg"
@@ -248,10 +248,10 @@ export default function BlogContent() {
                  <div className="absolute top-4 left-4 bg-herbal text-white text-xs px-3 py-1 rounded-full font-bold">Success Story 1</div>
               </div>
               
-              <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto aspect-9/16 bg-black">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl max-w-2xl mx-auto aspect-9/16 bg-black">
                  <video 
                    src="/Videos/video 2.mp4" 
-                   className="w-full h-full object-cover" 
+                   className="w-full h-full object-contain" 
                    preload="none" 
                    controls 
                  />
@@ -259,7 +259,7 @@ export default function BlogContent() {
               </div>
             </div>
 
-            <BlogImage src="/images/blog/review2.jpg" alt="Review 2" linkHref="/images/blog/review2.jpg" />
+            <BlogImage src="/images/blog/review2.jpg" alt="Review 2" linkHref="/images/blog/review2.jpg" className="max-w-2xl" />
           </div>
 
           {/* ── Benefits ── */}
