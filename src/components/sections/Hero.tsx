@@ -83,8 +83,7 @@ export default function Hero() {
         {/* Right column — image */}
         <div className="relative w-full mt-0 lg:mt-0">
           <img
-            src="/images/uploaded/hero_new.jpg"
-            alt="Ayurveda Weight Loss"
+src="/assets/result_banner.jpg"            alt="Ayurveda Weight Loss"
             className="w-full h-auto rounded-3xl md:shadow-2xl relative z-10"
           />
 
