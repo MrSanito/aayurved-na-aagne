@@ -17,11 +17,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Weight Loss Info", href: "#about" },
-    { name: "Benefits", href: "#benefits" },
-    { name: "Success Stories", href: "#transformations" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Weight Loss", href: "/#about" },
+    { name: "Hair Care", href: "/haircare" },
+    { name: "Benefits", href: "/#benefits" },
+    { name: "Success Stories", href: "/#transformations" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
