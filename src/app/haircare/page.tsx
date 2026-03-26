@@ -28,7 +28,7 @@ export default function HairCarePage() {
       <header className="pt-32 pb-16 md:pt-40 md:pb-24 bg-linear-to-br from-emerald-900 via-emerald-800 to-teal-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-gold/40 via-transparent to-transparent"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 font-outfit tracking-tight">આયુર્વેદના આંગણે</h1>
+          <div className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 font-outfit tracking-tight">આયુર્વેદના આંગણે</div>
           <p className="text-lg md:text-2xl font-light italic opacity-90 font-body">વાળ ખરવાની ચિંતા છોડો, આયુર્વેદ સાથે નાતો જોડો</p>
         </div>
       </header>

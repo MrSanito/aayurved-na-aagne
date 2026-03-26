@@ -31,9 +31,9 @@ export default function BlogContent() {
         <div className="bg-white p-6 sm:p-10 rounded-3xl shadow-xl shadow-stone-200/50 border border-stone-100 leading-relaxed text-stone-700 font-body text-base sm:text-lg">
           
           <div className="border-b-2 border-stone-50 pb-4 mb-8">
-            <h1 className="text-lg sm:text-xl font-bold text-herbal font-outfit tracking-wider">
+            <h2 className="text-lg sm:text-xl font-bold text-herbal font-outfit tracking-wider">
               AAYURVED NA AANGNE
-            </h1>
+            </h2>
           </div>
 
           <h2 className="text-2xl sm:text-4xl font-extrabold text-stone-900 mb-6 leading-tight font-heading">
@@ -82,7 +82,7 @@ export default function BlogContent() {
           </p>
 
           {/* ── Section 3 ── */}
-          <h1 className="text-2xl sm:text-3xl font-bold text-herbal mt-12 mb-6 leading-tight font-heading">• વજન ઘટાડવા માટેનો સાચો રસ્તો ક્યો છે ??</h1>
+          <h2 className="text-2xl sm:text-3xl font-bold text-herbal mt-12 mb-6 leading-tight font-heading">• વજન ઘટાડવા માટેનો સાચો રસ્તો ક્યો છે ??</h2>
           <p className="mb-4 font-bold text-stone-800">– આપણું વજન ઘટાડવાના મુખ્ય 2 રસ્તાઓ હોય છે.</p>
           <ol className="list-decimal pl-6 space-y-3 mb-8">
             <li>
@@ -122,7 +122,7 @@ export default function BlogContent() {
           </p>
 
           {/* ── Section 4 ── */}
-          <h1 className="text-2xl sm:text-3xl font-bold text-herbal mt-12 mb-6 leading-tight font-heading">• વજન વધવાનું મુખ્ય કારણ કયું છે ?</h1>
+          <h2 className="text-2xl sm:text-3xl font-bold text-herbal mt-12 mb-6 leading-tight font-heading">• વજન વધવાનું મુખ્ય કારણ કયું છે ?</h2>
           <p className="my-6">
             – વજન વધવાનું મુખ્ય કારણ વ્યક્તિની <span className="font-bold underline decoration-herbal border-b border-herbal pb-1">ડાયજેસ્ટીવ સિસ્ટમ એટલે પચન સાયકલ</span> નિયમિત ન હોય
             જેથી ખાધેલા ખોરાકનું પાચન ન થાય અને પાચન ન થયેલા ખોરાકનું ચરબીમાં રૂપાંતર થતું રહે
@@ -184,7 +184,7 @@ export default function BlogContent() {
           </p>
 
           {/* ── Section 6 ── */}
-          <h1 className="text-2xl sm:text-4xl font-extrabold text-stone-900 mt-12 mb-6 leading-tight font-heading">• કાયમ માટે (પરમેનેન્ટ ) વજન ઘટાડવા માટે શું કરવું ?</h1>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-stone-900 mt-12 mb-6 leading-tight font-heading">• કાયમ માટે (પરમેનેન્ટ ) વજન ઘટાડવા માટે શું કરવું ?</h2>
           <p className="my-6">
             કાયમ માટે (પરમેનેન્ટ ) વજન ઘટાડવા માટેની અમારી આયુર્વેદિક કીટ આવશે , જે મેટાબોલિઝ્મ
             સિસ્ટમ અને ડાયજેસ્ટીવ સિસ્ટમ ( પાચન તંત્ર ) પર કાર્ય કરે છે. અને જેનો 90 દિવસનો
@@ -233,7 +233,7 @@ export default function BlogContent() {
 
           {/* ── Reviews ── */}
           <div className="my-16 border-t border-stone-100 pt-10">
-            <h1 className="text-2xl sm:text-3xl font-bold text-center text-stone-900 mb-8 font-heading">• અમારી આયુર્વેદીક કીટ ના RESULT &amp; REVIEW</h1>
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-stone-900 mb-8 font-heading">• અમારી આયુર્વેદીક કીટ ના RESULT &amp; REVIEW</h2>
             <BlogImage src="/images/blog/review1.jpg" alt="Review 1" linkHref="/images/blog/review1.jpg" className="max-w-2xl" />
             
  
@@ -242,7 +242,7 @@ export default function BlogContent() {
 
           {/* ── Benefits ── */}
           <div className="my-16 border-t border-stone-100 pt-10">
-            <h1 className="text-2xl sm:text-3xl font-bold text-herbal mb-8 font-heading">• આયુર્વેદીક કીટ થી થતા ફાયદાઓ</h1>
+            <h2 className="text-2xl sm:text-3xl font-bold text-herbal mb-8 font-heading">• આયુર્વેદીક કીટ થી થતા ફાયદાઓ</h2>
             <ol className="list-decimal pl-6 space-y-4 mb-10 text-stone-700 font-medium bg-stone-50 p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-inner">
               <li>સંપૂર્ણ આયુર્વેદિક કીટ છે. તેની કોઈ પણ પ્રકારની સાઇડ ઈફેક્ટ નથી.</li>
               <li>
@@ -272,7 +272,7 @@ export default function BlogContent() {
               આયુર્વેદિક કીટ….
             </div>
 
-            <h1 className="text-xl sm:text-2xl font-bold text-center text-stone-900 mb-6 font-heading">ઑર્ડર કરવા માટે નીચેના બટન પર ક્લિક કરો</h1>
+            <h2 className="text-xl sm:text-2xl font-bold text-center text-stone-900 mb-6 font-heading">ઑર્ડર કરવા માટે નીચેના બટન પર ક્લિક કરો</h2>
             <div className="text-center">
               <a href={ORDER_LINK} target="_blank" rel="noreferrer" className="inline-block group relative">
                 <div className="absolute -inset-4 bg-herbal/10 rounded-full blur-2xl group-hover:bg-herbal/20 transition-all duration-500"></div>

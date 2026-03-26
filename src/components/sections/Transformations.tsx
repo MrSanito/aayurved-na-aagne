@@ -6,24 +6,25 @@ interface MediaItem {
   type: "image" | "video";
   url: string;
   id: string;
+  alt: string;
 }
 
 export default function Transformations() {
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
   const mediaItems: MediaItem[] = [
-    { type: "image", url: "/content/prodcut result.jpeg", id: "img1" },
-    { type: "image", url: "/assets/1001965731.jpg", id: "img2" },
-    { type: "video", url: "/Videos/video 2.mp4", id: "vid2" },
-    { type: "image", url: "/assets/1001972842.jpg", id: "img3" },
-    { type: "video", url: "/Videos/video 3.mp4", id: "vid3" },
-    { type: "image", url: "/assets/1001972854.jpg", id: "img4" },
-    { type: "video", url: "/Videos/video 4.mp4", id: "vid4" },
-    { type: "image", url: "/assets/1001972865.jpg", id: "img5" },
-    { type: "video", url: "/Videos/video 5.mp4", id: "vid5" },
-    { type: "image", url: "/assets/1001965644.jpg", id: "img6" },
-    { type: "video", url: "/Videos/video 1.mp4", id: "vid1" },
-    { type: "image", url: "/assets/1001972839.jpg", id: "img7" },
+    { type: "image", url: "/content/prodcut result.jpeg", id: "img1", alt: "Ayurvedic weight loss product result comparison" },
+    { type: "image", url: "/assets/1001965731.jpg", id: "img2", alt: "Customer weight loss success story before after" },
+    { type: "video", url: "/Videos/video 2.mp4", id: "vid2", alt: "Ayurveda treatment testimonial video" },
+    { type: "image", url: "/assets/1001972842.jpg", id: "img3", alt: "Natural fat reduction result image" },
+    { type: "video", url: "/Videos/video 3.mp4", id: "vid3", alt: "Ayurvedic diet success video review" },
+    { type: "image", url: "/assets/1001972854.jpg", id: "img4", alt: "Body transformation after 90 days ayurveda" },
+    { type: "video", url: "/Videos/video 4.mp4", id: "vid4", alt: "Healthy living journey video testimonial" },
+    { type: "image", url: "/assets/1001972865.jpg", id: "img5", alt: "Effective ayurvedic weight loss result" },
+    { type: "video", url: "/Videos/video 5.mp4", id: "vid5", alt: "Customer sharing experience with ayurvedic kit" },
+    { type: "image", url: "/assets/1001965644.jpg", id: "img6", alt: "Transformation result after natural treatment" },
+    { type: "video", url: "/Videos/video 1.mp4", id: "vid1", alt: "Introduction to ayurvedic weight loss process" },
+    { type: "image", url: "/assets/1001972839.jpg", id: "img7", alt: "Consistent weight loss results with ayurveda" },
   ];
 
   const toggleVideo = (id: string, e: React.MouseEvent) => {
@@ -78,7 +79,7 @@ export default function Transformations() {
                   <div className="relative group">
                     <img 
                       src={item.url} 
-                      alt="Ayurvedic Result"
+                      alt={item.alt}
                       className="w-full h-auto min-h-[400px] object-contain bg-stone-50 transition-transform duration-1000 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
