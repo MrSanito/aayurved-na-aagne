@@ -52,15 +52,20 @@ const Section = ({ children, className = "" }: { children: React.ReactNode; clas
 );
 
 const Heading = ({ children, level = 2, className = "" }: { children: React.ReactNode; level?: 1 | 2 | 3; className?: string }) => {
-  const baseClasses = "font-bold text-stone-900 tracking-tight leading-tight";
-  if (level === 1) return <h1 className={`${baseClasses} text-3xl md:text-4xl text-center mb-8 ${className}`}>{children}</h1>;
-  if (level === 2) return <h2 className={`${baseClasses} text-2xl md:text-3xl mt-12 mb-6 ${className}`}>{children}</h2>;
-  return <h3 className={`${baseClasses} text-xl md:text-2xl mt-8 mb-4 ${className}`}>{children}</h3>;
+  const baseClasses = "font-bold tracking-tight leading-tight";
+  const colorClass = className.includes("text-") ? "" : "text-stone-900";
+  
+  if (level === 1) return <h1 className={`${baseClasses} ${colorClass} text-3xl md:text-4xl text-center mb-8 ${className}`}>{children}</h1>;
+  if (level === 2) return <h2 className={`${baseClasses} ${colorClass} text-2xl md:text-3xl mt-12 mb-6 ${className}`}>{children}</h2>;
+  return <h3 className={`${baseClasses} ${colorClass} text-xl md:text-2xl mt-8 mb-4 ${className}`}>{children}</h3>;
 };
 
-const Paragraph = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <p className={`text-stone-700 leading-relaxed mb-4 text-base md:text-lg ${className}`}>{children}</p>
-);
+const Paragraph = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => {
+  const colorClass = className.includes("text-") ? "" : "text-stone-700";
+  return (
+    <p className={`${colorClass} leading-relaxed mb-4 text-base md:text-lg ${className}`}>{children}</p>
+  );
+};
 
 const ImageBox = ({ src, alt, width, className = "" }: { src: string; alt: string; width?: number; className?: string }) => (
   <div className={`flex justify-center my-8 ${className}`}>
@@ -100,6 +105,26 @@ const InfoBox = ({ children, type = "default" }: { children: React.ReactNode; ty
     </div>
   );
 };
+
+const ReviewCard = ({ name, location, review, rating = 5 }: { name: string; location: string; review: string; rating?: number }) => (
+  <div className="bg-white p-6 rounded-2xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow relative">
+    <div className="flex text-amber-400 mb-3">
+      {[...Array(rating)].map((_, i) => (
+        <span key={i} className="text-xl">★</span>
+      ))}
+    </div>
+    <p className="text-stone-700 italic mb-6 leading-relaxed">"{review}"</p>
+    <div className="flex items-center gap-3 border-t border-stone-50 pt-4">
+      <div className="w-10 h-10 rounded-full bg-herbal/10 flex items-center justify-center text-herbal font-bold">
+        {name.charAt(0)}
+      </div>
+      <div>
+        <p className="font-bold text-stone-900 text-sm">{name}</p>
+        <p className="text-stone-500 text-xs">{location}</p>
+      </div>
+    </div>
+  </div>
+);
 
 export default function AyurvedicHairCare() {
   return (
@@ -247,10 +272,10 @@ export default function AyurvedicHairCare() {
 
       {/* Section 5: Solutions Showcase */}
       <Section className="bg-stone-900 text-white rounded-[3rem] px-8 md:px-16 py-16 md:py-24">
-        <Heading level={2} className="text-white text-center mb-6">ખરતા અને સફેદ વાળને કહો અલવિદા! મેળવો મજબૂત અને કાળા વાળ કુદરતી રીતે 🌿</Heading>
+        <Heading level={2} className="text-white text-center mb-6 mt-0!">ખરતા અને સફેદ વાળને કહો અલવિદા! મેળવો મજબૂત અને કાળા વાળ કુદરતી રીતે 🌿</Heading>
         <ImageBox src={images.blackHair} alt="કાળા અને મજબૂત વાળ" />
-        <Paragraph className="text-stone-300 text-center text-xl mb-12">
-          શું તમે વાળ ખરવા (Hair Fall), ટાલ પડવી (Hair Loss) અથવા નાની ઉંમરે સફેદ થતા વાળ (Grey Hair) થી પરેશાન છો?
+        <Paragraph className="text-white text-center text-xl md:text-2xl mb-12 font-medium opacity-100">
+           શું તમે વાળ ખરવા (Hair Fall), ટાલ પડવી (Hair Loss) અથવા નાની ઉંમરે સફેદ થતા વાળ (Grey Hair) થી પરેશાન છો?
         </Paragraph>
         
         <div className="grid md:grid-cols-2 gap-6 my-10">
@@ -337,7 +362,7 @@ export default function AyurvedicHairCare() {
            </div>
            <div className="bg-herbal/5 p-4 rounded-xl border border-herbal/20 mt-6">
              <Paragraph className="font-bold mb-1">કેવી રીતે ઉપયોગ કરવો? 🍬</Paragraph>
-             <Paragraph className="text-sm mb-0">દિવસની માત્ર 1 થી 2 ગમીઝ લો. (24 કલાકમાં 8 થી વધુ ન લેવી).</Paragraph>
+             <Paragraph className="text-sm mb-0">24 કલાક માં 1 થી વધુ ના લેવી</Paragraph>
            </div>
         </ProductCard>
 
@@ -419,7 +444,7 @@ export default function AyurvedicHairCare() {
 
       {/* Social Proof & Gifs section */}
       <Section className="bg-white rounded-3xl my-12 border border-stone-100 shadow-sm text-center">
-        <Heading level={2}>પરિણામો જે બોલે છે!</Heading>
+        <Heading level={2}>અમે નહિ અમારા પરિણામો બોલે છે</Heading>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
           <img src={images.gif1} alt="animation" className="w-full rounded-xl shadow-md" />
           <img src={images.result1} alt="Result" className="w-full rounded-xl shadow-md" />
@@ -441,6 +466,43 @@ export default function AyurvedicHairCare() {
           <img src={images.gif4} alt="animation" className="w-full rounded-xl shadow-md" />
           <img src={images.cert3} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
           <img src={images.gif5} alt="animation" className="w-full rounded-xl shadow-md" />
+        </div>
+      </Section>
+
+      {/* Customer Reviews Section */}
+      <Section className="bg-stone-50 rounded-[3rem]">
+        <Heading level={2} className="text-center text-herbal-dark mb-12">અમારા સંતુષ્ટ ગ્રાહકો શું કહે છે?</Heading>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ReviewCard 
+            name="રમેશભાઈ" 
+            location="સુરત" 
+            review="મારા વાળ બહુ ખરતા હતા, પણ આ કોર્ષ પછી મને ઘણો ફરક લાગ્યો છે. હવે વાળ મજબૂત લાગે છે." 
+          />
+          <ReviewCard 
+            name="મનીષ પટેલ" 
+            location="અમદાવાદ" 
+            review="માત્ર ૨ મહિનામાં જ નવા વાળ આવવાની શરૂઆત થઈ ગઈ છે. ખરેખર આ આયુર્વેદિક અસર છે!" 
+          />
+          <ReviewCard 
+            name="સ્નેહાબેન" 
+            location="રાજકોટ" 
+            review="સફેદ વાળની સમસ્યા માટે આ બેસ્ટ સોલ્યુશન છે. હું બધાને આ વાપરવાની સલાહ આપીશ." 
+          />
+          <ReviewCard 
+            name="અંકિત શાહ" 
+            location="વડોદરા" 
+            review="ડોક્ટરોએ હાથ જોડી દીધા હતા, પણ આયુર્વેદના આંગણે હેર ઓઈલે કમાલ કરી દીધો. થેન્ક યુ!" 
+          />
+          <ReviewCard 
+            name="વિજયભાઈ" 
+            location="જામનગર" 
+            review="મારી ટાલમાં નવા વાળ આવવા જોઈને મને મારો ખોવાયેલો આત્મવિશ્વાસ પાછો મળ્યો છે." 
+          />
+          <ReviewCard 
+            name="નેહા રાવલ" 
+            location="ભાવનગર" 
+            review="શેમ્પૂ અને તેલ બંને બહુ જ મસ્ત છે. વાળમાં બહુ જ સરસ ચમક આવી ગઈ છે." 
+          />
         </div>
       </Section>
 
