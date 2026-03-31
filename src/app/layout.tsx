@@ -3,6 +3,8 @@ import { Anek_Gujarati, Outfit } from "next/font/google";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import JsonLd from "@/components/JsonLd";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const anekGujarati = Anek_Gujarati({
   variable: "--font-anek-gujarati",
@@ -71,12 +73,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="gu" data-theme="light">
+    <html lang="gu" data-theme="light" className={`${anekGujarati.variable} ${outfit.variable}`}>
       <body
-        className={`${anekGujarati.variable} ${outfit.variable} font-body bg-white text-gray-800`}
+        className="font-body bg-white text-gray-800"
       >
         <JsonLd />
+        <Navbar />
         {children}
+        <Footer />
         <FloatingWhatsApp />
       </body>
     </html>

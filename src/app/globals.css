@@ -15,12 +15,33 @@
 }
 
 @layer base {
+  :root {
+    --font-anek-gujarati-fallback: "Anek Gujarati", var(--font-anek-gujarati), "Segoe UI Gujarati", "Shruti", "Gujarati Sangam MN", sans-serif;
+  }
+
+  * {
+    font-family: inherit;
+  }
+
+  html {
+    font-family: var(--font-anek-gujarati-fallback) !important;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
-    @apply bg-white text-stone-700 antialiased font-body;
+    font-family: var(--font-anek-gujarati-fallback) !important;
+    @apply bg-white text-stone-700;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply text-stone-900 font-heading tracking-tight;
+    font-family: var(--font-anek-gujarati-fallback) !important;
+    @apply text-stone-900 tracking-tight;
+  }
+  
+  .font-outfit {
+    font-family: var(--font-outfit), "Outfit", sans-serif !important;
   }
 }
 
