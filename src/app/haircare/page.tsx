@@ -33,6 +33,17 @@ const images = {
   certification: imgBase + "AVvXsEhEc9r0YjlslgT7HJkArSJoINKZKPNN3Ar7e7j2HYzDZli7mKqd5GTHU-7fNArQL4rA38KgBQ5y5KwRvsAT8qeBhiYlkNI_AFoSgvuD-RA8iwHJcEC1taOHkcBylGSFtD4KWJJL-LRWwo2tYlbgich1q5GyJPj2fSJbeLXu2XCU_-oR2lk0iYhMYR1lTDM5/s320/1003080746.jpg",
 };
 
+const haircareResults = {
+  img1: "/haircareresults/WhatsApp Image 2026-03-31 at 12.30.35 PM.jpeg",
+  img2: "/haircareresults/WhatsApp Image 2026-03-31 at 12.30.45 PM (1).jpeg",
+  img3: "/haircareresults/WhatsApp Image 2026-03-31 at 12.30.45 PM.jpeg",
+  vid1: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.37 PM.mp4",
+  vid2: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.39 PM.mp4",
+  vid3: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.41 PM.mp4",
+  vid4: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.42 PM.mp4",
+  vid5: "/haircareresults/WhatsApp Video 2026-03-31 at 12.30.34 PM.mp4",
+};
+
 // UI Components
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <section className={`max-w-4xl mx-auto px-4 py-12 md:py-16 ${className}`}>
@@ -51,9 +62,15 @@ const Paragraph = ({ children, className = "" }: { children: React.ReactNode; cl
   <p className={`text-stone-700 leading-relaxed mb-4 text-base md:text-lg ${className}`}>{children}</p>
 );
 
-const ImageBox = ({ src, alt, width }: { src: string; alt: string; width?: number }) => (
-  <div className="flex justify-center my-8">
+const ImageBox = ({ src, alt, width, className = "" }: { src: string; alt: string; width?: number; className?: string }) => (
+  <div className={`flex justify-center my-8 ${className}`}>
     <img src={src} alt={alt} className="max-w-full h-auto rounded-xl shadow-lg border border-stone-100" style={width ? { maxWidth: width } : {}} />
+  </div>
+);
+
+const VideoBox = ({ src, className = "" }: { src: string; className?: string }) => (
+  <div className={`overflow-hidden rounded-xl shadow-lg border border-stone-100 bg-black ${className}`}>
+    <video src={src} controls className="w-full h-auto max-h-[600px] mx-auto" preload="metadata" />
   </div>
 );
 
@@ -403,16 +420,27 @@ export default function AyurvedicHairCare() {
       {/* Social Proof & Gifs section */}
       <Section className="bg-white rounded-3xl my-12 border border-stone-100 shadow-sm text-center">
         <Heading level={2}>પરિણામો જે બોલે છે!</Heading>
-        <div className="columns-1 md:columns-2 gap-4 space-y-4">
-          <img src={images.gif1} alt="animation" className="w-full rounded-xl" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
+          <img src={images.gif1} alt="animation" className="w-full rounded-xl shadow-md" />
           <img src={images.result1} alt="Result" className="w-full rounded-xl shadow-md" />
-          <img src={images.gif2} alt="animation" className="w-full rounded-xl" />
-          <img src={images.cert1} alt="Certification" className="w-full rounded-xl border border-stone-200" />
-          <img src={images.gif3} alt="animation" className="w-full rounded-xl" />
-          <img src={images.cert2} alt="Certification" className="w-full rounded-xl border border-stone-200" />
-          <img src={images.gif4} alt="animation" className="w-full rounded-xl" />
-          <img src={images.cert3} alt="Certification" className="w-full rounded-xl border border-stone-200" />
-          <img src={images.gif5} alt="animation" className="w-full rounded-xl" />
+          <img src={images.gif2} alt="animation" className="w-full rounded-xl shadow-md" />
+          
+          {/* New Results from public folder */}
+          <VideoBox src={haircareResults.vid1} />
+          <img src={haircareResults.img1} alt="Result 1" className="w-full rounded-xl shadow-md" />
+          <VideoBox src={haircareResults.vid2} />
+          <img src={haircareResults.img2} alt="Result 2" className="w-full rounded-xl shadow-md" />
+          <VideoBox src={haircareResults.vid3} />
+          <img src={haircareResults.img3} alt="Result 3" className="w-full rounded-xl shadow-md" />
+          <VideoBox src={haircareResults.vid4} />
+          <VideoBox src={haircareResults.vid5} />
+
+          <img src={images.cert1} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
+          <img src={images.gif3} alt="animation" className="w-full rounded-xl shadow-md" />
+          <img src={images.cert2} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
+          <img src={images.gif4} alt="animation" className="w-full rounded-xl shadow-md" />
+          <img src={images.cert3} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
+          <img src={images.gif5} alt="animation" className="w-full rounded-xl shadow-md" />
         </div>
       </Section>
 
