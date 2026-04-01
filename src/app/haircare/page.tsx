@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const imgBase = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/";
@@ -446,9 +447,9 @@ export default function AyurvedicHairCare() {
       <Section className="bg-white rounded-3xl my-12 border border-stone-100 shadow-sm text-center">
         <Heading level={2}>અમે નહિ અમારા પરિણામો બોલે છે</Heading>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
-          <img src={images.gif1} alt="animation" className="w-full rounded-xl shadow-md" />
+          {/* <img src={images.gif1} alt="animation" className="w-full rounded-xl shadow-md" /> */}
           <img src={images.result1} alt="Result" className="w-full rounded-xl shadow-md" />
-          <img src={images.gif2} alt="animation" className="w-full rounded-xl shadow-md" />
+          {/* <img src={images.gif2} alt="animation" className="w-full rounded-xl shadow-md" /> */}
           
           {/* New Results from public folder */}
           <VideoBox src={haircareResults.vid1} />
@@ -461,11 +462,13 @@ export default function AyurvedicHairCare() {
           <VideoBox src={haircareResults.vid5} />
 
           <img src={images.cert1} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
-          <img src={images.gif3} alt="animation" className="w-full rounded-xl shadow-md" />
+          {/* <img src={images.gif3} alt="animation" className="w-full rounded-xl shadow-md" /> */}
           <img src={images.cert2} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
-          <img src={images.gif4} alt="animation" className="w-full rounded-xl shadow-md" />
+          {/* <img src={images.gif4} alt="animation" className="w-full rounded-xl shadow-md" /> */}
           <img src={images.cert3} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
+          <Link  href="https://wa.me/919687105624?text=હું++આયુર્વેદિક+હેર+કેર+કોર્ષ+ઓર્ડર+કરવા+ઈચ્છું+છું">
           <img src={images.gif5} alt="animation" className="w-full rounded-xl shadow-md" />
+          </Link>
         </div>
       </Section>
 
