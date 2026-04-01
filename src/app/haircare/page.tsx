@@ -150,7 +150,7 @@ export default function AyurvedicHairCare() {
 
       {/* Section 1: Hair Fall Issues */}
       <Section className="bg-white rounded-3xl mt-12 shadow-sm border border-stone-100">
-        <Heading level={2} className="text-center font-outfit text-herbal mb-8">"શું તમે પણ દરરોજ ખરતા વાળથી પરેશાન છો?</Heading>
+        <Heading level={2} className="text-center text-herbal mb-8">"શું તમે પણ દરરોજ ખરતા વાળથી પરેશાન છો?</Heading>
         <ImageBox src={images.hairfall1} alt="ખરતા વાળ" />
         <Heading level={3} className="text-stone-900 border-l-4 border-herbal pl-4 py-2 my-10">
           * "કાંસકામાં આવતા વાળ જોઈને ચિંતા થાય છે? હવે અટકાવો કાયમી ધોરણે!"
@@ -540,7 +540,7 @@ export default function AyurvedicHairCare() {
           <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/leaf.png')] opacity-10"></div>
           <Heading level={1} className="text-white relative z-10 mb-8">"ખરતા વાળને કાયમી અલવિદા કહેવા માટે અત્યારે જ અમારો સંપર્ક કરો!"</Heading>
           <div className="inline-block bg-white text-herbal-dark px-10 py-6 rounded-3xl shadow-xl transition-all hover:scale-105 relative z-10">
-            <Paragraph className="text-2xl md:text-4xl font-black mb-0 font-outfit">📞 કોલ કરો: 96871 05624</Paragraph>
+            <Paragraph className="text-2xl md:text-4xl font-black mb-0">📞 કોલ કરો: 96871 05624</Paragraph>
           </div>
           <Paragraph className="text-white/80 mt-8 text-sm italic relative z-10">વધારે માહિતી કે ઓર્ડર માટે આજે જ અમારો સંપર્ક કરો.</Paragraph>
         </div>
