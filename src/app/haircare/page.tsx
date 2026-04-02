@@ -308,6 +308,77 @@ export default function AyurvedicHairCare() {
         <ImageBox src={images.products} alt="પ્રોડક્ટ્સ" />
       </Section>
 
+      {/* Recommended Stages Section */}
+      <Section className="bg-herbal/5 rounded-[2.5rem] border border-herbal/10 px-8 my-12">
+        <Heading level={2} className="text-center text-herbal mb-4 mt-0!">તમારો કયો સ્ટેજ છે? જાણો અને શ્રેષ્ઠ ઉકેલ મેળવો 🔎</Heading>
+        <Paragraph className="text-center mb-10 text-herbal-dark/70">વાળ ખરવાના તબક્કા અને તે મુજબ શ્રેષ્ઠ આયુર્વેદિક ઉકેલ</Paragraph>
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {[
+            {
+              stage: "સ્ટેજ ૧",
+              title: "વાળ ખરવાની શરૂઆત",
+              image: images.result1,
+              products: ["Hair Oil", "Shampoo", "Biotin"],
+              desc: "વાળ ખરવાની હળવી શરૂઆત અને વાળ પાતળા થવાની સમસ્યા.",
+              gif: images.gif1
+            },
+            {
+              stage: "સ્ટેજ ૨",
+              title: "સામાન્ય ટાલની શરૂઆત",
+              image: images.cert1,
+              products: ["Oil", "Shampoo", "Biotin", "B12"],
+              desc: "કપાળના ખૂણે હળવાશ અને હેરલાઇન પાછળ જવી.",
+              gif: images.gif2
+            },
+            {
+              stage: "સ્ટેજ ૩",
+              title: "મધ્યમ હેર લોસ",
+              image: images.cert2,
+              products: ["Serum", "Tonic", "Loh", "Shampoo"],
+              desc: "નોંધપાત્ર વાળનું નુકસાન અને વરટેક્સ પર ટાલની અસર.",
+              gif: images.gif3
+            },
+            {
+              stage: "સ્ટેજ ૪",
+              title: "ગંભીર સમસ્યા",
+              image: images.cert3,
+              products: ["Full Kit", "Serum", "Tonic", "Loh"],
+              desc: "ગંભીર ટાલ અને માથાના મોટા ભાગમાં વાળ ઉતરી જવા.",
+              gif: images.gif4
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="bg-white rounded-3xl shadow-sm border border-stone-200 overflow-hidden flex flex-col items-center p-5 md:p-8 text-center transition-all hover:scale-[1.02] hover:shadow-xl hover:border-herbal/30 group">
+              <span className="bg-herbal/10 text-herbal text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase group-hover:bg-herbal group-hover:text-white transition-colors">{item.stage}</span>
+              <div className="w-full aspect-square mb-6 overflow-hidden rounded-2xl border border-stone-100 bg-stone-50 flex items-center justify-center">
+                <img src={item.image} alt={item.title} className="max-w-full max-h-full object-contain transition-transform group-hover:scale-110" />
+              </div>
+              <h3 className="font-bold text-stone-900 text-lg md:text-xl mb-3">{item.title}</h3>
+              <p className="text-sm md:text-base text-stone-600 mb-6 leading-relaxed">{item.desc}</p>
+              
+              <div className="w-full pt-6 border-t border-stone-100 mt-auto">
+                <p className="text-xs font-bold text-herbal mb-3 uppercase tracking-wider">Recommended Products:</p>
+                <div className="flex flex-wrap justify-center gap-2 mb-8">
+                  {item.products.map(p => (
+                    <span key={p} className="bg-stone-50 text-stone-700 font-medium text-xs px-2.5 py-1 rounded-lg border border-stone-200">{p}</span>
+                  ))}
+                </div>
+                
+                <Link 
+                  href="https://wa.me/919687105624?text=હું++આયુર્વેદિક+હેર+કેર+કોર્ષ+ઓર્ડર+કરવા+ઈચ્છું+છું" 
+                  className="flex items-center justify-center gap-3 bg-[#4ade80] hover:bg-[#22c55e] text-white font-bold py-4 px-6 rounded-2xl shadow-lg transition-all hover:scale-[1.05] active:scale-95 w-full md:w-auto mx-auto mt-4"
+                >
+                  <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                  <span>અત્યારે જ ઓર્ડર કરો</span>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* Section 6: Product Deep Dive (Biotin) */}
       <Section>
         <Heading level={2} className="text-center">"બાયોટિન: નવા અને મજબૂત વાળ ઉગાડવાનું ગુપ્ત રહસ્ય!"</Heading>
@@ -447,11 +518,6 @@ export default function AyurvedicHairCare() {
       <Section className="bg-white rounded-3xl my-12 border border-stone-100 shadow-sm text-center">
         <Heading level={2}>અમે નહિ અમારા પરિણામો બોલે છે</Heading>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
-          {/* <img src={images.gif1} alt="animation" className="w-full rounded-xl shadow-md" /> */}
-          <img src={images.result1} alt="Result" className="w-full rounded-xl shadow-md" />
-          {/* <img src={images.gif2} alt="animation" className="w-full rounded-xl shadow-md" /> */}
-          
-          {/* New Results from public folder */}
           <VideoBox src={haircareResults.vid1} />
           <img src={haircareResults.img1} alt="Result 1" className="w-full rounded-xl shadow-md" />
           <VideoBox src={haircareResults.vid2} />
@@ -460,14 +526,9 @@ export default function AyurvedicHairCare() {
           <img src={haircareResults.img3} alt="Result 3" className="w-full rounded-xl shadow-md" />
           <VideoBox src={haircareResults.vid4} />
           <VideoBox src={haircareResults.vid5} />
-
-          <img src={images.cert1} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
-          {/* <img src={images.gif3} alt="animation" className="w-full rounded-xl shadow-md" /> */}
-          <img src={images.cert2} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
-          {/* <img src={images.gif4} alt="animation" className="w-full rounded-xl shadow-md" /> */}
-          <img src={images.cert3} alt="Certification" className="w-full rounded-xl border border-stone-200 shadow-sm" />
-          <Link  href="https://wa.me/919687105624?text=હું++આયુર્વેદિક+હેર+કેર+કોર્ષ+ઓર્ડર+કરવા+ઈચ્છું+છું">
-          <img src={images.gif5} alt="animation" className="w-full rounded-xl shadow-md" />
+          
+          <Link  href="https://wa.me/919687105624?text=હું++આયુર્વેદિક+હેર+કેર+કોર્ષ+ઓર્ડર+કરવા+ઈચ્છું+છું" className="hover:scale-105 transition-transform duration-300">
+            <img src={images.gif5} alt="Order Final" className="w-full rounded-xl shadow-md" />
           </Link>
         </div>
       </Section>
