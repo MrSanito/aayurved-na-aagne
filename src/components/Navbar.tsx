@@ -20,6 +20,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Weight Loss", href: "/#about" },
     { name: "Hair Care", href: "/haircare" },
+    { name: "Women Health", href: "/women" },
     { name: "Benefits", href: "/#benefits" },
     { name: "Success Stories", href: "/#transformations" },
     { name: "Contact", href: "/#contact" },
