@@ -91,7 +91,7 @@ export default function Transformations() {
                     </div>
                   </div>
                 ) : (
-                  <div className="relative aspect-[9/16] bg-black flex items-center justify-center min-h-[400px]">
+                  <div className="relative aspect-9/16 bg-black flex items-center justify-center min-h-[400px]">
                     <video
                       id={item.id}
                       className="w-full h-full object-contain"

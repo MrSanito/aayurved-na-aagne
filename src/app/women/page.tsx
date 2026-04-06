@@ -95,7 +95,7 @@ const VideoBox = ({ src, className = "" }: { src: string; className?: string }) 
   };
 
   return (
-    <div className={`relative group rounded-[2rem] overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl hover:shadow-herbal/10 transition-all duration-700 hover:-translate-y-2 border border-white bg-black aspect-[9/16] ${className}`}>
+    <div className={`relative group rounded-4xl overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl hover:shadow-herbal/10 transition-all duration-700 hover:-translate-y-2 border border-white bg-black aspect-9/16 ${className}`}>
       <video 
         ref={videoRef}
         src={src} 
