@@ -397,6 +397,7 @@ export default function WomenHealthAwareness() {
             <VideoBox src={images.pcodVideo5} />
             <VideoBox src={images.pcodVideo6} />
           </div>
+          <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-1/2 mx-auto mt-8" />
         </div>
 
         {/* Written Reviews After */}
@@ -511,7 +512,7 @@ export default function WomenHealthAwareness() {
                   <VideoBox src={images.thyroidResultVideo3} />
                   <ImageBox src={images.thyroidResultImage1} alt="Thyroid Result" className="my-0" />
                 </div>
-                <ImageBox src={images.resultGif2} alt="Result GIF" className="bg-white p-2 rounded-2xl mx-auto shadow-sm" width={500} />
+                <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-1/2 mx-auto mt-8" />
               </div>
 
               {/* Written Reviews After */}
