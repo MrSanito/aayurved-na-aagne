@@ -98,7 +98,7 @@ const VideoBox = ({ src, className = "" }: { src: string; className?: string }) 
         ref={videoRef}
         src={src} 
         playsInline
-        className="w-full h-full object-cover"
+        className="w-full h-full object-contain"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
         onClick={togglePlay}
