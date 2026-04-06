@@ -13,17 +13,17 @@ export default function Transformations() {
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
   const mediaItems: MediaItem[] = [
-    { type: "image", url: "/content/prodcut result.jpeg", id: "img1", alt: "Ayurvedic weight loss product result comparison" },
-    { type: "image", url: "/assets/1001965731.jpg", id: "img2", alt: "Customer weight loss success story before after" },
     { type: "video", url: "/Videos/video 2.mp4", id: "vid2", alt: "Ayurveda treatment testimonial video" },
-    { type: "image", url: "/assets/1001972842.jpg", id: "img3", alt: "Natural fat reduction result image" },
     { type: "video", url: "/Videos/video 3.mp4", id: "vid3", alt: "Ayurvedic diet success video review" },
-    { type: "image", url: "/assets/1001972854.jpg", id: "img4", alt: "Body transformation after 90 days ayurveda" },
     { type: "video", url: "/Videos/video 4.mp4", id: "vid4", alt: "Healthy living journey video testimonial" },
-    { type: "image", url: "/assets/1001972865.jpg", id: "img5", alt: "Effective ayurvedic weight loss result" },
     { type: "video", url: "/Videos/video 5.mp4", id: "vid5", alt: "Customer sharing experience with ayurvedic kit" },
-    { type: "image", url: "/assets/1001965644.jpg", id: "img6", alt: "Transformation result after natural treatment" },
     { type: "video", url: "/Videos/video 1.mp4", id: "vid1", alt: "Introduction to ayurvedic weight loss process" },
+    { type: "image", url: "/content/product result.jpeg", id: "img1", alt: "Ayurvedic weight loss product result comparison" },
+    { type: "image", url: "/assets/1001965731.jpg", id: "img2", alt: "Customer weight loss success story before after" },
+    { type: "image", url: "/assets/1001972842.jpg", id: "img3", alt: "Natural fat reduction result image" },
+    { type: "image", url: "/assets/1001972854.jpg", id: "img4", alt: "Body transformation after 90 days ayurveda" },
+    { type: "image", url: "/assets/1001972865.jpg", id: "img5", alt: "Effective ayurvedic weight loss result" },
+    { type: "image", url: "/assets/1001965644.jpg", id: "img6", alt: "Transformation result after natural treatment" },
     { type: "image", url: "/assets/1001972839.jpg", id: "img7", alt: "Consistent weight loss results with ayurveda" },
   ];
 
@@ -59,10 +59,10 @@ export default function Transformations() {
               Success Stories
             </span>
           </div>
-          <h3 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight font-heading">
-            અમારી આયુર્વેદીક કીટ ના <span className="text-white/80 italic font-light font-outfit block mt-2 text-2xl md:text-3xl tracking-widest uppercase">Result & Review</span>
-          </h3>
-          <div className="w-24 h-1 bg-gold mx-auto rounded-full mb-10"></div>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-8 leading-tight font-heading">
+            અમારી આયુર્વેદીક કીટ ના <span className="text-gold italic font-light font-outfit block mt-2 text-2xl md:text-4xl tracking-widest uppercase">Results</span>
+          </h2>
+          <div className="w-24 h-1.5 bg-gold mx-auto rounded-full mb-10 shadow-lg shadow-gold/20"></div>
           <p className="text-beige/80 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
             માત્ર 90 દિવસમાં સેંકડો લોકોએ આયુર્વેદના માધ્યમથી પોતાનું વજન ઘટાડીને સ્વાસ્થ્ય પાછું મેળવ્યું છે.
           </p>
@@ -91,7 +91,7 @@ export default function Transformations() {
                     </div>
                   </div>
                 ) : (
-                  <div className="relative aspect-9/16 bg-black flex items-center justify-center min-h-[400px]">
+                  <div className="relative aspect-[9/16] bg-black flex items-center justify-center min-h-[400px]">
                     <video
                       id={item.id}
                       className="w-full h-full object-contain"

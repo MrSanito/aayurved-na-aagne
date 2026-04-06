@@ -1,5 +1,6 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState, useRef } from "react";
+import { FaPlay } from "react-icons/fa";
 
 const assetPath = "/assets/haircare";
 
@@ -74,11 +75,54 @@ const ImageBox = ({ src, alt, width, className = "" }: { src: string; alt: strin
   </div>
 );
 
-const VideoBox = ({ src, className = "" }: { src: string; className?: string }) => (
-  <div className={`overflow-hidden rounded-xl shadow-lg border border-stone-100 bg-black ${className}`}>
-    <video src={src} controls className="w-full h-auto max-h-[600px] mx-auto" preload="metadata" />
-  </div>
-);
+const VideoBox = ({ src, className = "" }: { src: string; className?: string }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  return (
+    <div className={`relative group rounded-[2rem] overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl hover:shadow-herbal/10 transition-all duration-700 hover:-translate-y-2 border border-white bg-black aspect-[9/16] ${className}`}>
+      <video 
+        ref={videoRef}
+        src={src} 
+        playsInline
+        className="w-full h-full object-cover"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onClick={togglePlay}
+        controls={isPlaying}
+      />
+      
+      {!isPlaying && (
+        <div 
+          className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-500 cursor-pointer flex items-center justify-center"
+          onClick={togglePlay}
+        >
+          <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-transform duration-500 border border-white/30">
+            <FaPlay className="ml-1 text-xl" />
+          </div>
+
+          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+            <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div>
+            <span className="text-white text-[10px] font-bold uppercase tracking-widest font-outfit">
+              Video Story
+            </span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const ProductCard = ({ title, image, children }: { title: string; image: string; children: React.ReactNode }) => (
   <div className="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden my-12 transition-all hover:shadow-md">
@@ -525,18 +569,17 @@ export default function AyurvedicHairCare() {
         <Heading level={2}>અમે નહિ અમારા પરિણામો બોલે છે</Heading>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
           <VideoBox src={haircareResults.vid1} />
-          <img src={haircareResults.img1} alt="Result 1" className="w-full rounded-xl shadow-md" />
           <VideoBox src={haircareResults.vid2} />
-          <img src={haircareResults.img2} alt="Result 2" className="w-full rounded-xl shadow-md" />
           <VideoBox src={haircareResults.vid3} />
-          <img src={haircareResults.img3} alt="Result 3" className="w-full rounded-xl shadow-md" />
           <VideoBox src={haircareResults.vid4} />
           <VideoBox src={haircareResults.vid5} />
+          <img src={haircareResults.img1} alt="Result 1" className="w-full rounded-xl shadow-md h-full object-cover" />
+          <img src={haircareResults.img2} alt="Result 2" className="w-full rounded-xl shadow-md h-full object-cover" />
+          <img src={haircareResults.img3} alt="Result 3" className="w-full rounded-xl shadow-md h-full object-cover" />
           
           <div className="flex items-center justify-center p-4 bg-stone-50 rounded-xl border border-stone-100 hover:shadow-md transition-shadow">
             <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full" />
           </div>
-
         </div>
       </Section>
 
