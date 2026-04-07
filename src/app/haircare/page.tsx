@@ -103,7 +103,7 @@ const VideoBox = ({ src, className = "" }: { src: string; className?: string }) 
         onPause={() => setIsPlaying(false)}
         onClick={togglePlay}
         controls={isPlaying}
-      />
+      /> 
       
       {!isPlaying && (
         <div 
