@@ -52,6 +52,7 @@ const images = {
   beautilookVideo2: "/Beautilook%20result/WhatsApp%20Video%202026-04-08%20at%2010.00.30%20PM%20(1).mp4",
   beautilookVideo3: "/Beautilook%20result/WhatsApp%20Video%202026-04-08%20at%2010.00.30%20PM.mp4",
 };
+ 
 
 // UI Components
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
