@@ -48,6 +48,9 @@ const images = {
   pcodVideo4: "/pcod/WhatsApp%20Video%202026-04-05%20at%2011.06.58%20AM.mp4",
   pcodVideo5: "/pcod/WhatsApp%20Video%202026-04-05%20at%2011.06.59%20AM%20(1).mp4",
   pcodVideo6: "/pcod/WhatsApp%20Video%202026-04-05%20at%2011.06.59%20AM.mp4",
+  beautilookVideo1: "/Beautilook%20result/WhatsApp%20Video%202026-04-08%20at%2010.00.06%20PM.mp4",
+  beautilookVideo2: "/Beautilook%20result/WhatsApp%20Video%202026-04-08%20at%2010.00.30%20PM%20(1).mp4",
+  beautilookVideo3: "/Beautilook%20result/WhatsApp%20Video%202026-04-08%20at%2010.00.30%20PM.mp4",
 };
 
 // UI Components
@@ -378,12 +381,8 @@ export default function WomenHealthAwareness() {
         
         <div className="bg-stone-800 p-6 md:p-10 rounded-3xl mt-12 border border-stone-700">
            <Heading level={3} className="text-white text-center mt-0 mb-8">PCOD અને PCOS ના શાનદાર પરિણામો</Heading>
-           <ImageBox src={images.resultGif1} alt="Result GIF" className="bg-white p-2 rounded-2xl mx-auto" />
-           <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-1/2 mx-auto mt-8" />
-        </div>
-      </Section>
-
-      {/* Results & Reviews */}
+           
+           {/* Results & Reviews */}
       <Section className="bg-white rounded-[3rem] border border-stone-100 shadow-sm mb-16 px-6 py-12 md:p-16">
         <Heading level={2} className="text-center text-herbal mt-0">PCOD અને PCOS ના રિઝલ્ટ & રિવ્યૂ </Heading>
         
@@ -418,7 +417,11 @@ export default function WomenHealthAwareness() {
             />
           </div>
         </div>
+      </Section> <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-1/2 mx-auto mt-8" />
+        </div>
       </Section>
+
+      
 
       {/* Thyroid Section */}
       <Section className="bg-stone-50 rounded-[3rem] px-6 py-12 md:p-16 border border-stone-200">
@@ -589,11 +592,20 @@ export default function WomenHealthAwareness() {
         <ProductCard title="Beautilook :- " image={images.beautilook}>
            <Paragraph className="font-bold text-herbal text-xl leading-snug">હવે વજન ઘટાડો કુદરતી રીતે, કોઈ પણ કસરત કે ડાયટ વગર! ✨</Paragraph>
            <Paragraph className="text-lg text-stone-600">બ્યુટીલુક લાવ્યું છે ભારતની નંબર ૧ આયુર્વેદિક ફોર્મ્યુલા, જે માત્ર ૯૦ દિવસમાં તમને આપશે મનગમતું ફિગર!</Paragraph>
-           <div className="mt-8">
-             <Paragraph className="font-bold text-stone-800 mb-4 border-b border-stone-200 pb-2 inline-block">Beautilook અદભુત રિઝલ્ટ :</Paragraph>
-             <ImageBox src={images.resultGif3} alt="Result GIF" width={400} className="mx-0 shadow-sm p-1 bg-stone-50" />
-           </div>
         </ProductCard>
+
+        {/* Beautilook Results */}
+        <div className="bg-white rounded-[3rem] border border-stone-100 shadow-sm mb-16 px-6 py-12 md:p-16">
+          <Heading level={2} className="text-center text-herbal mt-0">Beautilook અદભુત રિઝલ્ટ :</Heading>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center mt-10">
+            <VideoBox src={images.beautilookVideo1} />
+            <VideoBox src={images.beautilookVideo2} />
+            <VideoBox src={images.beautilookVideo3} />
+          </div>
+          
+          <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-1/2 mx-auto mt-12" />
+        </div>
       </Section>
 
       {/* CTA Section */}
