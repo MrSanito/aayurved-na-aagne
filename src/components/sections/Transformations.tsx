@@ -25,6 +25,7 @@ export default function Transformations() {
     { type: "image", url: "/assets/1001972865.jpg", id: "img5", alt: "Effective ayurvedic weight loss result" },
     { type: "image", url: "/assets/1001965644.jpg", id: "img6", alt: "Transformation result after natural treatment" },
     { type: "image", url: "/assets/1001972839.jpg", id: "img7", alt: "Consistent weight loss results with ayurveda" },
+    { type: "image", url: "/Beautilook%20result/kamna-mundra-result.png", id: "img8", alt: "Kamna Mundra lost 17 Kgs in 4 months with Beautilook" },
   ];
 
   const toggleVideo = (id: string, e: React.MouseEvent) => {

@@ -51,6 +51,7 @@ const images = {
   beautilookVideo1: "/Beautilook%20result/WhatsApp%20Video%202026-04-08%20at%2010.00.06%20PM.mp4",
   beautilookVideo2: "/Beautilook%20result/WhatsApp%20Video%202026-04-08%20at%2010.00.30%20PM%20(1).mp4",
   beautilookVideo3: "/Beautilook%20result/WhatsApp%20Video%202026-04-08%20at%2010.00.30%20PM.mp4",
+  beautilookResult1: "/Beautilook%20result/kamna-mundra-result.png",
 };
  
 
@@ -601,7 +602,15 @@ export default function WomenHealthAwareness() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center mt-10">
             <VideoBox src={images.beautilookVideo1} />
-            <VideoBox src={images.beautilookVideo2} />
+            <div className="relative group rounded-4xl overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl hover:shadow-herbal/10 transition-all duration-700 hover:-translate-y-2 border border-white bg-white aspect-9/16">
+              <img src={images.beautilookResult1} alt="Kamna Mundra Result" className="w-full h-full object-cover" />
+              <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/80 backdrop-blur-md rounded-full border border-white/20">
+                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-herbal-dark text-[10px] font-bold uppercase tracking-widest font-outfit">
+                  Success Story
+                </span>
+              </div>
+            </div>
             <VideoBox src={images.beautilookVideo3} />
           </div>
           
