@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState, useRef } from "react";
 import { FaPlay } from "react-icons/fa";
+import SocialLinks from "@/components/sections/SocialLinks";
 
 const assetPath = "/assets/women";
 
@@ -573,6 +574,19 @@ export default function WomenHealthAwareness() {
            </ul>
         </div>
 
+        <div className="flex justify-center my-10">
+          <Link 
+            href="/" 
+            className="bg-herbal hover:bg-herbal-dark text-white font-bold py-5 px-10 rounded-[2rem] shadow-xl transition-all hover:scale-105 active:scale-95 text-xl md:text-2xl flex items-center gap-4 border-4 border-white"
+          >
+            વજન ઘટાડવા વિશે વધુ માહિતી મેળવો
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </Link>
+        </div>
+
         <div className="bg-green-50/50 p-8 md:p-10 rounded-3xl border border-green-100 my-12">
           <Heading level={2} className="text-herbal mt-0 text-center mb-8">🌿 આયુર્વેદિક સમાધાન (The Solution)</Heading>
           <Paragraph className="text-center font-bold text-lg mb-8 text-stone-800 bg-white p-4 rounded-2xl shadow-sm">જીમ કે કડક ડાયેટિંગ વગર પણ વજન ઘટાડવું શક્ય છે:</Paragraph>
@@ -658,6 +672,7 @@ export default function WomenHealthAwareness() {
           </div>
         </div>
       </Section>
+      <SocialLinks />
     </main>
   );
 }

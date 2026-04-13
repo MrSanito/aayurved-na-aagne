@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState, useRef } from "react";
 import { FaPlay } from "react-icons/fa";
+import SocialLinks from "@/components/sections/SocialLinks";
 
 const assetPath = "/assets/haircare";
 
@@ -664,6 +665,7 @@ export default function AyurvedicHairCare() {
           <Paragraph className="text-white/80 mt-8 text-sm italic relative z-10">વધારે માહિતી કે ઓર્ડર માટે આજે જ અમારો સંપર્ક કરો.</Paragraph>
         </div>
       </Section>
+      <SocialLinks />
     </main>
   );
 }
