@@ -96,8 +96,9 @@ const VideoBox = ({ src, className = "" }: { src: string; className?: string }) 
     <div className={`relative group rounded-4xl overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl hover:shadow-herbal/10 transition-all duration-700 hover:-translate-y-2 border border-white bg-black aspect-9/16 ${className}`}>
       <video 
         ref={videoRef}
-        src={src} 
+        src={`${src}#t=0.001`} 
         playsInline
+        preload="metadata"
         className="w-full h-full object-contain"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}

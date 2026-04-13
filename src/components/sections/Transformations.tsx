@@ -97,9 +97,9 @@ export default function Transformations() {
                       id={item.id}
                       className="w-full h-full object-contain"
                       playsInline
-                      preload="none"
+                      preload="metadata"
                       onClick={(e) => toggleVideo(item.id, e)}
-                      src={item.url}
+                      src={`${item.url}#t=0.001`}
                       controls={playingVideo === item.id}
                     >
                       Your browser does not support the video tag.
