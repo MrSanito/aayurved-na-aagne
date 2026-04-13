@@ -177,6 +177,8 @@ const ReviewCard = ({ name, location, review, rating = 5 }: { name: string; loca
 const WhatsAppButton = ({ text = "અત્યારે જ ઓર્ડર કરો", className = "" }: { text?: string, className?: string }) => (
   <Link 
     href="https://wa.me/919687105624?text=હું++આયુર્વેદિક+હેર+કેર+કોર્ષ+ઓર્ડર+કરવા+ઈચ્છું+છું" 
+    target="_blank"
+    rel="noopener noreferrer"
     className={`flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-2xl shadow-lg transition-all hover:scale-[1.05] active:scale-95 ${className}`}
   >
     <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">

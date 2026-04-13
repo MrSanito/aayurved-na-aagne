@@ -17,6 +17,7 @@ const images = {
   cancerRisk: `${assetPath}/cancer_risk.jpg`,
   pcosIndia: `${assetPath}/pcos_india.jpg`,
   celebrity: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzT6_E9QQueM62BH_K8-9RO8A2KLsndmaWBkidM83IQrlGMZdHlQ24j-B3z6n2MP9ySzutzpQ7Xig7_lAjY7JTpM3HDUS6PH3FwHqHMqLteZ7T43ANaUxRQ3mZJg1zKIq8XkAp6lHm63knS4PXDpjGxTldoF_MS8NESMG6oS-lYsbcmHfoTxN2oRU5Bhe/s1280/1003056943.jpg",
+  celebrity2: "/Beautilook%20result/celebrity%20success.jpeg",
   ayurvedicCourse: `${assetPath}/ayurvedic_course.jpg`,
   shewellDrink: `${assetPath}/shewell_drink.jpg`,
   shewellTablet: `${assetPath}/shewell_tablet.jpg`,
@@ -181,9 +182,11 @@ const ReviewCard = ({ name, location, review, rating = 5 }: { name: string; loca
   </div>
 );
 
-const WhatsAppButton = ({ text = "અત્યારે જ ઓર્ડર કરો", className = "" }: { text?: string, className?: string }) => (
+const WhatsAppButton = ({ text = "અત્યારે જ ઓર્ડર કરો", className = "", href }: { text?: string, className?: string, href?: string }) => (
   <Link 
-    href="https://wa.me/919687105624?text=હું++સ્ત્રી+સ્વાસ્થ્ય+કોર્ષ+વિશે+જાણવા+ઈચ્છું+છું" 
+    href={href || "https://wa.me/919687105624?text=હું++સ્ત્રી+સ્વાસ્થ્ય+કોર્ષ+વિશે+જાણવા+ઈચ્છું+છું"} 
+    target="_blank"
+    rel="noopener noreferrer"
     className={`flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-2xl shadow-lg transition-all hover:scale-[1.05] active:scale-95 ${className}`}
   >
     <svg className="w-6 h-6 fill-white" viewBox="0 0 24 24">
@@ -326,7 +329,7 @@ export default function WomenHealthAwareness() {
         <ImageBox src={images.pcosIndia} alt="PCOS cases India" />
         
         <Heading level={2} className="text-center text-stone-800">સૅલીબ્રિટીઓની pcod અને pcos ની સાથેની સ્ટ્રગલ સ્ટોરી </Heading>
-        <ImageBox src={images.celebrity} alt="Celebrity struggle" />
+        <ImageBox src={images.celebrity2} alt="Celebrity success stories" />
       </Section>
 
       {/* Ayurvedic Course Section */}
@@ -420,7 +423,11 @@ export default function WomenHealthAwareness() {
             />
           </div>
         </div>
-      </Section> <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-1/2 mx-auto mt-8" />
+      </Section> <WhatsAppButton 
+        text="અત્યારે જ ઓર્ડર કરો" 
+        className="w-full md:w-1/2 mx-auto mt-8" 
+        href="https://wa.me/919687105624?text=હું+વજન+ઘટાડવાનો+આયુર્વેદિક+કોર્ષ+ઓર્ડર+કરવા+ઈચ્છું+છું"
+      />
         </div>
       </Section>
 
@@ -518,7 +525,11 @@ export default function WomenHealthAwareness() {
                   <VideoBox src={images.thyroidResultVideo3} />
                   <ImageBox src={images.thyroidResultImage1} alt="Thyroid Result" className="my-0" />
                 </div>
-                <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-1/2 mx-auto mt-8" />
+                <WhatsAppButton 
+                  text="અત્યારે જ ઓર્ડર કરો" 
+                  className="w-full md:w-1/2 mx-auto mt-8" 
+                  href="https://wa.me/919687105624?text=હું+થાઇરોઇડનો+આયુર્વેદિક+કોર્ષ+ઓર્ડર+કરવા+ઈચ્છું+છું"
+                />
               </div>
            
               {/* Written Reviews After */}
@@ -615,7 +626,11 @@ export default function WomenHealthAwareness() {
             <VideoBox src={images.beautilookVideo3} />
           </div>
           
-          <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-1/2 mx-auto mt-12" />
+          <WhatsAppButton 
+            text="અત્યારે જ ઓર્ડર કરો" 
+            className="w-full md:w-1/2 mx-auto mt-12" 
+            href="https://wa.me/919687105624?text=હું+વજન+ઘટાડવાનો+આયુર્વેદિક+કોર્ષ+ઓર્ડર+કરવા+ઈચ્છું+છું"
+          />
         </div>
       </Section>
 

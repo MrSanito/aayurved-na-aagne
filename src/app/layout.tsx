@@ -80,7 +80,7 @@ export default function RootLayout({
         <JsonLd />
         <Navbar />
         {children}
-        <Footer />
+
         <FloatingWhatsApp />
       </body>
     </html>
