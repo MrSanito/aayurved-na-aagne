@@ -41,7 +41,7 @@ const images = {
   footerGif: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9CP8RUm7dItkfESaZJVKx1Vr5xAn9Jkh-cZoOcoCNt9AqoHidqrIZVgjLwXeNxYLTkkkP6nUncdK4-Uj5oBAkb9ior1-lm6dF0Wd2g6gtWd2dWlogU67KVAIsrPlpJGYKFQYytaBT9R6aT-zL_0vF5QQETM6nMD5MApnRKjqQ8R63xamG7_92AHWiYtLz/s400/1003065750.gif",
 };
 
-const Img = ({ src, alt = "", className = "" }) => (
+const Img = ({ src, alt = "", className = "" } : any) => (
   <img src={src} alt={alt} className={`w-full rounded-xl object-cover ${className}`} />
 );
 
