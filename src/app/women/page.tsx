@@ -183,6 +183,35 @@ const ReviewCard = ({ name, location, review, rating = 5 }: { name: string; loca
   </div>
 );
 
+const YouTubeCard = ({ image, title, description, link }: { image: string, title: string, description: string, link: string }) => (
+  <Link href={link} className="block group max-w-sm mx-auto bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-stone-100 mb-10">
+    <div className="relative aspect-video overflow-hidden">
+      <img src={image} alt={title} className="w-full h-full object-contain bg-stone-50 transition-transform duration-700 group-hover:scale-105" />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+      <div className="absolute bottom-3 right-3 bg-black/80 px-2 py-1 rounded text-[10px] text-white font-bold font-outfit uppercase tracking-wider">
+        Learn More
+      </div>
+    </div>
+    <div className="p-6">
+      <h3 className="font-black text-xl text-stone-900 mb-2 group-hover:text-herbal transition-colors leading-tight">
+        {title}
+      </h3>
+      <p className="text-stone-600 text-sm mb-6 leading-relaxed">
+        {description}
+      </p>
+      <div className="flex items-center justify-between">
+        <span className="bg-herbal/10 text-herbal px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest">Know More</span>
+        <div className="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center text-white transform group-hover:translate-x-1 transition-transform shadow-lg shadow-stone-900/20">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </Link>
+);
+
 const WhatsAppButton = ({ text = "અત્યારે જ ઓર્ડર કરો", className = "", href }: { text?: string, className?: string, href?: string }) => (
   <Link 
     href={href || "https://wa.me/919687105624?text=હું++સ્ત્રી+સ્વાસ્થ્ય+કોર્ષ+વિશે+જાણવા+ઈચ્છું+છું"} 
@@ -199,7 +228,7 @@ const WhatsAppButton = ({ text = "અત્યારે જ ઓર્ડર ક�
 
 export default function WomenHealthAwareness() {
   return (
-    <main className="bg-[#FAFAF9] min-h-screen">
+    <main className="bg-[#FAFAF9] min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <div className="bg-white border-b border-stone-100 py-12 md:py-20 overflow-hidden relative">
         <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-60"></div>
@@ -548,7 +577,7 @@ export default function WomenHealthAwareness() {
                     review="મારા વાળ બહુ ખરતા હતા અને થાક લાગતો. બે મહિનામાં એનર્જી લેવલ સારુ થયું છે. કાંચનાર ગુગ્ગલુ બહુ જ અસરકારક છે." 
                   />
                 </div>
-              </div>
+              </div>  
             </div>
         </div>
       </Section>
@@ -574,17 +603,13 @@ export default function WomenHealthAwareness() {
            </ul>
         </div>
 
-        <div className="flex justify-center my-10">
-          <Link 
-            href="/" 
-            className="bg-herbal hover:bg-herbal-dark text-white font-bold py-5 px-10 rounded-[2rem] shadow-xl transition-all hover:scale-105 active:scale-95 text-xl md:text-2xl flex items-center gap-4 border-4 border-white"
-          >
-            વજન ઘટાડવા વિશે વધુ માહિતી મેળવો
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14"></path>
-              <path d="m12 5 7 7-7 7"></path>
-            </svg>
-          </Link>
+        <div className="my-12">
+          <YouTubeCard 
+            image={images.hero} 
+            title="વજન ઘટાડવા વિશે વધુ જાણો (Weight Loss Guide)" 
+            description="આયુર્વેદિક રીતે વજન ઘટાડવા માટેની સંપૂર્ણ માહિતી અને પ્રોડક્ટ્સ વિશે જાણવા માટે અહીં ક્લિક કરો." 
+            link="/" 
+          />
         </div>
 
         <div className="bg-green-50/50 p-8 md:p-10 rounded-3xl border border-green-100 my-12">
@@ -629,7 +654,7 @@ export default function WomenHealthAwareness() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center mt-10">
             <VideoBox src={images.beautilookVideo1} />
             <div className="relative group rounded-4xl overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl hover:shadow-herbal/10 transition-all duration-700 hover:-translate-y-2 border border-white bg-white aspect-9/16">
-              <img src={images.beautilookResult1} alt="Kamna Mundra Result" className="w-full h-full object-cover" />
+              <img src={images.beautilookResult1} alt="Kamna Mundra Result" className="w-full h-full object-contain bg-stone-50" />
               <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/80 backdrop-blur-md rounded-full border border-white/20">
                 <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                 <span className="text-herbal-dark text-[10px] font-bold uppercase tracking-widest font-outfit">

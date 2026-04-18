@@ -1,9 +1,10 @@
 "use client"
 
 import Link from "next/link";
-import React from "react";
+import React, { useState, useRef } from "react";
 import SocialLinks from "@/components/sections/SocialLinks";
-import { Star, Zap, Play, MessageSquare, Clock, CheckCircle2 } from "lucide-react";
+import { Star, Zap, MessageSquare, Clock, CheckCircle2 } from "lucide-react";
+import { FaPlay } from "react-icons/fa";
 
 
 const a = "/assets/arthritis";
@@ -46,7 +47,70 @@ const img = {
   footerGif: `${a}/footerGif.gif`,
 };
 
+const arthritisResults = {
+  vid1: "/arthiritis results/WhatsApp Video 2026-04-15 at 1.50.55 PM.mp4",
+  vid2: "/arthiritis results/WhatsApp Video 2026-04-15 at 12.27.08 PM.mp4",
+  vid3: "/arthiritis results/WhatsApp Video 2026-04-15 at 12.28.48 PM.mp4",
+};
+
 /* ── Reusable UI Components (identical style to women page) ── */
+
+const VideoBox = ({ src, className = "" }: { src: string; className?: string }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  return (
+    <div className={`relative group rounded-4xl overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl hover:shadow-herbal/10 transition-all duration-700 hover:-translate-y-2 border border-white bg-black ${isLandscape ? 'aspect-video' : 'aspect-9/16'} ${className}`}>
+      <video 
+        ref={videoRef}
+        src={`${src}#t=0.001`} 
+        playsInline
+        preload="metadata"
+        className="w-full h-full object-contain"
+        onLoadedMetadata={(e) => {
+          const v = e.currentTarget;
+          if (v.videoWidth > v.videoHeight) {
+            setIsLandscape(true);
+          }
+        }}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onClick={togglePlay}
+        controls={isPlaying}
+      /> 
+      
+      {!isPlaying && (
+        <div 
+          className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-500 cursor-pointer flex items-center justify-center"
+          onClick={togglePlay}
+        >
+          <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-transform duration-500 border border-white/30">
+            <FaPlay className="ml-1 text-xl" />
+          </div>
+
+          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+            <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div>
+            <span className="text-white text-[10px] font-bold uppercase tracking-widest font-outfit">
+              Video Story
+            </span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <section className={`max-w-4xl mx-auto px-4 py-12 md:py-16 ${className}`}>
@@ -120,7 +184,7 @@ const WhatsAppButton = ({ text = "અત્યારે જ ઓર્ડર ક�
 
 export default function ArthritisPage() {
   return (
-    <main className="bg-[#FAFAF9] min-h-screen">
+    <main className="bg-[#FAFAF9] min-h-screen overflow-x-hidden">
 
       {/* ─── HERO ─── */}
       <div className="bg-white border-b border-stone-100 py-12 md:py-20 overflow-hidden relative">
@@ -807,20 +871,15 @@ export default function ArthritisPage() {
             </div>
           </div>
 
-          {/* Video Reviews Placeholder */}
+          {/* Video Reviews */}
           <div className="space-y-6">
             <Heading level={3} className="text-herbal-dark mt-0 mb-6 flex items-center gap-3">
               <Zap className="text-herbal" /> વિડિયો પ્રતિસાદ
             </Heading>
-            <div className="space-y-6">
-              {[1, 2].map((_, i) => (
-                <div key={i} className="aspect-video bg-stone-100 rounded-3xl border-2 border-dashed border-stone-200 flex flex-col items-center justify-center group cursor-pointer hover:bg-stone-200/50 transition-colors">
-                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-herbal shadow-md group-hover:scale-110 transition-transform">
-                    <Play className="w-8 h-8 fill-current" />
-                  </div>
-                  <Paragraph className="text-stone-400 text-sm mt-4 font-bold uppercase tracking-widest mb-0">Video Review Coming Soon</Paragraph>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 gap-6">
+              <VideoBox src={arthritisResults.vid1} />
+              <VideoBox src={arthritisResults.vid2} />
+              <VideoBox src={arthritisResults.vid3} />
               <div className="bg-herbal/5 border border-herbal/10 p-6 rounded-2xl text-center">
                 <Paragraph className="text-herbal-dark font-bold mb-0 italic">તમારા સફળ પરિણામો અમારી સાથે શેર કરો!</Paragraph>
               </div>

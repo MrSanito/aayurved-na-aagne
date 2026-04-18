@@ -82,7 +82,7 @@ export default function SocialLinks() {
                   <h4 className={`text-xl font-bold ${platform.textColor} uppercase tracking-tight`}>
                     {platform.name}
                   </h4>
-                  <p className="text-gray-500 font-medium">{platform.handle}</p>
+                  <p className="text-gray-500 font-medium truncate max-w-[150px] sm:max-w-none">{platform.handle}</p>
                 </div>
                 
                 {/* Visual Accent from reference image */}

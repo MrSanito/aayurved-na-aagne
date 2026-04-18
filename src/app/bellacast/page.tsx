@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   ShieldCheck, 
@@ -260,6 +261,86 @@ const products: Product[] = [
   },
 ];
 
+const resultImages = [
+  "/bellavita results/WhatsApp Image 2026-04-18 at 5.17.02 PM (1).jpeg",
+  "/bellavita results/WhatsApp Image 2026-04-18 at 5.17.02 PM (2).jpeg",
+  "/bellavita results/WhatsApp Image 2026-04-18 at 5.17.02 PM.jpeg",
+  "/bellavita results/WhatsApp Image 2026-04-18 at 5.17.03 PM.jpeg",
+  "/bellavita results/WhatsApp Image 2026-04-18 at 5.25.48 PM.jpeg",
+  "/bellavita results/WhatsApp Image 2026-04-18 at 5.25.49 PM.jpeg",
+  "/bellavita results/WhatsApp Image 2026-04-18 at 5.25.50 PM.jpeg",
+  "/bellavita results/WhatsApp Image 2026-04-18 at 5.26.43 PM.jpeg",
+];
+
+const arthritisResults = {
+  vid1: "/arthiritis results/WhatsApp Video 2026-04-15 at 1.50.55 PM.mp4",
+  vid2: "/arthiritis results/WhatsApp Video 2026-04-15 at 12.27.08 PM.mp4",
+  vid3: "/arthiritis results/WhatsApp Video 2026-04-15 at 12.28.48 PM.mp4",
+};
+
+const VideoBox = ({ src, className = "" }: { src: string; className?: string }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  return (
+    <div className={`relative group rounded-3xl overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 border border-white bg-black ${isLandscape ? 'aspect-video' : 'aspect-9/16'} ${className}`}>
+      <video 
+        ref={videoRef}
+        src={`${src}#t=0.001`} 
+        playsInline
+        preload="metadata"
+        className="w-full h-full object-contain"
+        onLoadedMetadata={(e) => {
+          const v = e.currentTarget;
+          if (v.videoWidth > v.videoHeight) {
+            setIsLandscape(true);
+          }
+        }}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onClick={togglePlay}
+        controls={isPlaying}
+      /> 
+      
+      {!isPlaying && (
+        <div 
+          className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-500 cursor-pointer flex items-center justify-center"
+          onClick={togglePlay}
+        >
+          <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-transform duration-500 border border-white/30">
+            <Zap className="ml-0.5 text-xl fill-current" />
+          </div>
+
+          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+            <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div>
+            <span className="text-white text-[10px] font-bold uppercase tracking-widest font-outfit">
+              Result Video
+            </span>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+interface SortedImage {
+  src: string;
+  isPortrait: boolean;
+}
+
+
 interface SkinType {
   name: string;
   en: string;
@@ -406,12 +487,44 @@ function ProductCard({ product }: { product: Product }) {
 export default function BellaCast() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeTab, setActiveTab] = useState("all");
+  const [sortedResults, setSortedResults] = useState<SortedImage[]>([]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slideImages.length);
     }, 5000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const mediaPromises = resultImages.map(src => {
+      return new Promise<SortedImage>((resolve) => {
+        if (src.toLowerCase().endsWith('.mp4')) {
+          const video = document.createElement('video');
+          video.src = src;
+          video.onloadedmetadata = () => {
+            resolve({ src, isPortrait: video.videoHeight > video.videoWidth });
+          };
+          video.onerror = () => resolve({ src, isPortrait: true });
+        } else {
+          const img = new Image();
+          img.src = src;
+          img.onload = () => {
+            resolve({ src, isPortrait: img.naturalHeight > img.naturalWidth });
+          };
+          img.onerror = () => resolve({ src, isPortrait: true });
+        }
+      });
+    });
+
+    Promise.all(mediaPromises).then(results => {
+      const sorted = [...results].sort((a, b) => {
+        if (a.isPortrait && !b.isPortrait) return -1;
+        if (!a.isPortrait && b.isPortrait) return 1;
+        return 0;
+      });
+      setSortedResults(sorted);
+    });
   }, []);
 
   const filteredProducts =
@@ -462,7 +575,7 @@ export default function BellaCast() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-stone-50"
                 />
               </AnimatePresence>
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -527,12 +640,12 @@ export default function BellaCast() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative h-[450px] rounded-[2.5rem] overflow-hidden shadow-xl border-8 border-white"
+              className="relative aspect-video md:h-[450px] rounded-[2.5rem] overflow-hidden shadow-xl border-8 border-white bg-stone-50"
             >
               <img
                 src="/assets/bellacast/Slide2.jpg"
                 alt="Skin Protection"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-herbal/40 to-transparent"></div>
             </motion.div>
@@ -656,9 +769,9 @@ export default function BellaCast() {
                 initial={{ opacity: 0, x: item.reverse ? 30 : -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className={`relative h-[400px] rounded-[3rem] overflow-hidden border-[10px] border-white shadow-2xl ${item.reverse ? 'lg:order-2' : ''}`}
+                className={`relative h-[300px] md:h-[400px] rounded-[3rem] overflow-hidden border-[10px] border-white shadow-2xl ${item.reverse ? 'lg:order-2' : ''}`}
               >
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+                <img src={item.img} alt={item.title} className="w-full h-full object-contain bg-stone-50 transition-transform duration-1000 hover:scale-105" />
                 <div className="absolute top-6 left-6 bg-herbal text-white px-5 py-2 rounded-full font-outfit font-black text-xs shadow-lg uppercase tracking-widest">
                   {item.badge}
                 </div>
@@ -719,9 +832,9 @@ export default function BellaCast() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white"
+              className="relative h-[350px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white"
             >
-              <img src="/assets/bellacast/Slide9.jpg" alt="Internal Factors" className="w-full h-full object-cover" />
+              <img src="/assets/bellacast/Slide9.jpg" alt="Internal Factors" className="w-full h-full object-contain bg-stone-50" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-10">
                 <p className="text-white text-xl font-bold leading-relaxed">
                   તમારા શરીરની અંદરથી કાળજી લો, <br/>અને બહાર કુદરતી નિખાર મેળવો!
@@ -749,9 +862,9 @@ export default function BellaCast() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-[550px] rounded-[3rem] overflow-hidden border-[12px] border-white shadow-2xl"
+              className="relative h-[350px] md:h-[550px] rounded-[3rem] overflow-hidden border-[12px] border-white shadow-2xl"
             >
-              <img src="/assets/bellacast/Slide10.jpg" alt="External Factors" className="w-full h-full object-cover" />
+              <img src="/assets/bellacast/Slide10.jpg" alt="External Factors" className="w-full h-full object-contain bg-stone-50" />
             </motion.div>
 
             <div className="grid grid-cols-1 gap-6">
@@ -827,9 +940,9 @@ export default function BellaCast() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative h-[650px] rounded-[4rem] overflow-hidden border-[15px] border-stone-50 shadow-2xl"
+              className="relative h-[350px] md:h-[650px] rounded-[4rem] overflow-hidden border-[15px] border-stone-50 shadow-2xl"
             >
-              <img src="/assets/bellacast/Slide11.jpg" alt="Problems" className="w-full h-full object-cover" />
+              <img src="/assets/bellacast/Slide11.jpg" alt="Problems" className="w-full h-full object-contain bg-stone-50" />
             </motion.div>
           </div>
         </div>
@@ -844,9 +957,9 @@ export default function BellaCast() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/10 group h-[500px]"
+              className="relative rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/10 group h-[300px] md:h-[500px]"
             >
-              <img src="/assets/bellacast/Slide12.jpg" alt="Brand" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              <img src="/assets/bellacast/Slide12.jpg" alt="Brand" className="w-full h-full object-contain bg-stone-50 transition-transform duration-1000 group-hover:scale-105" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-900 to-transparent p-12">
                 <h4 className="text-white font-outfit font-black text-4xl tracking-tight leading-none">
                   PURE RESULTS <br/><span className="text-gold">GUARANTEED</span>
@@ -940,7 +1053,7 @@ export default function BellaCast() {
                 </div>
              </div>
              <div className="relative h-80 rounded-[2rem] overflow-hidden">
-                <img src="/assets/bellacast/Slide13.jpg" className="w-full h-full object-cover" />
+                <img src="/assets/bellacast/Slide13.jpg" className="w-full h-full object-contain bg-stone-50" />
              </div>
           </div>
         </div>
@@ -961,7 +1074,7 @@ export default function BellaCast() {
               viewport={{ once: true }}
               className="relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl"
             >
-              <img src="/assets/bellacast/Slide15.jpg" alt="CTM" className="w-full h-full object-cover" />
+              <img src="/assets/bellacast/Slide15.jpg" alt="CTM" className="w-full h-full object-contain bg-stone-50" />
               <div className="absolute inset-0 bg-black/20"></div>
             </motion.div>
 
@@ -1038,7 +1151,7 @@ export default function BellaCast() {
               viewport={{ once: true }}
               className="relative rounded-[5rem] overflow-hidden border-[20px] border-white shadow-2xl h-[600px]"
             >
-              <img src="/assets/bellacast/Slide16.jpg" alt="Sunscreen" className="w-full h-full object-cover" />
+              <img src="/assets/bellacast/Slide16.jpg" alt="Sunscreen" className="w-full h-full object-contain bg-stone-50" />
               <div className="absolute top-10 right-10 w-24 h-24 bg-white/40 backdrop-blur-xl rounded-full flex flex-col items-center justify-center border border-white/40 p-2 text-center animate-pulse">
                 <span className="text-herbal font-black text-xl">SPF 50+</span>
                 <span className="text-[10px] text-stone-900 font-bold uppercase">Safe Guard</span>
@@ -1066,12 +1179,13 @@ export default function BellaCast() {
             className="max-w-5xl mx-auto mb-16"
           >
             <div className="relative rounded-[3rem] overflow-hidden border-[12px] border-stone-50 shadow-2xl mb-16 h-80">
-              <img src="/assets/bellacast/Slide14.jpg" className="w-full h-full object-cover" />
+              <img src="/assets/bellacast/Slide14.jpg" className="w-full h-full object-contain bg-stone-50" />
               <div className="absolute inset-0 bg-herbal/10"></div>
             </div>
 
-            <div className="overflow-hidden rounded-[3rem] border border-stone-100 shadow-2xl shadow-stone-200/50">
-              <table className="w-full text-left">
+            <div className="overflow-x-auto rounded-[3rem] border border-stone-100 shadow-2xl shadow-stone-200/50">
+              <div className="min-w-[800px] md:min-w-full">
+                <table className="w-full text-left">
                 <thead>
                   <tr className="bg-stone-900 text-white">
                     <th className="p-10 text-lg font-black font-outfit uppercase tracking-widest">વિશેષતા</th>
@@ -1107,6 +1221,7 @@ export default function BellaCast() {
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
           </motion.div>
 
@@ -1124,7 +1239,66 @@ export default function BellaCast() {
         </div>
       </section>
 
+      {/* ===== ACTUAL RESULTS GALLERY ===== */}
+      <section className="py-24 bg-stone-50 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <SectionHeader 
+            subtitle="Real Benefits" 
+            title={<span>વાસ્તવિક પરિણામો: <span className="text-stone-400">અમારા ખુશ ગ્રાહકો</span></span>} 
+          />
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            {(sortedResults.length > 0 ? sortedResults : resultImages.map(src => ({ src, isPortrait: true }))).map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className={`relative rounded-3xl overflow-hidden shadow-lg border-4 border-white group bg-white ${
+                  item.isPortrait ? 'aspect-[9/16]' : 'aspect-video md:col-span-2'
+                }`}
+              >
+                {item.src.toLowerCase().endsWith('.mp4') ? (
+                  <video 
+                    src={item.src} 
+                    className="w-full h-full object-contain"
+                    playsInline
+                    muted
+                    loop
+                    onMouseEnter={(e) => e.currentTarget.play()}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.pause();
+                      e.currentTarget.currentTime = 0;
+                    }}
+                  />
+                ) : (
+                  <img 
+                    src={item.src} 
+                    alt={`Result ${i + 1}`} 
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" 
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-16 bg-white p-8 rounded-[3rem] border border-stone-100 shadow-xl text-center">
+             <div className="flex justify-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 text-gold fill-gold" />
+                ))}
+             </div>
+             <p className="text-stone-900 text-xl font-bold">હજારો લોકોનો અતૂટ વિશ્વાસ અને શ્રેષ્ઠ અનુભવ!</p>
+             <p className="text-stone-500 mt-2">ગ્રાહકોના સંતોષકારક પરિણામો જ અમારી પર્સનલ કેરની અસલી ઓળખ છે.</p>
+          </div>
+        </div>
+      </section>
+
       {/* ===== REVIEWS SECTION ===== */}
+
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[120px] -translate-y-1/2"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -1174,31 +1348,15 @@ export default function BellaCast() {
               </div>
             </div>
 
-            {/* Video Reviews Placeholder */}
+            {/* Video Reviews */}
             <div className="space-y-6">
               <h3 className="text-2xl font-black text-stone-900 mb-8 flex items-center gap-3">
-                <Zap className="text-herbal" /> વિડિયો પ્રતિસાદ
+                <Zap className="text-herbal" /> વિડિયો પ્રતિસાદ (Arthritis Results)
               </h3>
-              <div className="grid gap-6">
-                {[1, 2].map((_, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="relative aspect-video rounded-[2.5rem] bg-stone-100 border-2 border-dashed border-stone-200 flex flex-col items-center justify-center group overflow-hidden"
-                  >
-                    <div className="w-20 h-20 rounded-full bg-white/80 shadow-xl flex items-center justify-center text-herbal group-hover:scale-110 transition-transform duration-500 z-10">
-                      <ChevronRight className="w-10 h-10 fill-current" />
-                    </div>
-                    <div className="mt-4 text-center z-10">
-                      <p className="text-stone-400 font-bold uppercase tracking-widest text-xs">Video Review Placeholder</p>
-                      <p className="text-stone-300 text-[10px] mt-1 italic">Coming Soon - Real Results Shared by Real People</p>
-                    </div>
-                    {/* Abstract background for placeholder */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-herbal/5 to-gold/5 group-hover:opacity-100 transition-opacity"></div>
-                  </motion.div>
-                ))}
+              <div className="grid grid-cols-2 gap-6">
+                <VideoBox src={arthritisResults.vid1} />
+                <VideoBox src={arthritisResults.vid2} />
+                <VideoBox src={arthritisResults.vid3} />
                 
                 <div className="bg-stone-900 p-8 rounded-[2rem] text-center text-white">
                   <p className="text-gold font-black mb-2 uppercase tracking-widest text-xs">Join our community</p>

@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="gu" data-theme="light" className={`${anekGujarati.variable} ${outfit.variable}`}>
       <body
-        className="font-body bg-white text-gray-800"
+        className="font-body bg-white text-gray-800 overflow-x-hidden"
       >
         <JsonLd />
         <Navbar />
