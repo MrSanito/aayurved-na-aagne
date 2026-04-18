@@ -26,7 +26,22 @@ import {
   Minus
 } from "lucide-react";
 
-const products = [
+interface Product {
+  id: number;
+  name: string;
+  subtitle: string;
+  img: string;
+  tagline: string;
+  intro: string;
+  why: string;
+  whyPoints: string[];
+  benefits: string[];
+  howToUse: string;
+  badge: string;
+  category: string;
+}
+
+const products: Product[] = [
   {
     id: 1,
     name: "BellaCast Sunscreen Gel",
@@ -245,7 +260,16 @@ const products = [
   },
 ];
 
-const skinTypes = [
+interface SkinType {
+  name: string;
+  en: string;
+  desc: string;
+  icon: string;
+  color: string;
+  border: string;
+}
+
+const skinTypes: SkinType[] = [
   { name: "સામાન્ય ત્વચા", en: "Normal Skin", desc: "જે બહુ તેલી પણ નથી અને બહુ સૂકી પણ નથી.", icon: "✨", color: "from-blue-50 to-indigo-50", border: "border-blue-100" },
   { name: "તૈલી ત્વચા", en: "Oily Skin", desc: "જેમાં ચહેરા પર સતત ચીકાશ અને તેલ જોવા મળે છે.", icon: "💧", color: "from-yellow-50 to-amber-50", border: "border-yellow-100" },
   { name: "સૂકી ત્વચા", en: "Dry Skin", desc: "જે વારંવાર ખેંચાયેલી અને સૂકી લાગે છે.", icon: "🌿", color: "from-green-50 to-emerald-50", border: "border-green-100" },
@@ -291,7 +315,7 @@ function SectionHeader({ subtitle, title, dark = false }: { subtitle: string; ti
   );
 }
 
-function ProductCard({ product }: { product: any }) {
+function ProductCard({ product }: { product: Product }) {
   const [expanded, setExpanded] = useState(false);
   return (
     <motion.div 
@@ -331,7 +355,7 @@ function ProductCard({ product }: { product: any }) {
                 <Target className="w-4 h-4" /> {product.why}
               </h4>
               <ul className="grid grid-cols-1 gap-2">
-                {product.whyPoints.map((p, i) => (
+                {product.whyPoints.map((p: string, i: number) => (
                   <li key={i} className="flex gap-3 text-xs text-stone-600 leading-relaxed">
                     <CheckCircle2 className="w-3.5 h-3.5 text-herbal mt-0.5 flex-shrink-0" />
                     <span>{p}</span>
@@ -345,7 +369,7 @@ function ProductCard({ product }: { product: any }) {
                 <Sparkles className="w-4 h-4" /> મુખ્ય ફાયદાઓ:
               </h4>
               <ul className="grid grid-cols-1 gap-2">
-                {product.benefits.map((b, i) => (
+                {product.benefits.map((b: string, i: number) => (
                   <li key={i} className="flex gap-3 text-xs text-stone-600 leading-relaxed">
                     <Star className="w-3.5 h-3.5 text-gold mt-0.5 flex-shrink-0 fill-gold" />
                     <span>{b}</span>
@@ -893,7 +917,7 @@ export default function BellaCast() {
             className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10"
           >
             <AnimatePresence mode="popLayout">
-              {filteredProducts.map((product) => (
+              {filteredProducts.map((product: Product) => (
                 <motion.div
                   key={product.id}
                   initial={{ opacity: 0, scale: 0.9 }}
