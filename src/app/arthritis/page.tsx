@@ -72,7 +72,7 @@ const VideoBox = ({ src, className = "" }: { src: string; className?: string }) 
   };
 
   return (
-    <div className={`relative group rounded-4xl overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl hover:shadow-herbal/10 transition-all duration-700 hover:-translate-y-2 border border-white bg-black ${isLandscape ? 'aspect-video' : 'aspect-9/16'} ${className}`}>
+    <div className={`relative group rounded-3xl overflow-hidden shadow-xl shadow-stone-200/50 hover:shadow-2xl transition-all duration-700 hover:-translate-y-2 border border-white bg-black ${isLandscape ? 'aspect-video' : 'aspect-9/16'} ${className}`}>
       <video 
         ref={videoRef}
         src={`${src}#t=0.001`} 
@@ -93,21 +93,26 @@ const VideoBox = ({ src, className = "" }: { src: string; className?: string }) 
       
       {!isPlaying && (
         <div 
-          className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-500 cursor-pointer flex items-center justify-center"
+          className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 group-hover:bg-black/10 transition-all duration-500 cursor-pointer flex items-center justify-center"
           onClick={togglePlay}
         >
-          <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-transform duration-500 border border-white/30">
+          <div className="w-16 h-16 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-all duration-500 border border-white/40 shadow-2xl">
             <FaPlay className="ml-1 text-xl" />
           </div>
-
-          <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-            <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div>
-            <span className="text-white text-[10px] font-bold uppercase tracking-widest font-outfit">
-              Video Story
-            </span>
+          <div className="absolute bottom-6 left-6 right-6 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+            <p className="font-outfit font-black text-xs uppercase tracking-[0.2em] mb-1 drop-shadow-lg">Patient Review</p>
+            <div className="h-1 w-12 bg-herbal rounded-full shadow-[0_0_15px_rgba(34,197,94,0.5)]"></div>
           </div>
         </div>
       )}
+
+      {/* Premium Badge */}
+      <div className="absolute top-4 left-4 z-10">
+        <div className="bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+          <span className="text-[10px] font-black text-white uppercase tracking-widest">Aayurved Results</span>
+        </div>
+      </div>
     </div>
   );
 };
@@ -876,12 +881,15 @@ export default function ArthritisPage() {
             <Heading level={3} className="text-herbal-dark mt-0 mb-6 flex items-center gap-3">
               <Zap className="text-herbal" /> વિડિયો પ્રતિસાદ
             </Heading>
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
               <VideoBox src={arthritisResults.vid1} />
               <VideoBox src={arthritisResults.vid2} />
               <VideoBox src={arthritisResults.vid3} />
-              <div className="bg-herbal/5 border border-herbal/10 p-6 rounded-2xl text-center">
-                <Paragraph className="text-herbal-dark font-bold mb-0 italic">તમારા સફળ પરિણામો અમારી સાથે શેર કરો!</Paragraph>
+              <div className="bg-herbal/5 border border-herbal/10 p-4 md:p-6 rounded-3xl flex flex-col items-center justify-center text-center aspect-9/16">
+                <div className="w-12 h-12 rounded-full bg-herbal/10 flex items-center justify-center text-herbal mb-4">
+                  <MessageSquare size={24} />
+                </div>
+                <Paragraph className="text-herbal-dark font-black mb-0 italic text-xs md:text-sm">તમારા સફળ પરિણામો અમારી સાથે શેર કરો!</Paragraph>
               </div>
             </div>
           </div>

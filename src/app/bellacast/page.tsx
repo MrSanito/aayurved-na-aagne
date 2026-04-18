@@ -272,11 +272,6 @@ const resultImages = [
   "/bellavita results/WhatsApp Image 2026-04-18 at 5.26.43 PM.jpeg",
 ];
 
-const arthritisResults = {
-  vid1: "/arthiritis results/WhatsApp Video 2026-04-15 at 1.50.55 PM.mp4",
-  vid2: "/arthiritis results/WhatsApp Video 2026-04-15 at 12.27.08 PM.mp4",
-  vid3: "/arthiritis results/WhatsApp Video 2026-04-15 at 12.28.48 PM.mp4",
-};
 
 const VideoBox = ({ src, className = "" }: { src: string; className?: string }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -1348,25 +1343,6 @@ export default function BellaCast() {
               </div>
             </div>
 
-            {/* Video Reviews */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-black text-stone-900 mb-8 flex items-center gap-3">
-                <Zap className="text-herbal" /> વિડિયો પ્રતિસાદ (Arthritis Results)
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                <VideoBox src={arthritisResults.vid1} />
-                <VideoBox src={arthritisResults.vid2} />
-                <VideoBox src={arthritisResults.vid3} />
-                
-                <div className="bg-stone-900 p-8 rounded-[2rem] text-center text-white">
-                  <p className="text-gold font-black mb-2 uppercase tracking-widest text-xs">Join our community</p>
-                  <p className="font-bold text-lg mb-4">તમતારો અનુભવ અમારી સાથે શેર કરો!</p>
-                  <button className="bg-white text-stone-950 font-black px-8 py-3 rounded-full text-xs uppercase tracking-widest hover:bg-gold transition-colors">
-                    અમારો સંપર્ક કરો
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
