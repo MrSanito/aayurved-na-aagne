@@ -3,6 +3,8 @@
 import Link from "next/link";
 import React from "react";
 import SocialLinks from "@/components/sections/SocialLinks";
+import { Star, Zap, Play, MessageSquare, Clock, CheckCircle2 } from "lucide-react";
+
 
 const a = "/assets/arthritis";
 const img = {
@@ -760,6 +762,70 @@ export default function ArthritisPage() {
 
         <div className="mt-8 text-center">
           <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full md:w-auto mx-auto" />
+        </div>
+      </Section>
+
+      {/* ─── REVIEWS SECTION ─── */}
+      <Section className="bg-stone-50 rounded-[3rem] px-6 py-12 md:p-16 border border-stone-200 mt-12 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-60"></div>
+        <Heading level={2} className="text-center text-herbal mb-12">ગ્રાહકોનો પ્રતિસાદ (Customer Reviews)</Heading>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Written Reviews */}
+          <div className="space-y-6">
+            <Heading level={3} className="text-herbal-dark mt-0 mb-6 flex items-center gap-3">
+              <MessageSquare className="text-herbal" /> લેખિત પ્રતિસાદ
+            </Heading>
+            <div className="grid gap-4">
+              {[
+                { name: "રતિલાલ શાહ", text: "વર્ષોથી ઘૂંટણનો દુખાવો હતો, ઓર્થો ઓઈલ અને ટેબ્લેટથી હવે ચાલવામાં ઘણી રાહત છે.", rating: 5, date: "૨ અઠવાડિયા પહેલા" },
+                { name: "જે. પી. પટેલ", text: "આયુર્વેદિક કીટ વાપરવા જેવી છે. કોઈ આડઅસર વગર દુખાવો ઓછો થાય છે.", rating: 5, date: "૧ મહિના પહેલા" },
+                { name: "વસંતીબેન", text: "કાઈશોર ગૂગળ અને કેલ્શિયમ ટેબ્લેટથી મારા સાંધાની જકડન ઓછી થઈ ગઈ છે. ખૂબ સારો અનુભવ.", rating: 5, date: "૩ અઠવાડિયા પહેલા" },
+                { name: "મુકેશભાઈ", text: "યુરિક એસિડ વધી ગયું હતું, પણ બેલાકાસ્ટની સલાહ મુજબ સારવાર લેવાથી હવે સ્ટેબલ છે.", rating: 4, date: "૫ દિવસ પહેલા" },
+
+              ].map((rev, i) => (
+                <div key={i} className="bg-white p-6 rounded-2xl border border-stone-100 shadow-sm">
+                  <div className="flex justify-between items-start mb-3">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className={`w-4 h-4 ${i < rev.rating ? "text-amber-400 fill-amber-400" : "text-stone-200"}`} />
+                      ))}
+                    </div>
+                    <span className="text-[10px] font-bold text-stone-300 uppercase tracking-widest flex items-center gap-1">
+                      <Clock className="w-3 h-3" /> {rev.date}
+                    </span>
+                  </div>
+                  <Paragraph className="text-stone-700 italic text-base md:text-lg mb-4">"{rev.text}"</Paragraph>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-herbal/10 flex items-center justify-center text-herbal font-bold text-xs">
+                      {rev.name[0]}
+                    </div>
+                    <span className="font-bold text-stone-900">{rev.name}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Video Reviews Placeholder */}
+          <div className="space-y-6">
+            <Heading level={3} className="text-herbal-dark mt-0 mb-6 flex items-center gap-3">
+              <Zap className="text-herbal" /> વિડિયો પ્રતિસાદ
+            </Heading>
+            <div className="space-y-6">
+              {[1, 2].map((_, i) => (
+                <div key={i} className="aspect-video bg-stone-100 rounded-3xl border-2 border-dashed border-stone-200 flex flex-col items-center justify-center group cursor-pointer hover:bg-stone-200/50 transition-colors">
+                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-herbal shadow-md group-hover:scale-110 transition-transform">
+                    <Play className="w-8 h-8 fill-current" />
+                  </div>
+                  <Paragraph className="text-stone-400 text-sm mt-4 font-bold uppercase tracking-widest mb-0">Video Review Coming Soon</Paragraph>
+                </div>
+              ))}
+              <div className="bg-herbal/5 border border-herbal/10 p-6 rounded-2xl text-center">
+                <Paragraph className="text-herbal-dark font-bold mb-0 italic">તમારા સફળ પરિણામો અમારી સાથે શેર કરો!</Paragraph>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
