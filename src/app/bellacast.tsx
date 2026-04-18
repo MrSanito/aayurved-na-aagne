@@ -267,7 +267,7 @@ const slideImages = [
   "/assets/bellacast/Slide3.jpg",
 ];
 
-function SectionHeader({ subtitle, title, dark = false }) {
+function SectionHeader({ subtitle, title, dark = false }: { subtitle: string; title: React.ReactNode; dark?: boolean }) {
   return (
     <div className="space-y-4 mb-12 sm:mb-16">
       <motion.span 
@@ -291,7 +291,7 @@ function SectionHeader({ subtitle, title, dark = false }) {
   );
 }
 
-function ProductCard({ product }) {
+function ProductCard({ product }: { product: any }) {
   const [expanded, setExpanded] = useState(false);
   return (
     <motion.div 

@@ -267,7 +267,7 @@ const slideImages = [
   "/assets/bellacast/Slide3.jpg",
 ];
 
-function SectionHeader({ subtitle, title, dark = false }) {
+function SectionHeader({ subtitle, title, dark = false }: { subtitle: string; title: React.ReactNode; dark?: boolean }) {
   return (
     <div className="space-y-4 mb-12 sm:mb-16">
       <motion.span 
@@ -291,7 +291,7 @@ function SectionHeader({ subtitle, title, dark = false }) {
   );
 }
 
-function ProductCard({ product }) {
+function ProductCard({ product }: { product: any }) {
   const [expanded, setExpanded] = useState(false);
   return (
     <motion.div 
@@ -398,77 +398,94 @@ export default function BellaCast() {
   return (
     <div className="min-h-screen bg-white">
       {/* ===== HERO SECTION ===== */}
-      <section className="relative min-h-[90vh] flex items-center pt-10 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,111,78,0.05),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(201,162,39,0.05),transparent_50%)]"></div>
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      <section className="relative pt-12 md:pt-20 pb-20 overflow-hidden bg-white border-b border-stone-100">
+        {/* Background Blurs like Arthritis page */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-herbal/5 rounded-full blur-3xl -mr-48 -mt-48 opacity-60"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -ml-48 -mb-48 opacity-60"></div>
+        
+        <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <motion.div 
-            initial={{ opacity: 0, x: -30 }} 
-            animate={{ opacity: 1, x: 0 }} 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
             className="space-y-8"
           >
-            <div className="inline-flex items-center gap-2 bg-herbal/5 border border-herbal/10 px-4 py-2 rounded-full">
+            {/* Top Badge */}
+            <div className="inline-flex items-center gap-2 bg-herbal/5 border border-herbal/10 px-5 py-2.5 rounded-full">
               <Leaf className="w-4 h-4 text-herbal" />
-              <span className="text-herbal font-outfit font-bold text-xs tracking-widest uppercase">100% Natural • GMP Certified</span>
+              <span className="text-herbal font-outfit font-bold text-[10px] md:text-xs tracking-widest uppercase">100% Natural • GMP Certified</span>
             </div>
             
+            {/* Main Titles */}
             <div className="space-y-4">
-              <h1 className="text-5xl sm:text-7xl font-black text-stone-900 leading-[1.1] font-heading">
-                બેલાકાસ્ટ <br/><span className="text-herbal italic">પર્સનલ કેર</span>
+              <h1 className="text-5xl sm:text-7xl font-black text-stone-900 leading-tight font-heading">
+                બેલાકાસ્ટ <span className="text-herbal italic">પર્સનલ કેર</span>
               </h1>
-              <p className="text-2xl text-gold font-bold font-outfit">કુદરતનો સાથ, તમારી સુંદરતાનો વિશ્વાસ</p>
+              <p className="text-xl md:text-3xl text-gold font-bold font-outfit">કુદરતનો સાથ, તમારી સુંદરતાનો વિશ્વાસ</p>
             </div>
 
-            <p className="text-stone-500 text-lg md:text-xl leading-relaxed max-w-xl">
+            {/* Slider - Centered and Enlarged */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }} 
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="relative max-w-3xl mx-auto aspect-[16/10] md:aspect-[16/9] rounded-[3rem] overflow-hidden shadow-2xl border-[8px] md:border-[12px] border-white group my-12"
+            >
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeSlide}
+                  src={slideImages[activeSlide]}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="w-full h-full object-cover"
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              
+              <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-20">
+                {slideImages.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveSlide(i)}
+                    className={`h-2 transition-all duration-300 rounded-full ${i === activeSlide ? "w-10 bg-white" : "w-2 bg-white/40 hover:bg-white/60"}`}
+                  />
+                ))}
+              </div>
+              
+              {/* Navigation Arrows */}
+              <button 
+                onClick={() => setActiveSlide((prev) => (prev - 1 + slideImages.length) % slideImages.length)}
+                className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-white/20"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button 
+                onClick={() => setActiveSlide((prev) => (prev + 1) % slideImages.length)}
+                className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all hover:bg-white/20"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </motion.div>
+
+            {/* Paragraph Text */}
+            <p className="text-stone-700 text-lg md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto">
               બેલાકાસ્ટ પર્સનલ કેર લાવ્યું છે ખાસ તમારી ત્વચા માટે શુદ્ધ અને અસરકારક પ્રોડક્ટ્સ. અમે માનીએ છીએ કે સાચી સુંદરતા કુદરતી પોષણમાં જ છુપાયેલી છે.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            {/* Bottom Badges */}
+            <div className="flex flex-wrap justify-center gap-4 pt-6">
               {[
                 { icon: <Droplets className="w-5 h-5" />, text: "કુદરતી પોષણ" },
                 { icon: <Sparkles className="w-5 h-5" />, text: "ગ્લોઈંગ સ્કીન" },
                 { icon: <ShieldCheck className="w-5 h-5" />, text: "કેમિકલ મુક્ત" },
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 bg-stone-50 border border-stone-100 px-6 py-4 rounded-2xl">
+                <div key={i} className="flex items-center gap-3 bg-stone-50 border border-stone-100 px-6 py-4 rounded-2xl hover:bg-white hover:shadow-md transition-all">
                   <div className="text-herbal">{item.icon}</div>
-                  <span className="text-stone-900 font-bold text-sm">{item.text}</span>
+                  <span className="text-stone-900 font-extrabold text-sm">{item.text}</span>
                 </div>
               ))}
             </div>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }} 
-            animate={{ opacity: 1, scale: 1 }}
-            className="relative"
-          >
-            <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white group">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={activeSlide}
-                  src={slideImages[activeSlide]}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
-                  className="w-full h-full object-cover"
-                />
-              </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              
-              <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3">
-                {slideImages.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveSlide(i)}
-                    className={`h-2 transition-all duration-300 rounded-full ${i === activeSlide ? "w-8 bg-white" : "w-2 bg-white/40 hover:bg-white/60"}`}
-                  />
-                ))}
-              </div>
-            </div>
-            
-            {/* Decors */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/10 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-herbal/10 rounded-full blur-3xl -z-10"></div>
           </motion.div>
         </div>
       </section>
