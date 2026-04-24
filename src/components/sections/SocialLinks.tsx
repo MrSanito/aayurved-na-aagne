@@ -13,8 +13,8 @@ const socialPlatforms = [
   },
   {
     name: "Instagram",
-    handle: "@aayurvedna_aangne_weightloss",
-    link: "https://www.instagram.com/aayurvedna_aangne_weightloss?igsh=MTR5bnVqZWY4NTRsZg==",
+    handle: "@aayurvedna_aangne_results",
+    link: "https://www.instagram.com/aayurvedna_aangne_results",
     icon: <Instagram size={32} className="text-white" />,
     color: "#E4405F",
     bgColor: "bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF]",

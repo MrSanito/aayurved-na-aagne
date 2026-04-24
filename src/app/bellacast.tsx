@@ -1218,7 +1218,7 @@ export default function BellaCast() {
 
             <div className="pt-12 border-t border-white/5 flex flex-col items-center gap-6">
                <div className="flex gap-8 text-white/30 text-xs font-outfit font-black uppercase tracking-widest">
-                  <a href="#" className="hover:text-herbal transition-colors">Instagram</a>
+                  <a href="https://www.instagram.com/aayurvedna_aangne_results" target="_blank" rel="noopener noreferrer" className="hover:text-herbal transition-colors">Instagram</a>
                   <a href="#" className="hover:text-herbal transition-colors">Facebook</a>
                   <a href="#" className="hover:text-herbal transition-colors">WhatsApp</a>
                </div>

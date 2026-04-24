@@ -2,6 +2,7 @@
 
 import BmiCalculator from "@/components/BmiCalculator";
 import JourneyTimeline from "./JourneyTimeline";
+import { FaWhatsapp } from "react-icons/fa";
 
 // ─── Reusable image component ────────────────────────────────────────────────
 function BlogImage({ src, alt = "", linkHref, className = "max-w-md" }: { src: string, alt?: string, linkHref?: string, className?: string }) {
@@ -223,11 +224,10 @@ export default function BlogContent() {
             </p>
             <a href={ORDER_LINK} target="_blank" rel="noreferrer" className="inline-block group relative">
               <div className="absolute -inset-4 bg-gold/10 rounded-full blur-2xl group-hover:bg-gold/20 transition-all duration-500"></div>
-              <img
-                src="/images/blog/orderBtn.jpg"
-                alt="Order Now"
-                className="max-w-[320px] w-full mx-auto rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105 group-active:scale-95 relative z-10"
-              />
+              <div className="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-2xl shadow-lg transition-all duration-300 transform group-hover:scale-105 flex items-center gap-3 font-bold text-xl relative z-10">
+                <FaWhatsapp size={24} />
+                અત્યારે જ ઓર્ડર કરો
+              </div>
             </a>
           </div>
 
@@ -276,11 +276,10 @@ export default function BlogContent() {
             <div className="text-center">
               <a href={ORDER_LINK} target="_blank" rel="noreferrer" className="inline-block group relative">
                 <div className="absolute -inset-4 bg-herbal/10 rounded-full blur-2xl group-hover:bg-herbal/20 transition-all duration-500"></div>
-                <img
-                  src="/images/blog/orderBtn.jpg"
-                  alt="Order Now"
-                  className="max-w-[320px] w-full mx-auto rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105 group-active:scale-95 relative z-10"
-                />
+                <div className="bg-[#25D366] hover:bg-[#128C7E] text-white px-8 py-4 rounded-2xl shadow-lg transition-all duration-300 transform group-hover:scale-105 flex items-center gap-3 font-bold text-xl relative z-10">
+                  <FaWhatsapp size={24} />
+                  અત્યારે જ ઓર્ડર કરો
+                </div>
               </a>
             </div>
           </div>

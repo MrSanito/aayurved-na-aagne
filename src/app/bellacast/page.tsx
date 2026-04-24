@@ -26,6 +26,7 @@ import {
   Plus,
   Minus
 } from "lucide-react";
+import { FaPlay } from "react-icons/fa";
 
 interface Product {
   id: number;
@@ -262,6 +263,11 @@ const products: Product[] = [
 ];
 
 const resultImages = [
+  "/bellavita results/WhatsApp Video 2026-04-19 at 7.50.15 PM.mp4",
+  "/bellavita results/WhatsApp Video 2026-04-19 at 7.50.18 PM.mp4",
+  "/bellavita results/WhatsApp Video 2026-04-19 at 7.50.19 PM.mp4",
+  "/bellavita results/WhatsApp Video 2026-04-19 at 7.50.21 PM.mp4",
+  "/bellavita results/WhatsApp Video 2026-04-19 at 7.50.23 PM.mp4",
   "/bellavita results/WhatsApp Image 2026-04-18 at 5.17.02 PM (1).jpeg",
   "/bellavita results/WhatsApp Image 2026-04-18 at 5.17.02 PM (2).jpeg",
   "/bellavita results/WhatsApp Image 2026-04-18 at 5.17.02 PM.jpeg",
@@ -271,6 +277,20 @@ const resultImages = [
   "/bellavita results/WhatsApp Image 2026-04-18 at 5.25.50 PM.jpeg",
   "/bellavita results/WhatsApp Image 2026-04-18 at 5.26.43 PM.jpeg",
 ];
+
+const WhatsAppButton = ({ text = "અત્યારે જ ઓર્ડર કરો", className = "", href }: { text?: string; className?: string; href?: string }) => (
+  <Link
+    href={href || "https://wa.me/919687105624?text=હું+પર્સનલ+કેર+પ્રોડક્ટ+વિશે+વધુ+જાણવા+માગું+છું"}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 px-6 rounded-2xl shadow-lg transition-all hover:scale-[1.05] active:scale-95 ${className}`}
+  >
+    <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    {text}
+  </Link>
+);
 
 
 const VideoBox = ({ src, className = "" }: { src: string; className?: string }) => {
@@ -305,6 +325,7 @@ const VideoBox = ({ src, className = "" }: { src: string; className?: string }) 
         }}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
         onClick={togglePlay}
         controls={isPlaying}
       /> 
@@ -315,13 +336,13 @@ const VideoBox = ({ src, className = "" }: { src: string; className?: string }) 
           onClick={togglePlay}
         >
           <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white scale-90 group-hover:scale-100 transition-transform duration-500 border border-white/30">
-            <Zap className="ml-0.5 text-xl fill-current" />
+            <FaPlay className="ml-1 text-xl" />
           </div>
 
           <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
             <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div>
             <span className="text-white text-[10px] font-bold uppercase tracking-widest font-outfit">
-              Result Video
+              Success Story
             </span>
           </div>
         </div>
@@ -402,7 +423,7 @@ function ProductCard({ product }: { product: Product }) {
         <motion.img
           src={product.img}
           alt={product.name}
-          className="object-contain h-full w-full p-8 transition-transform duration-700 group-hover:scale-110"
+          className="object-contain h-full w-full px-10 py-16 transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute top-6 left-6">
           <span className="bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-outfit font-black text-herbal shadow-sm border border-herbal/10">
@@ -766,7 +787,7 @@ export default function BellaCast() {
                 viewport={{ once: true }}
                 className={`relative h-[300px] md:h-[400px] rounded-[3rem] overflow-hidden border-[10px] border-white shadow-2xl ${item.reverse ? 'lg:order-2' : ''}`}
               >
-                <img src={item.img} alt={item.title} className="w-full h-full object-contain bg-stone-50 transition-transform duration-1000 hover:scale-105" />
+                <img src={item.img} alt={item.title} className="w-full h-full object-contain p-8 md:p-12 bg-stone-50 transition-transform duration-1000 hover:scale-105" />
                 <div className="absolute top-6 left-6 bg-herbal text-white px-5 py-2 rounded-full font-outfit font-black text-xs shadow-lg uppercase tracking-widest">
                   {item.badge}
                 </div>
@@ -829,7 +850,7 @@ export default function BellaCast() {
               viewport={{ once: true }}
               className="relative h-[350px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white"
             >
-              <img src="/assets/bellacast/Slide9.jpg" alt="Internal Factors" className="w-full h-full object-contain bg-stone-50" />
+              <img src="/assets/bellacast/Slide9.jpg" alt="Internal Factors" className="w-full h-full object-contain p-8 md:p-16 bg-stone-50" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-10">
                 <p className="text-white text-xl font-bold leading-relaxed">
                   તમારા શરીરની અંદરથી કાળજી લો, <br/>અને બહાર કુદરતી નિખાર મેળવો!
@@ -954,7 +975,7 @@ export default function BellaCast() {
               viewport={{ once: true }}
               className="relative rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/10 group h-[300px] md:h-[500px]"
             >
-              <img src="/assets/bellacast/Slide12.jpg" alt="Brand" className="w-full h-full object-contain bg-stone-50 transition-transform duration-1000 group-hover:scale-105" />
+              <img src="/assets/bellacast/Slide12.jpg" alt="Brand" className="w-full h-full object-contain p-8 md:p-16 bg-stone-50 transition-transform duration-1000 group-hover:scale-105" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-900 to-transparent p-12">
                 <h4 className="text-white font-outfit font-black text-4xl tracking-tight leading-none">
                   PURE RESULTS <br/><span className="text-gold">GUARANTEED</span>
@@ -1047,8 +1068,8 @@ export default function BellaCast() {
                   <p className="text-herbal font-bold italic">"આજે જ તમારા સ્કીનકેર રૂટિનમાં બેલાકાસ્ટનો સમાવેશ કરો અને અનુભવો કુદરતી બદલાવ!"</p>
                 </div>
              </div>
-             <div className="relative h-80 rounded-[2rem] overflow-hidden">
-                <img src="/assets/bellacast/Slide13.jpg" className="w-full h-full object-contain bg-stone-50" />
+             <div className="relative">
+                <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full py-6 text-xl" />
              </div>
           </div>
         </div>
@@ -1146,7 +1167,7 @@ export default function BellaCast() {
               viewport={{ once: true }}
               className="relative rounded-[5rem] overflow-hidden border-[20px] border-white shadow-2xl h-[600px]"
             >
-              <img src="/assets/bellacast/Slide16.jpg" alt="Sunscreen" className="w-full h-full object-contain bg-stone-50" />
+              <img src="/assets/bellacast/Slide16.jpg" alt="Sunscreen" className="w-full h-full object-contain p-8 md:p-16 bg-stone-50" />
               <div className="absolute top-10 right-10 w-24 h-24 bg-white/40 backdrop-blur-xl rounded-full flex flex-col items-center justify-center border border-white/40 p-2 text-center animate-pulse">
                 <span className="text-herbal font-black text-xl">SPF 50+</span>
                 <span className="text-[10px] text-stone-900 font-bold uppercase">Safe Guard</span>
@@ -1173,27 +1194,26 @@ export default function BellaCast() {
             viewport={{ once: true }}
             className="max-w-5xl mx-auto mb-16"
           >
-            <div className="relative rounded-[3rem] overflow-hidden border-[12px] border-stone-50 shadow-2xl mb-16 h-80">
-              <img src="/assets/bellacast/Slide14.jpg" className="w-full h-full object-contain bg-stone-50" />
-              <div className="absolute inset-0 bg-herbal/10"></div>
+            <div className="relative">
+               <WhatsAppButton text="અત્યારે જ ઓર્ડર કરો" className="w-full py-6 text-xl" />
             </div>
 
-            <div className="overflow-x-auto rounded-[3rem] border border-stone-100 shadow-2xl shadow-stone-200/50">
-              <div className="min-w-[800px] md:min-w-full">
-                <table className="w-full text-left">
+            {/* Comparison Table with Horizontal Scroll on Mobile */}
+            <div className="overflow-x-auto rounded-[2rem] md:rounded-[3rem] border border-stone-100 shadow-2xl shadow-stone-200/50 no-scrollbar mb-12">
+              <table className="w-full text-left border-collapse min-w-[500px] md:min-w-full text-sm md:text-base">
                 <thead>
                   <tr className="bg-stone-900 text-white">
-                    <th className="p-10 text-lg font-black font-outfit uppercase tracking-widest">વિશેષતા</th>
-                    <th className="p-10 text-center bg-stone-800/50">
+                    <th className="p-6 md:p-10 text-sm md:text-lg font-black font-outfit uppercase tracking-widest">વિશેષતા</th>
+                    <th className="p-6 md:p-10 text-center bg-stone-800/50">
                        <span className="flex flex-col items-center gap-2">
-                          <X className="text-red-400 w-8 h-8" />
-                          <span className="text-xs font-bold uppercase tracking-[0.2em] opacity-50">સામાન્ય પ્રોડક્ટ્સ</span>
+                          <X className="text-red-400 w-6 h-6 md:w-8 md:h-8" />
+                          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] opacity-50 whitespace-nowrap">સામાન્ય પ્રોડક્ટ્સ</span>
                        </span>
                     </th>
-                    <th className="p-10 text-center bg-herbal">
+                    <th className="p-6 md:p-10 text-center bg-herbal">
                        <span className="flex flex-col items-center gap-2">
-                          <Check className="text-white w-8 h-8" />
-                          <span className="text-xs font-bold uppercase tracking-[0.2em]">BellaCast</span>
+                          <Check className="text-white w-6 h-6 md:w-8 md:h-8" />
+                          <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">BellaCast</span>
                        </span>
                     </th>
                   </tr>
@@ -1201,22 +1221,28 @@ export default function BellaCast() {
                 <tbody className="divide-y divide-stone-100">
                   {comparisonData.map((row, i) => (
                     <tr key={i} className="group hover:bg-stone-50 transition-colors">
-                      <td className="p-8 font-black text-stone-900 font-heading">{row.feature}</td>
-                      <td className="p-8 text-center text-stone-500 font-medium">
+                      <td className="p-6 md:p-8 font-black text-stone-900 font-heading text-sm md:text-base">{row.feature}</td>
+                      <td className="p-6 md:p-8 text-center text-stone-500 font-medium whitespace-pre-wrap text-xs md:text-sm">
                         <span className="inline-flex items-center gap-2 text-red-500/70">
-                          <Minus className="w-4 h-4" /> {row.market}
+                          <Minus className="w-3 h-3 md:w-4 md:h-4" /> {row.market}
                         </span>
                       </td>
-                      <td className="p-8 text-center bg-herbal/5">
-                         <span className="inline-flex items-center gap-2 text-herbal font-black">
-                            <Plus className="w-4 h-4" /> {row.bellacast}
+                      <td className="p-6 md:p-8 text-center bg-herbal/5">
+                         <span className="inline-flex items-center gap-2 text-herbal font-black whitespace-pre-wrap text-xs md:text-sm">
+                            <Plus className="w-3 h-3 md:w-4 md:h-4" /> {row.bellacast}
                          </span>
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-              </div>
+            </div>
+
+            {/* Mobile Swipe Hint */}
+            <div className="md:hidden flex items-center justify-center gap-2 text-stone-400 text-[10px] font-bold uppercase tracking-widest mt-4">
+              <ChevronLeft className="w-3 h-3 animate-pulse" />
+              <span>Scroll to compare</span>
+              <ChevronRight className="w-3 h-3 animate-pulse" />
             </div>
           </motion.div>
 
@@ -1250,32 +1276,22 @@ export default function BellaCast() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                className={`relative rounded-3xl overflow-hidden shadow-lg border-4 border-white group bg-white ${
-                  item.isPortrait ? 'aspect-[9/16]' : 'aspect-video md:col-span-2'
-                }`}
+                className={`${item.isPortrait ? 'md:col-span-1' : 'md:col-span-2'}`}
               >
                 {item.src.toLowerCase().endsWith('.mp4') ? (
-                  <video 
-                    src={item.src} 
-                    className="w-full h-full object-contain"
-                    playsInline
-                    muted
-                    loop
-                    onMouseEnter={(e) => e.currentTarget.play()}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.pause();
-                      e.currentTarget.currentTime = 0;
-                    }}
-                  />
+                  <VideoBox src={item.src} className="h-full" />
                 ) : (
-                  <img 
-                    src={item.src} 
-                    alt={`Result ${i + 1}`} 
-                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" 
-                  />
+                  <div className={`relative rounded-3xl overflow-hidden shadow-lg border-4 border-white group bg-white ${
+                    item.isPortrait ? 'aspect-[9/16]' : 'aspect-video'
+                  }`}>
+                    <img 
+                      src={item.src} 
+                      alt={`Result ${i + 1}`} 
+                      className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </motion.div>
             ))}
           </div>
@@ -1369,7 +1385,7 @@ export default function BellaCast() {
 
             <div className="pt-12 border-t border-white/5 flex flex-col items-center gap-6">
                <div className="flex gap-8 text-white/30 text-xs font-outfit font-black uppercase tracking-widest">
-                  <a href="#" className="hover:text-herbal transition-colors">Instagram</a>
+                  <a href="https://www.instagram.com/aayurvedna_aangne_results" target="_blank" rel="noopener noreferrer" className="hover:text-herbal transition-colors">Instagram</a>
                   <a href="#" className="hover:text-herbal transition-colors">Facebook</a>
                   <a href="#" className="hover:text-herbal transition-colors">WhatsApp</a>
                </div>

@@ -151,7 +151,7 @@ const ProductCard = ({ title, image, children }: { title: string; image: string;
     </div>
     <div className="p-6 md:p-8 md:flex gap-10 items-start">
       <div className="md:w-1/3 mb-6 md:mb-0 shrink-0">
-        <img src={image} alt={title} className="w-full h-auto rounded-xl shadow-inner border border-stone-100" />
+        <img src={image} alt={title} className="w-full h-auto rounded-xl shadow-inner border border-stone-100 p-1" />
       </div>
       <div className="md:w-2/3 space-y-3">
         {children}
@@ -197,9 +197,9 @@ export default function ArthritisPage() {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-50 rounded-full blur-3xl -ml-32 -mb-32 opacity-60"></div>
         <Section className="relative z-10 text-center">
           <Heading level={1} className="text-herbal mb-6">
-            Arthritis (સંધિવા): સાંધાના દુખાવાનો સંપૂર્ણ ઉપચાર
+            સંધિવા (Arthritis): સાંધાના દુખાવાથી મુક્તિ મેળવો
           </Heading>
-          <ImageBox src={img.hero} alt="Arthritis" className="max-w-md mx-auto" />
+          <ImageBox src={img.hero} alt="Arthritis" className="max-w-md mx-auto p-1" />
           <Paragraph className="text-xl md:text-2xl font-medium text-stone-700 mt-8 max-w-3xl mx-auto">
             આર્થરાઇટિસ (Arthritis) એટલે સાંધાનો સોજો. આ કોઈ એક બીમારી નથી, પરંતુ સાંધાના દુખાવા અને તેના રોગોને દર્શાવતો એક સમૂહ છે. જ્યારે સાંધામાં રહેલી ગાદી ઘસાઈ જાય અથવા રોગપ્રતિકારક શક્તિમાં ફેરફાર થાય, ત્યારે આ સમસ્યા ઉદભવે છે.
           </Paragraph>
@@ -248,8 +248,8 @@ export default function ArthritisPage() {
 
       {/* ─── STATS ─── */}
       <Section className="bg-beige/30 rounded-[3rem] mt-12 border border-beige">
-        <Heading level={2} className="text-center text-herbal-dark">સંધિવા (Arthritis): સાંધાના દુખાવાથી મુ‌ক্তি મેળવો</Heading>
-        <ImageBox src={img.stats} alt="Stats" />
+        <Heading level={2} className="text-center text-herbal-dark">સંધિવા (Arthritis): સાંધાના દુખાવાથી મુક્તિ મેળવો</Heading>
+        <ImageBox src={img.stats} alt="Stats" className="p-1" />
 
         <Paragraph className="text-center font-semibold bg-white p-5 rounded-2xl border-l-4 border-herbal shadow-sm">
           આજે ભારતમાં સાંધાનો દુખાવો એક ગંભીર સમસ્યા બની ગઈ છે. અહીં તેના વિશેના કેટલાક ચોંકાવનારા આંકડાઓ છે:
@@ -540,7 +540,7 @@ export default function ArthritisPage() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-white p-7 rounded-3xl shadow-sm border border-stone-100">
-            <Heading level={3} className="text-herbal-dark mt-0 border-b border-stone-100 pb-3 mb-6">ટીમેક્સ શા માટે પસંદ કરવું?</Heading>
+            <Heading level={3} className="text-herbal-dark mt-0 border-b border-stone-100 pb-3 mb-6">આયુર્વેદના આંગણે શા માટે પસંદ કરવું?</Heading>
             <ul className="space-y-4 text-stone-700 font-semibold mb-7">
               {[
                 { icon: "🌱", text: "૧૦૦% આયુર્વેદિક અને સુરક્ષિત" },

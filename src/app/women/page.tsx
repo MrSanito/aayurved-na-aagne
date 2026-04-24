@@ -603,14 +603,7 @@ export default function WomenHealthAwareness() {
            </ul>
         </div>
 
-        <div className="my-12">
-          <YouTubeCard 
-            image={images.hero} 
-            title="વજન ઘટાડવા વિશે વધુ જાણો (Weight Loss Guide)" 
-            description="આયુર્વેદિક રીતે વજન ઘટાડવા માટેની સંપૂર્ણ માહિતી અને પ્રોડક્ટ્સ વિશે જાણવા માટે અહીં ક્લિક કરો." 
-            link="/" 
-          />
-        </div>
+
 
         <div className="bg-green-50/50 p-8 md:p-10 rounded-3xl border border-green-100 my-12">
           <Heading level={2} className="text-herbal mt-0 text-center mb-8">🌿 આયુર્વેદિક સમાધાન (The Solution)</Heading>
@@ -697,6 +690,16 @@ export default function WomenHealthAwareness() {
           </div>
         </div>
       </Section>
+
+      <Section className="py-0">
+        <YouTubeCard 
+          image={images.hero} 
+          title="વજન ઘટાડવા વિશે વધુ જાણો (Weight Loss Guide)" 
+          description="આયુર્વેદિક રીતે વજન ઘટાડવા માટેની સંપૂર્ણ માહિતી અને પ્રોડક્ટ્સ વિશે જાણવા માટે અહીં ક્લિક કરો." 
+          link="/" 
+        />
+      </Section>
+
       <SocialLinks />
     </main>
   );
