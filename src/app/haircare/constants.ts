@@ -1,0 +1,43 @@
+const assetPath = "/assets/haircare";
+
+export const images = {
+  logo: `${assetPath}/logo.png`,
+  hairfall1: `${assetPath}/hairfall1.jpg`,
+  hairfall2: `${assetPath}/hairfall2.jpg`,
+  vitamins: `${assetPath}/vitamins.jpg`,
+  norwood: `${assetPath}/norwood.jpg`,
+  blackHair: `${assetPath}/blackHair.jpg`,
+  products: `${assetPath}/products.jpg`,
+  biotinDeficiency: `${assetPath}/biotinDeficiency.jpg`,
+  biotinGummy: `${assetPath}/biotinGummy.jpg`,
+  b12spray: `${assetPath}/b12spray.jpg`,
+  saptamrut: `${assetPath}/saptamrut.jpg`,
+  hairTonic: `${assetPath}/hairTonic.jpg`,
+  shampoo: `${assetPath}/shampoo.jpg`,
+  conditioner: `${assetPath}/conditioner.jpg`,
+  conditionerResult: `${assetPath}/conditionerResult.jpg`,
+  hairOil: `${assetPath}/hairOil.jpg`,
+  hairOilResult: `${assetPath}/hairOilResult.jpg`,
+  serum: `${assetPath}/serum.jpg`,
+  gif1: `${assetPath}/gif1.gif`,
+  result1: `${assetPath}/result1.jpg`,
+  gif2: `${assetPath}/gif2.gif`,
+  cert1: `${assetPath}/cert1.png`,
+  gif3: `${assetPath}/gif3.gif`,
+  cert2: `${assetPath}/cert2.png`,
+  gif4: `${assetPath}/gif4.gif`,
+  cert3: `${assetPath}/cert3.png`,
+  gif5: `${assetPath}/gif5.gif`,
+  certification: `${assetPath}/certification.jpg`,
+};
+
+export const haircareResults = {
+  img1: "/haircareresults/WhatsApp Image 2026-03-31 at 12.30.35 PM.jpeg",
+  img2: "/haircareresults/WhatsApp Image 2026-03-31 at 12.30.45 PM (1).jpeg",
+  img3: "/haircareresults/WhatsApp Image 2026-03-31 at 12.30.45 PM.jpeg",
+  vid1: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.37 PM.mp4",
+  vid2: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.39 PM.mp4",
+  vid3: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.41 PM.mp4",
+  vid4: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.42 PM.mp4",
+  vid5: "/haircareresults/WhatsApp Video 2026-03-31 at 12.30.34 PM.mp4",
+};
