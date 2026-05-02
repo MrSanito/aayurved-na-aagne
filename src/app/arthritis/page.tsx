@@ -49,7 +49,7 @@ const SocialLinks = () => (
 
 export default function ArthritisPage() {
   return (
-    <main className="min-h-screen bg-[#FAFAF9] font-sans">
+    <main className="min-h-screen bg-[#FAFAF9] font-sans pt-16 md:pt-20">
       <Hero />
       <Symptoms />
       <Stats />
@@ -74,9 +74,6 @@ export default function ArthritisPage() {
       <WeightLossCard />
       <SocialLinks />
 
-      <footer className="bg-stone-900 text-stone-400 py-12 text-center border-t border-stone-800">
-        <p className="text-sm tracking-widest uppercase font-bold">© 2024 Aayurved Na Aagne. All rights reserved.</p>
-      </footer>
     </main>
   );
 }

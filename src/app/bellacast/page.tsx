@@ -1,9 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 // Sections
 import { Hero } from "@/components/bellacast/sections/Hero";
@@ -35,9 +32,7 @@ export default function BellaCast() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-outfit selection:bg-herbal/10 selection:text-herbal">
-      <Navbar />
-
+    <div className="min-h-screen bg-white font-outfit selection:bg-herbal/10 selection:text-herbal pt-16 md:pt-20">
       <main>
         <Hero activeSlide={activeSlide} />
         <ScientificApproach />
@@ -54,9 +49,6 @@ export default function BellaCast() {
         <WeightLossCard />
         <FollowUs />
       </main>
-
-      <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 }

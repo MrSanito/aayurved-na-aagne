@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import BlogContent from "@/components/sections/BlogContent";
 import Certifications from "@/components/sections/Certifications";
@@ -10,12 +9,10 @@ import DoshaElements from "@/components/sections/DoshaElements";
 import JourneyTimeline from "@/components/sections/JourneyTimeline";
 import SocialLinks from "@/components/sections/SocialLinks";
 import ContactCTA from "@/components/sections/ContactCTA";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden">
-      <Navbar />
+    <main className="min-h-screen bg-white overflow-x-hidden pt-16 md:pt-20">
       <Hero />
       <BlogContent />
       <Certifications />
@@ -26,7 +23,6 @@ export default function Home() {
       {/* <About /> */}
        <SocialLinks />
       <ContactCTA />
-      <Footer />
     </main>
   );
 }

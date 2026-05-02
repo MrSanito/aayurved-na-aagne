@@ -181,9 +181,9 @@ export default function ProductsPage() {
   });
 
   return (
-    <main className="min-h-screen bg-gray-50 font-sans">
+    <main className="min-h-screen bg-gray-50 font-sans pt-20">
       {/* Header */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-10 shadow-sm">
+      <div className="bg-white border-b border-gray-100 sticky top-16 md:top-20 z-10 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
             <div>

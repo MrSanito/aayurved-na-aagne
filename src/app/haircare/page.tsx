@@ -20,7 +20,7 @@ import { CTA } from "@/components/haircare/sections/CTA";
 
 export default function HaircarePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pt-16 md:pt-20">
       <Hero />
       <Causes />
       <Scale />

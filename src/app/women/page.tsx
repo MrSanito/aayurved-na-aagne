@@ -16,7 +16,7 @@ import { CTA } from "@/components/women/sections/CTA";
 
 export default function WomenPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white pt-16 md:pt-20">
       <Hero />
       <Gynocare />
       <Raktavardhak />
