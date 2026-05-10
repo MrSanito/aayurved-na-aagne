@@ -109,8 +109,16 @@ export default function ProductsPage() {
                 <div
                   className={`w-full aspect-square bg-gradient-to-br ${categoryGradients[product.category] ?? "from-gray-100 to-gray-200"} flex flex-col items-center justify-center relative overflow-hidden`}
                 >
-                  <span className="text-5xl mb-1 group-hover:scale-110 transition-transform duration-300">{product.emoji}</span>
-                  <span className={`text-[10px] uppercase tracking-wider font-bold ${categoryTextColors[product.category] ?? "text-gray-500"} opacity-60`}>
+                  {product.image ? (
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  ) : (
+                    <span className="text-5xl mb-1 group-hover:scale-110 transition-transform duration-300">{product.emoji}</span>
+                  )}
+                  <span className={`absolute bottom-2 left-2 text-[10px] uppercase tracking-wider font-bold ${categoryTextColors[product.category] ?? "text-gray-500"} bg-white/80 px-2 py-0.5 rounded-full backdrop-blur-sm z-[1]`}>
                     {product.category}
                   </span>
                   

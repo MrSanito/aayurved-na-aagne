@@ -58,9 +58,17 @@ export default function ProductDetailPage() {
           {/* Left: Product Image/Emoji */}
           <div className="relative group">
             <div className={`aspect-square rounded-[2rem] bg-gradient-to-br ${categoryGradients[product.category] ?? "from-gray-50 to-gray-100"} flex items-center justify-center overflow-hidden shadow-sm border border-gray-100`}>
-              <span className="text-[10rem] sm:text-[12rem] group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl">
-                {product.emoji}
-              </span>
+              {product.image ? (
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              ) : (
+                <span className="text-[10rem] sm:text-[12rem] group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl">
+                  {product.emoji}
+                </span>
+              )}
             </div>
             
             {/* Feature Badges */}
