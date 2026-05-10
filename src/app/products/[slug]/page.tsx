@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { FaWhatsapp, FaArrowLeft, FaShareAlt, FaShieldAlt, FaLeaf, FaTruck } from "react-icons/fa";
 import { products } from "../constants";
@@ -10,6 +10,7 @@ export default function ProductDetailPage() {
   const router = useRouter();
 
   const product = products.find((p) => p.slug === slug);
+  const [mainImage, setMainImage] = useState<string | undefined>(product?.image);
 
   if (!product) {
     return (
@@ -58,9 +59,9 @@ export default function ProductDetailPage() {
           {/* Left: Product Image/Emoji */}
           <div className="relative group">
             <div className={`aspect-square rounded-[2rem] bg-gradient-to-br ${categoryGradients[product.category] ?? "from-gray-50 to-gray-100"} flex items-center justify-center overflow-hidden shadow-sm border border-gray-100`}>
-              {product.image ? (
+              {mainImage ? (
                 <img
-                  src={product.image}
+                  src={mainImage}
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -70,6 +71,23 @@ export default function ProductDetailPage() {
                 </span>
               )}
             </div>
+
+            {/* Thumbnail Gallery */}
+            {product.images && product.images.length > 1 && (
+              <div className="grid grid-cols-5 sm:grid-cols-7 gap-2 mt-4">
+                {product.images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setMainImage(img)}
+                    className={`aspect-square rounded-xl overflow-hidden border-2 transition-all ${
+                      mainImage === img ? "border-orange-500 scale-95" : "border-transparent opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
             
             {/* Feature Badges */}
             <div className="grid grid-cols-3 gap-4 mt-6">
