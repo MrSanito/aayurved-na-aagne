@@ -2,7 +2,7 @@ const assetPath = "/assets/women";
 
 export const images = {
   logo: `${assetPath}/logo.png`,
-  hero: `${assetPath}/hero.jpg`,
+  hero: `${assetPath}/hero.png`,
   gynocare: `${assetPath}/gynocare.jpg`,
   raktavardhak: `${assetPath}/raktavardhak.jpg`,
   calcium: `${assetPath}/calcium.jpg`,
@@ -12,9 +12,9 @@ export const images = {
 };
 
 export const womenResults = {
-  img1: "/womenresults/WhatsApp Image 2026-03-31 at 12.30.35 PM.jpeg",
-  img2: "/womenresults/WhatsApp Image 2026-03-31 at 12.30.45 PM (1).jpeg",
-  vid1: "/womenresults/WhatsApp Video 2026-03-31 at 12.29.37 PM.mp4",
-  vid2: "/womenresults/WhatsApp Video 2026-03-31 at 12.29.39 PM.mp4",
-  vid3: "/womenresults/WhatsApp Video 2026-03-31 at 12.29.41 PM.mp4",
+  img1: "/haircareresults/WhatsApp Image 2026-03-31 at 12.30.35 PM.jpeg",
+  img2: "/haircareresults/WhatsApp Image 2026-03-31 at 12.30.45 PM (1).jpeg",
+  vid1: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.37 PM.mp4",
+  vid2: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.39 PM.mp4",
+  vid3: "/haircareresults/WhatsApp Video 2026-03-31 at 12.29.41 PM.mp4",
 };
