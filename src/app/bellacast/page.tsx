@@ -32,7 +32,7 @@ export default function BellaCast() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-outfit selection:bg-herbal/10 selection:text-herbal pt-16 md:pt-20">
+    <div className="min-h-screen bg-white font-outfit selection:bg-herbal/10 selection:text-herbal pt-16 lg:pt-20">
       <main>
         <Hero activeSlide={activeSlide} />
         <ScientificApproach />

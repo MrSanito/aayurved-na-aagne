@@ -49,7 +49,7 @@ const SocialLinks = () => (
 
 export default function ArthritisPage() {
   return (
-    <main className="min-h-screen bg-[#FAFAF9] font-sans pt-16 md:pt-20">
+    <main className="min-h-screen bg-[#FAFAF9] font-sans pt-16 lg:pt-20">
       <Hero />
       <Symptoms />
       <Stats />

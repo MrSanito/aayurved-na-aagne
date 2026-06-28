@@ -12,7 +12,7 @@ import ContactCTA from "@/components/sections/ContactCTA";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white overflow-x-hidden pt-16 md:pt-20">
+    <main className="min-h-screen bg-white overflow-x-hidden pt-16 lg:pt-20">
       <Hero />
       <BlogContent />
       <Certifications />

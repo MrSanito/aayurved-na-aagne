@@ -4,7 +4,7 @@ export const images = {
   logo: `${assetPath}/logo.png`,
   hero: `${assetPath}/hero.png`,
   gynocare: `${assetPath}/gynocare.jpg`,
-  raktavardhak: `${assetPath}/raktavardhak.jpg`,
+  raktavardhak: `${assetPath}/WhatsApp Image 2026-06-11 at 07.14.56_9ed903f3.jpg`,
   calcium: `${assetPath}/calcium.jpg`,
   amla: `${assetPath}/amla.jpg`,
   chyavanprash: `${assetPath}/chyavanprash.jpg`,
